@@ -1,0 +1,49 @@
+{
+  "input_batch_size": 1,
+  "included_operations": [
+    "Conv2d multiply-accumulate",
+    "Linear multiply-accumulate"
+  ],
+  "excluded_operations": [
+    "bias",
+    "normalization",
+    "pooling",
+    "residual addition",
+    "element-wise activation arithmetic and transcendental functions"
+  ],
+  "conversion": "1 MAC = 2 FLOPs",
+  "reason_for_exclusions": "Element-wise sigmoid, tanh, erf and sqrt costs are implementation- and hardware-dependent. They are represented by activation_elements and compared using measured latency.",
+  "datasets": [
+    {
+      "name": "cifar100",
+      "in_channels": 3,
+      "num_classes": 100,
+      "image_size": 32
+    },
+    {
+      "name": "dermamnist",
+      "in_channels": 3,
+      "num_classes": 7,
+      "image_size": 64
+    },
+    {
+      "name": "organsmnist",
+      "in_channels": 1,
+      "num_classes": 11,
+      "image_size": 64
+    }
+  ],
+  "models": [
+    "ResNet18",
+    "MobileNetV2",
+    "EfficientNetV2S"
+  ],
+  "activations": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "ACON-C",
+    "GELU",
+    "Native"
+  ],
+  "torch_version": "2.12.1+cu132"
+}

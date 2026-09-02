@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software or its published results, please cite the accompanying article and this software release."
+title: "LGTS-Alpha: Multi-Dataset and Multi-Architecture Evaluation of a Learnable, Smooth, and Strictly Monotonic Activation Function for Image Classification"
+type: software
+authors:
+  - family-names: "Taşkın"
+    given-names: "Süleyman Gökhan"
+    affiliation: "Bandirma Onyedi Eylul University, Department of Software Engineering, Balikesir, Turkiye"
+    email: "gokhan@bandirma.edu.tr"
+    orcid: "https://orcid.org/0000-0002-1535-7462"
+version: 1.0.0
+date-released: 2026-09-03
+license: MIT
+repository-code: "https://github.com/SGT85/LGTS-Alpha"
+url: "https://github.com/SGT85/LGTS-Alpha"
+keywords:
+  - activation function
+  - image classification
+  - deep learning
+  - reproducibility

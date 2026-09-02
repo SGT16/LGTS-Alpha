@@ -1,0 +1,61 @@
+{
+  "protocol_version": "f4-ablation-1.0.0",
+  "status": "exploratory_extension_separate_from_locked_v2_primary",
+  "candidate": {
+    "name": "LGTS-f4-Full",
+    "formula": "0.5*(x+sqrt(x^2+alpha^2))-alpha*sigmoid(-beta*x)",
+    "alpha_initial": 0.4,
+    "beta_initial": 1.0,
+    "alpha_range": [0.05, 1.5],
+    "beta_range": [0.5, 3.0],
+    "claimed_properties": [
+      "f(0)=0",
+      "strictly increasing for finite x when alpha,beta>0",
+      "positive-tail identity asymptote",
+      "negative-tail learnable -alpha asymptote",
+      "ReLU limit as alpha tends to zero"
+    ]
+  },
+  "nested_ablations": [
+    {
+      "activation": "LGTS-f4-Base-Squareplus",
+      "learning": "none",
+      "purpose": "known Squareplus-type algebraic base with fixed alpha"
+    },
+    {
+      "activation": "LGTS-f4-Fixed",
+      "learning": "none",
+      "purpose": "isolates the logistic correction against the fixed base"
+    },
+    {
+      "activation": "LGTS-f4-Alpha",
+      "learning": "alpha",
+      "purpose": "isolates learnable saturation/base width"
+    },
+    {
+      "activation": "LGTS-f4-Beta",
+      "learning": "beta",
+      "purpose": "isolates learnable logistic transition rate"
+    },
+    {
+      "activation": "LGTS-f4-Full",
+      "learning": "both",
+      "purpose": "tests the joint contribution of learnable alpha and beta"
+    }
+  ],
+  "developmental_screen": {
+    "dataset": "cifar100",
+    "model": "ResNet18",
+    "seed": 42,
+    "epochs": 100,
+    "selection_metric": "best validation macro-F1",
+    "test_split": "sealed",
+    "rationale": "This is the only locally completed dataset and ResNet18 was the prior near-best LGTS setting. The screen is exploratory and cannot establish cross-dataset superiority."
+  },
+  "promotion_rule": {
+    "minimum": "LGTS-f4-Full must improve over LGTS-f4-Fixed and LGTS-f4-Base-Squareplus on validation macro-F1",
+    "parsimony": "If Full does not materially exceed Alpha or Beta, retain the simpler learned variant",
+    "confirmation": "Freeze the selected formula before additional seeds, models, datasets, or official-test evaluation"
+  },
+  "novelty_policy": "The algebraic base is explicitly treated as Squareplus-type prior art. No exact-form novelty claim is permitted without a documented systematic literature and formula search."
+}

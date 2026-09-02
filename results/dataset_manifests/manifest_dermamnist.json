@@ -1,0 +1,70 @@
+{
+  "dataset": "dermamnist",
+  "source": "MedMNIST/dermamnist",
+  "classes": [
+    "actinic keratoses and intraepithelial carcinoma",
+    "basal cell carcinoma",
+    "benign keratosis-like lesions",
+    "dermatofibroma",
+    "melanoma",
+    "melanocytic nevi",
+    "vascular lesions"
+  ],
+  "in_channels": 3,
+  "native_size": 64,
+  "train": 7007,
+  "validation": 1003,
+  "test": 2005,
+  "train_class_counts": [
+    228,
+    359,
+    769,
+    80,
+    779,
+    4693,
+    99
+  ],
+  "validation_class_counts": [
+    33,
+    52,
+    110,
+    12,
+    111,
+    671,
+    14
+  ],
+  "test_class_counts": [
+    66,
+    103,
+    220,
+    23,
+    223,
+    1341,
+    29
+  ],
+  "recommended_normalization": [
+    [
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "holdout_seed": 2026,
+  "train_labels_sha256": "49eaf45cb52872a82024e1c5587186c9f3b7ce150f18f0e3f1b49e97ca6d077d",
+  "validation_labels_sha256": "1b173d696f44698c7677f72ac164d85158952604b22187778a8cd620a67caf15",
+  "test_labels_sha256": "b42481cd36b554c0f6031a9e141a46aaeab879b7a0e38e4d5e58023ff71cbb16",
+  "upstream_metadata": {
+    "file": "dermamnist_64.npz",
+    "md5": "b70a2f5635c6199aeaa28c31d7202e1f",
+    "expected_md5": "b70a2f5635c6199aeaa28c31d7202e1f",
+    "medmnist_version": "3.0.2",
+    "task": "multi-class",
+    "license": "CC BY-NC 4.0"
+  },
+  "dataset_fingerprint_sha256": "8a674fe09d79ab75ff51ed7805c4787a410f90fa56bd5660a5a8569c444fd2b4"
+}

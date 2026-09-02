@@ -1,0 +1,2 @@
+test,metric,n_dataset_model_blocks,n_activations,statistic,p_value,average_rank_LGTS-f4-Alpha,average_rank_LGTS-f2-Slope,average_rank_ACON-C,average_rank_GELU,average_rank_Native
+Friedman,mean test macro-F1 over five seeds,9,5,11.288888888888891,0.023502150278057205,3.111111111111111,4.111111111111111,2.5555555555555554,1.7777777777777777,3.4444444444444446

@@ -1,0 +1,89 @@
+{
+  "experiment_id": "4452d5a4d5db6977",
+  "code_sha256": "cc8753bdf13348a1cf6add379d5ad899da8b6dddada7e9c1f0d81496e3a38d72",
+  "source_file_sha256": {
+    "train_benchmark.py": "aa611abb5b88751d872ff455e319f4c825746aa3ed1a41912ad01129b3b7834f",
+    "protocol_v2.json": "f8d0c84a4a91db62f01f7c96f807c3a87d2b80d9012f0c8d9ecf9884fbd5e149",
+    "protocol_f4_ablation.json": "6ca87ce4f57d335149620705bf4970efb0a89e13b8817236949a269574e2c6e0",
+    "protocol_q2_confirmatory.json": "289acaa81f6452d6b8dffe29ad19e19b01642382b3718b63ee1fbb9cca03a38c",
+    "protocol_organsmnist_no_hflip_sensitivity.json": "b767fec50b6ced6babb5ed7d18669ebfd0dedc42835fb9c5117e574811d187e2",
+    "lgts_benchmark/activations.py": "f0c9fd5b5a5a2607ad9d1f786e0cba08bba4beaa6712b6598f8a1931c8584c52",
+    "lgts_benchmark/data.py": "3288718ed043d92113e78bb942af598a3c013acda2e8841c2c903ff7301fbb65",
+    "lgts_benchmark/metrics.py": "c5314d6aa1438dbadb4f36e63b95f3eabd8a97c574bf04cce7ac2e5302ec251d",
+    "lgts_benchmark/models.py": "f22c8a1d71bf9081f7f2f79316a19414922692b0ead5015442671995f17317b7",
+    "lgts_benchmark/reporting.py": "81e8b5bc53cbba0f0f5ea73aa870d3cc0f15e71955177d53c48c23ebd4a04faf"
+  },
+  "git_commit": "unavailable",
+  "canonical_config": {
+    "activation_scope": "full_backbone",
+    "augmentation": "organsmnist_no_hflip",
+    "batch_size": 128,
+    "best_state_device": "cpu",
+    "channels_last": false,
+    "class_weight": "auto",
+    "cudnn_benchmark": true,
+    "device": "cuda",
+    "epochs": 100,
+    "fused_optimizer": true,
+    "image_size": 0,
+    "k_folds": 5,
+    "keep_duplicate_controls": false,
+    "learning_rate": 0.001,
+    "lgts_alpha_max": 1.5,
+    "lgts_alpha_min": 0.05,
+    "lgts_beta": 1.0,
+    "lgts_beta_max": 3.0,
+    "lgts_beta_min": 0.5,
+    "lgts_fixed": false,
+    "lgts_learning": "both",
+    "log_t": 0.6,
+    "med_batch_size": 128,
+    "med_size": 64,
+    "min_delta": 0.0,
+    "min_epochs": 0,
+    "min_learning_rate": 1e-06,
+    "momentum": 0.9,
+    "no_amp": false,
+    "no_pretrained": true,
+    "normalization": "dataset",
+    "num_workers": 4,
+    "optimizer": "adamw",
+    "patience": 0,
+    "performance_mode": false,
+    "prefetch_factor": 4,
+    "protocol": "full_train",
+    "scheduler": "cosine",
+    "small_input_stem": "auto",
+    "tf32": true,
+    "weight_decay": 0.0001
+  },
+  "dataset_contract": {
+    "holdout_seed": 2026,
+    "medmnist_md5": {
+      "pathmnist": {
+        "64": "55aa9c1e0525abe5a6b9d8343a507616"
+      },
+      "dermamnist": {
+        "64": "b70a2f5635c6199aeaa28c31d7202e1f"
+      },
+      "organsmnist": {
+        "64": "53a6d115339d874c25e309a994ff46d3"
+      }
+    },
+    "torchvision": {
+      "cifar10": "CIFAR10",
+      "cifar100": "CIFAR100"
+    }
+  },
+  "runtime": {
+    "python_version": "3.14.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch_version": "2.12.1+cu132",
+    "torchvision_version": "0.27.1+cu132",
+    "cuda_runtime_version": "13.2",
+    "cudnn_version": 92000,
+    "cuda_available": true,
+    "gpu_model": "NVIDIA RTX A5500"
+  },
+  "package_lock_sha256": "64ff0295d298dfd0d1ee1ba35cfb21d84ed9806b3f0e78253c4556f24d535d43"
+}

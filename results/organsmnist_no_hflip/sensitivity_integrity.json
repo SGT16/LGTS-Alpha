@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "expected_runs": 75,
+  "sensitivity_runs": 75,
+  "paired_runs": 75,
+  "models": [
+    "ResNet18",
+    "MobileNetV2",
+    "EfficientNetV2S"
+  ],
+  "activations": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "ACON-C",
+    "GELU",
+    "Native"
+  ],
+  "seeds": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "augmentation": "organsmnist_no_hflip"
+}

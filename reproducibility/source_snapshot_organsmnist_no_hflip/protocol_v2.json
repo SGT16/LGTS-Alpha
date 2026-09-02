@@ -1,0 +1,78 @@
+{
+  "protocol_version": "2.2.0",
+  "status": "locked_before_v2_test_results",
+  "primary_method": {
+    "activation": "LGTS-f2-Slope",
+    "alpha_initial": 0.4,
+    "beta_initial": 1.0,
+    "alpha_range": [0.05, 1.5],
+    "beta_range": [0.5, 3.0],
+    "implementation": "single_sigmoid_exact_equivalent"
+  },
+  "datasets": ["cifar100", "pathmnist", "dermamnist", "imagenet100"],
+  "models": ["ResNet18", "MobileNetV2", "EfficientNetV2S"],
+  "core_controls": ["Native", "Swish", "Qian-Gated", "ACON-C", "ReLU", "ELU", "Softplus"],
+  "secondary_controls": ["PReLU", "GELU", "Mish", "LeakyReLU"],
+  "training_seeds": [42, 123, 456, 789, 2026],
+  "holdout_seed": 2026,
+  "protocol": {
+    "selection_phase": "fixed_validation_split_independent_training_seeds",
+    "confirmatory_phase": "full_train_fixed_budget_independent_training_seeds",
+    "selection_metric": "validation_macro_f1",
+    "selection_min_delta": 0.0,
+    "confirmatory_model": "final_epoch",
+    "test_policy": "official test evaluation, predictions, and metrics are closed during selection and ablation; evaluated only by confirmatory full_train"
+  },
+  "augmentation": "dataset_specific_standard",
+  "normalization": "dataset_specific",
+  "weight_initialization": "random",
+  "optimizer": "AdamW",
+  "scheduler": "cosine",
+  "training_budget": {
+    "selection_epochs_max": 100,
+    "selection_patience": 0,
+    "confirmatory_epochs": 100,
+    "confirmatory_patience": 0
+  },
+  "class_weight": {
+    "cifar10": "none",
+    "cifar100": "none",
+    "imagenet100": "none",
+    "pathmnist": "balanced",
+    "dermamnist": "balanced"
+  },
+  "dataset_identity": {
+    "imagenet100_revision": "0519dc2f402a3a18c6e57f7913db059215eee25b",
+    "pathmnist_64_md5": "55aa9c1e0525abe5a6b9d8343a507616",
+    "dermamnist_64_md5": "b70a2f5635c6199aeaa28c31d7202e1f",
+    "split_seed": 2026,
+    "manifest_policy": "record split fingerprints, index hashes, class counts, synsets and label hashes"
+  },
+  "small_input_backbones": {
+    "ResNet18": "3x3 stride-1 stem; no max-pool",
+    "MobileNetV2": "first convolution stride 1",
+    "EfficientNetV2S": "first convolution stride 1"
+  },
+  "reproducibility": {
+    "experiment_id": "SHA256(canonical training config + source + dataset contract + environment + package lock)",
+    "record_environment": ["git_commit", "source_file_sha256", "python", "torch", "torchvision", "CUDA", "cuDNN", "GPU"],
+    "resume_scope": "experiment_id/dataset/model/scope/activation/seed/protocol/fold",
+    "resume_behavior": "completed folds are skipped by atomic done.json; an incomplete fold is cleaned and restarted from epoch 1 without an epoch checkpoint"
+  },
+  "image_sizes": {
+    "cifar100": 32,
+    "pathmnist": 64,
+    "dermamnist": 64,
+    "imagenet100": 160
+  },
+  "notes": [
+    "f1 and f3 are ablations, not primary methods.",
+    "f2 was selected by a preregistered parsimony rule: near-f3 validation performance without a second independent gate.",
+    "Test metrics must not be used to change the locked primary method or hyperparameters.",
+    "Alpha-bound sensitivity at alpha_min 0.01, 0.025 and 0.05 is reported in separate experiment IDs.",
+    "ImageNet-100 uses the clane9/imagenet-100 CMC 160-pixel source; 224 is supported as an explicit resize but is not native-resolution evidence.",
+    "PReLU means scalar shared PReLU; PReLU-Channel is an optional separately named control.",
+    "LGTS learnability ablations use --lgts_learning both, alpha, beta and none in separate experiment IDs.",
+    "Epoch checkpoints are intentionally disabled by researcher decision; interrupted folds restart from epoch 1 and completed folds resume via atomic done.json."
+  ]
+}

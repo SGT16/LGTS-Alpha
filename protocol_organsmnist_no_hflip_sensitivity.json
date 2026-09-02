@@ -1,0 +1,20 @@
+{
+  "protocol_version": "post-confirmatory-organsmnist-no-hflip-1.0.0",
+  "status": "specified_after_confirmatory_analysis_before_sensitivity_training",
+  "specified_at": "2026-08-31",
+  "purpose": "Assess robustness of the locked 225-run conclusions after removing label-inconsistent horizontal flipping from OrganSMNIST.",
+  "relationship_to_primary_study": "The original 225 runs remain immutable and primary. These 75 runs are a post-confirmatory augmentation sensitivity analysis.",
+  "dataset": "organsmnist",
+  "models": ["ResNet18", "MobileNetV2", "EfficientNetV2S"],
+  "activations": ["LGTS-f4-Alpha", "LGTS-f2-Slope", "ACON-C", "GELU", "Native"],
+  "seeds": [936137, 529212, 448132, 942529, 110107],
+  "planned_runs": 75,
+  "single_protocol_change": {
+    "original": "RandomHorizontalFlip + RandomVerticalFlip + RandomRotation(15)",
+    "sensitivity": "RandomVerticalFlip + RandomRotation(15)",
+    "removed_operation": "RandomHorizontalFlip"
+  },
+  "held_constant": "Backbones, activations, seeds, split, 100-epoch full-train budget, initialization, optimizer, scheduler, normalization, batch size, image size, runtime settings and evaluation are identical to protocol_q2_confirmatory.json.",
+  "analysis": "Pair every sensitivity run with its original run by model, activation and seed; report original and no-horizontal-flip mean plus sample SD and the paired macro-F1 change with 95% t interval.",
+  "claim_boundary": "This analysis is explicitly post-confirmatory and descriptive; it does not replace or retroactively modify the locked primary analysis."
+}

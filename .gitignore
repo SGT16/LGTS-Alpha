@@ -1,0 +1,51 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local datasets and generated experiment trees
+data/
+outputs/
+output/
+reproduced/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.npz
+*.npy
+*.arrow
+*.parquet
+*.pkl
+*.joblib
+*.sqlite
+*.db
+*.log
+.ipynb_checkpoints/
+
+# Credentials, editor/browser state, and local configuration
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+tmp/
+*profile*/
+*Login Data*
+*Cookies*
+
+# Manuscripts, downloaded literature, and operating-system files
+paper/
+literature/
+*.docx
+*.pdf
+.DS_Store
+Thumbs.db
+desktop.ini
