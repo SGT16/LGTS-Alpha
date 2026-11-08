@@ -8,14 +8,14 @@ The original comparison used three datasets, three CNN backbones, five activatio
 - [Benchmarks](benchmarks/README.md) covers activation microbenchmarks, eager and compiled training steps, and full epochs timed with the data loader.
 - [Analysis](analysis/README.md) reproduces the paired activation and orientation comparisons and the uncertainty estimates from the released data.
 
-The training engine records a source fingerprint with each run and checkpoint. The [archived engine](https://github.com/SGT16/LGTS-Alpha/tree/cbc7baf51d662d4ec030fa3ae21cb41ea7ce4ab8/research_revision/engine) preserves the earlier release byte for byte. Reruns from this checkout receive a new source fingerprint.
+The training engine records a source fingerprint with each run and checkpoint. The earlier engine is archived in commit `cbc7baf51d662d4ec030fa3ae21cb41ea7ce4ab8` under `research_revision/engine`. See the [training entry point](engine/train_benchmark.py) for the version in this checkout. Reruns from this checkout receive a new source fingerprint.
 
 ## Inspect the results
 
 - [Reviewer tables](results/reviewer_tables/README.md) contain the 300 original and flip-sensitivity seed scores, statistical comparisons, activation controls and sagittal organ confusion matrices.
 - [Training diagnostics](results/diagnostics/README.md) contain layer gradients, learned activation parameters and validation losses from the learning-rate pilot.
 - [Measurement details](results/measurement_details/) accompany the activation, training-step and whole-epoch timing results.
-- [Per-run archive index](results/release_index/README.md) maps each of the 960 completed revision runs to its files in the [major-revision data release](https://github.com/SGT16/LGTS-Alpha/releases/tag/major-revision-data-2026-11-08). Select a run to download its history, predictions, class metrics and recorded diagnostics.
+- [Per-run archive index](results/release_index/README.md) maps each of the 960 completed revision runs to its files in the 48 numbered ZIP archives. Reviewers can download those archives through the view-only link in the manuscript. The same files are available under the release tag `major-revision-data-2026-11-08`.
 
 From this directory, with Python, NumPy and SciPy installed:
 
