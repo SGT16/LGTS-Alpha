@@ -13,3 +13,6 @@
 # Preserve recorded artifacts and exact source snapshots byte for byte.
 results/** binary
 reproducibility/source_snapshot_*/** binary
+
+# Preserve the byte-level revision manifest on all checkout platforms.
+research_revision/** -text

@@ -1,0 +1,314 @@
+{
+  "completed": 18,
+  "excluded": 0,
+  "original_stress_plan_sha256": "74782eb917cb72dcf49e5bd73acc9c55a65a99fe025bef69e2702d232bfd2002",
+  "plan_sha256": "c05ead6e0aa9a3c90d6ffb3050d0af0e28f37bde3a6c91cf961d1410edf46705",
+  "predecessor_sha256": "b2e8fe25a3021f9000fae69461809fa7efab8ae584e5db7fe04159b4d0f7b223",
+  "ranges": {
+    "cost-0928a6147805a1f85c91": {
+      "activation_site": "layer4.1.act2",
+      "capture_sha256": "94cbc044b40f873c63a05052ba8189a3bbf28e481b702353f6d15fac377e7f2f",
+      "checkpoint_sha256": "a5076385dc64baddb7919c8dc4bb16713b82c703bc235fa279bfbf0ef6d18508",
+      "dataset": "cifar100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 22.0625,
+      "minimum": -9.6484375,
+      "model": "ResNet18",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        512,
+        4,
+        4
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "cost-1277853ae26d88c90cb1": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "1502fd2f2030ec997085f4866bcf4808dfb514f0a93d4654e25520786a3b96d5",
+      "checkpoint_sha256": "296cfbddd8a0c2e3a3f01c2ccbda52440aa5ce80be249932d44129a87df81031",
+      "dataset": "organsmnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 10.9296875,
+      "minimum": -10.09375,
+      "model": "MobileNetV2",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        32,
+        64,
+        64
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "cost-255dd10b61b2ede34d78": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "91a9111b05b16c8585228ff141407f3c0ca3fb2748548ef9696dc6d92c51c03f",
+      "checkpoint_sha256": "1aa80832208b0fe7b7eaaeb9b47ad29068a3e232522d176bfedbeeef06b82037",
+      "dataset": "dermamnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 8.1015625,
+      "minimum": -8.4375,
+      "model": "EfficientNetV2S",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        24,
+        64,
+        64
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "cost-3e30ce4c88028f5aa7f9": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "9b44c16dc4673cefc9008c16abc83ded667a654a6acfa57ad9cb2897e4b31928",
+      "checkpoint_sha256": "27130a237b207cc18bbb5c390db0c3e5cd046ba9f1eadbf9511332f26af49202",
+      "dataset": "imagenet100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 22.921875,
+      "minimum": -23.90625,
+      "model": "EfficientNetV2S",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 512,
+      "shape": [
+        64,
+        24,
+        80,
+        80
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "cost-466b7433381e488fb92b": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "815910511a0d74448a3de8d4a6b509afc27415c32be8ce1c37412bf15bbd3b5e",
+      "checkpoint_sha256": "570d588a6768f77a9a62b9cedfa6614916dbd4df449c1c237ec27a1bdfe24d80",
+      "dataset": "organsmnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 12.2109375,
+      "minimum": -11.6171875,
+      "model": "EfficientNetV2S",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        24,
+        64,
+        64
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "cost-50a6191f3c75d60cee3d": {
+      "activation_site": "features.18.2",
+      "capture_sha256": "e54fc0fe73e06d27f646e383c0b6b3f5ff79c43acf24f699a19fc0463f331a72",
+      "checkpoint_sha256": "3aeb07a15594e9bc8da013ac26921e972333e58773b6b80f3b785c199d436d26",
+      "dataset": "cifar100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 6.5390625,
+      "minimum": -5.77734375,
+      "model": "MobileNetV2",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        1280,
+        2,
+        2
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    }
+  },
+  "receipt_sha256": {
+    "pelu-range-206ede944795bac2cffb4886": "55d817f8f60581b78c2a263703ed06392d62d59b3061ab7f8fe179b750cb6c30",
+    "pelu-range-2eaa90358f8e48fe99fee55b": "f1348abda0c326b78f31a3eb016db32eb7ed00220e98ef61d890be6be223c0d1",
+    "pelu-range-36057a77606a2c9807b0832e": "eaa2ac4f58d06561d0d5848243c1bfc57f8e699d12491e79feb5d6fb1f2b8fcc",
+    "pelu-range-3ec8105ebd1d393c34e69247": "7400f7e621174f4b104c4f778479eb0b8c363da2c6270843a6021d87d7586f2d",
+    "pelu-range-507468a078a3bb9388a4c095": "ea0d1955bd71216a1c9d1c5b1bae74209eb6c37508722a4b11c1438df1cf2110",
+    "pelu-range-5651df9e44d27d02b359a43f": "e67e92a9509782e0fe0317d82d1623eb7ca6bee030747140002521bc341a6fa3",
+    "pelu-range-705c3326a44f9cf47cac21fc": "087c30306d8c9ac4439f9056970b259b8b200fe9a2596a9d2f4a0d3c11617cf7",
+    "pelu-range-8a1f22d4374fe3003ffd7a61": "99214561ecef550ee0fab700b5badb604532828b805fdee68ed0232a801e07dc",
+    "pelu-range-a7e9baa307d7ff84319afc3e": "b809a00681c63115b6a03bb9373156f3be8bfc55ec88b2a3d0b235abe0fda2d3",
+    "pelu-range-b651f9595a0fdf8cda107c7e": "b06f3e18aceb3dcd0773e2c1637778bce40637331fd58d22c4423cc60f0cf8a8",
+    "pelu-range-b876ae7a7e73e34ffb066542": "93712e4f9f1086f70ca759349b7712b29b22225cee26f4c59ee6daafaa8b6a3c",
+    "pelu-range-bd6bcb1218a6df9be257cfee": "9e0ac1c7680b7ce4cd23eb0b1a3ca66f6395dd24ae60d1017037e0b88fda61e1",
+    "pelu-range-c8078d3b7f3405c3f9febaae": "d412b046296d5a1e182d2ea46d751c15bc019a7bf2e5052a005a34a5ce54fed1",
+    "pelu-range-d471834318e2c330fab7b4d4": "ddc8b5b0f274fa6bcbc25aa50b3322fe998b28ad58aab469723ff9b7423466f9",
+    "pelu-range-d89f76db57b5cbe4ab01392c": "f60e7a199a2a231584e159c57f2bd8c4114b40feb2ba4e998a2fce5ffd2fd6e5",
+    "pelu-range-db8bc2d371289a3fa809ef5a": "37ac31e0b2c8cc6d7b2747af14fec3a40e6f8d1f9fc510e4abbf642a0aea2eb4",
+    "pelu-range-de0cfa6d1592e6966d4acd3f": "c20aa11569014e9426fed27b5f12849b49f358658d39f7f4624d943b345ef9aa",
+    "pelu-range-e4b169254691d26aea63a100": "387ee13b52a32143c6bd34a094f0798d2d57d09d5c703a8b04c6dfa93a892667"
+  },
+  "scope": "Separate native PELU microtimings on training-split inputs captured at six learned checkpoint sites. The original FP16 stress exclusions remain authoritative.",
+  "units": {
+    "pelu-range-206ede944795bac2cffb4886": {
+      "cell_id": "cost-50a6191f3c75d60cee3d",
+      "error": null,
+      "median_ms": 1.1732758121446953,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-206ede944795bac2cffb4886",
+      "status": "accepted",
+      "throughput_per_second": 109096.25739750125
+    },
+    "pelu-range-2eaa90358f8e48fe99fee55b": {
+      "cell_id": "cost-255dd10b61b2ede34d78",
+      "error": null,
+      "median_ms": 1.3524324728170534,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-2eaa90358f8e48fe99fee55b",
+      "status": "accepted",
+      "throughput_per_second": 94644.2817461947
+    },
+    "pelu-range-36057a77606a2c9807b0832e": {
+      "cell_id": "cost-255dd10b61b2ede34d78",
+      "error": null,
+      "median_ms": 4.656872323843149,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-36057a77606a2c9807b0832e",
+      "status": "accepted",
+      "throughput_per_second": 27486.259252726562
+    },
+    "pelu-range-3ec8105ebd1d393c34e69247": {
+      "cell_id": "cost-3e30ce4c88028f5aa7f9",
+      "error": null,
+      "median_ms": 3.672681740039031,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-3ec8105ebd1d393c34e69247",
+      "status": "accepted",
+      "throughput_per_second": 17425.958612825474
+    },
+    "pelu-range-507468a078a3bb9388a4c095": {
+      "cell_id": "cost-1277853ae26d88c90cb1",
+      "error": null,
+      "median_ms": 6.1577600332406845,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-507468a078a3bb9388a4c095",
+      "status": "accepted",
+      "throughput_per_second": 20786.779495958468
+    },
+    "pelu-range-5651df9e44d27d02b359a43f": {
+      "cell_id": "cost-466b7433381e488fb92b",
+      "error": null,
+      "median_ms": 1.3533052764316944,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-5651df9e44d27d02b359a43f",
+      "status": "accepted",
+      "throughput_per_second": 94583.2416596364
+    },
+    "pelu-range-705c3326a44f9cf47cac21fc": {
+      "cell_id": "cost-255dd10b61b2ede34d78",
+      "error": null,
+      "median_ms": 3.3006527295941,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-705c3326a44f9cf47cac21fc",
+      "status": "accepted",
+      "throughput_per_second": 38780.208184985546
+    },
+    "pelu-range-8a1f22d4374fe3003ffd7a61": {
+      "cell_id": "cost-50a6191f3c75d60cee3d",
+      "error": null,
+      "median_ms": 0.27728636348894986,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-8a1f22d4374fe3003ffd7a61",
+      "status": "accepted",
+      "throughput_per_second": 461616.64204991073
+    },
+    "pelu-range-a7e9baa307d7ff84319afc3e": {
+      "cell_id": "cost-1277853ae26d88c90cb1",
+      "error": null,
+      "median_ms": 1.7897166151542732,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-a7e9baa307d7ff84319afc3e",
+      "status": "accepted",
+      "throughput_per_second": 71519.7025697649
+    },
+    "pelu-range-b651f9595a0fdf8cda107c7e": {
+      "cell_id": "cost-1277853ae26d88c90cb1",
+      "error": null,
+      "median_ms": 4.368205034186326,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-b651f9595a0fdf8cda107c7e",
+      "status": "accepted",
+      "throughput_per_second": 29302.653835671612
+    },
+    "pelu-range-b876ae7a7e73e34ffb066542": {
+      "cell_id": "cost-466b7433381e488fb92b",
+      "error": null,
+      "median_ms": 4.674191380947111,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-b876ae7a7e73e34ffb066542",
+      "status": "accepted",
+      "throughput_per_second": 27384.415734826827
+    },
+    "pelu-range-bd6bcb1218a6df9be257cfee": {
+      "cell_id": "cost-50a6191f3c75d60cee3d",
+      "error": null,
+      "median_ms": 0.775156032611513,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-bd6bcb1218a6df9be257cfee",
+      "status": "accepted",
+      "throughput_per_second": 165128.04469671217
+    },
+    "pelu-range-c8078d3b7f3405c3f9febaae": {
+      "cell_id": "cost-3e30ce4c88028f5aa7f9",
+      "error": null,
+      "median_ms": 2.6100916517763473,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-c8078d3b7f3405c3f9febaae",
+      "status": "accepted",
+      "throughput_per_second": 24520.211754420037
+    },
+    "pelu-range-d471834318e2c330fab7b4d4": {
+      "cell_id": "cost-0928a6147805a1f85c91",
+      "error": null,
+      "median_ms": 1.2969329061146326,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-d471834318e2c330fab7b4d4",
+      "status": "accepted",
+      "throughput_per_second": 98694.38842712686
+    },
+    "pelu-range-d89f76db57b5cbe4ab01392c": {
+      "cell_id": "cost-3e30ce4c88028f5aa7f9",
+      "error": null,
+      "median_ms": 1.0644916235081388,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-d89f76db57b5cbe4ab01392c",
+      "status": "accepted",
+      "throughput_per_second": 60122.59616386796
+    },
+    "pelu-range-db8bc2d371289a3fa809ef5a": {
+      "cell_id": "cost-0928a6147805a1f85c91",
+      "error": null,
+      "median_ms": 0.9022673930768972,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-db8bc2d371289a3fa809ef5a",
+      "status": "accepted",
+      "throughput_per_second": 141864.81854730065
+    },
+    "pelu-range-de0cfa6d1592e6966d4acd3f": {
+      "cell_id": "cost-466b7433381e488fb92b",
+      "error": null,
+      "median_ms": 3.3166468046988937,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-de0cfa6d1592e6966d4acd3f",
+      "status": "accepted",
+      "throughput_per_second": 38593.19594074795
+    },
+    "pelu-range-e4b169254691d26aea63a100": {
+      "cell_id": "cost-0928a6147805a1f85c91",
+      "error": null,
+      "median_ms": 0.2542937981748664,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-e4b169254691d26aea63a100",
+      "status": "accepted",
+      "throughput_per_second": 503354.7845786634
+    }
+  }
+}

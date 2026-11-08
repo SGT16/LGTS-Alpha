@@ -1,0 +1,120 @@
+{
+  "protocol_version": "q2-confirmatory-1.0.0",
+  "status": "locked_before_any_official_test_evaluation",
+  "locked_at": "2026-08-19",
+  "purpose": "Confirm the frozen LGTS-f4-Alpha candidate on untouched official test partitions after validation-only method selection.",
+  "discovery_results_are_not_final_test_results": true,
+  "datasets": [
+    "cifar100",
+    "dermamnist",
+    "organsmnist"
+  ],
+  "dataset_roles": {
+    "cifar100": "challenging standard natural-image benchmark",
+    "dermamnist": "imbalanced medical classification benchmark",
+    "organsmnist": "multi-class medical classification benchmark"
+  },
+  "models": [
+    "ResNet18",
+    "MobileNetV2",
+    "EfficientNetV2S"
+  ],
+  "model_rationale": "Residual, mobile inverted-residual and modern efficient convolutional families provide three structurally distinct confirmatory backbones. DenseNet121 remains a completed validation-only transfer extension and is not reopened in this resource-bounded confirmatory phase.",
+  "activations": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "ACON-C",
+    "GELU",
+    "Native"
+  ],
+  "primary_method": "LGTS-f4-Alpha",
+  "primary_comparator": "ACON-C",
+  "secondary_comparators": [
+    "LGTS-f2-Slope",
+    "GELU",
+    "Native"
+  ],
+  "activation_scope": "full_backbone",
+  "alpha_initial": 0.4,
+  "alpha_constraint": [0.05, 1.5],
+  "beta": 1.0,
+  "beta_learning": false,
+  "seeds": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "seed_generation": {
+    "method": "Python secrets.randbelow; sampled once without replacement from six-digit positive integers",
+    "generated_before_test_access": true,
+    "replacement_after_results": false
+  },
+  "planned_runs": 225,
+  "training": {
+    "protocol": "full_train",
+    "train_partition": "official train plus validation",
+    "evaluation_partition": "official test, evaluated once after the fixed training budget",
+    "pretrained": false,
+    "epochs": 100,
+    "early_stopping": false,
+    "checkpoint_selection": "none; final epoch under a fixed budget",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "minimum_learning_rate": 0.000001,
+    "augmentation": "standard online augmentation",
+    "normalization": "dataset-specific",
+    "batch_size": {
+      "cifar100": 128,
+      "dermamnist": 128,
+      "organsmnist": 128
+    },
+    "image_size": {
+      "cifar100": 32,
+      "dermamnist": 64,
+      "organsmnist": 64
+    },
+    "runtime": {
+      "amp": true,
+      "tf32": true,
+      "cudnn_benchmark": true,
+      "channels_last": false,
+      "fused_optimizer": true
+    }
+  },
+  "primary_metric": "test macro-F1",
+  "secondary_metrics": [
+    "accuracy",
+    "error rate",
+    "macro precision",
+    "macro recall",
+    "MCC",
+    "balanced accuracy",
+    "specificity",
+    "Cohen kappa",
+    "ROC-AUC",
+    "PR-AUC",
+    "NLL",
+    "Brier score",
+    "ECE",
+    "epoch time",
+    "training time",
+    "inference latency",
+    "throughput",
+    "peak GPU memory"
+  ],
+  "analysis": {
+    "confirmatory_block": "dataset x model; each block score is the mean over the five locked seeds",
+    "omnibus": "Friedman test across the five activations on nine dataset-model blocks",
+    "paired_tests": "two-sided exact Wilcoxon signed-rank tests comparing LGTS-f4-Alpha with each comparator; Holm family-wise correction",
+    "noninferiority_margin_macro_f1": 0.01,
+    "noninferiority_rule": "95% bootstrap lower confidence bound of the paired block difference must exceed -0.01",
+    "descriptive_reporting": "mean, sample SD, paired differences, wins/ties/losses, average rank and 95% confidence intervals",
+    "alpha_reporting": "layer mean, layer SD, minimum, maximum and boundary fraction for every run"
+  },
+  "resume_policy": "Completed conditions are skipped using run-level done.json. An interrupted condition has no epoch checkpoint and restarts from epoch 1.",
+  "claim_boundary": "Superiority is claimed only when multiplicity-corrected inference supports it. Otherwise the study reports competitiveness or non-inferiority with explicit efficiency trade-offs."
+}

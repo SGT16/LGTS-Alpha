@@ -1,0 +1,18 @@
+{
+  "alpha_grid": 20,
+  "alpha_sharing": 15,
+  "alpha_zero_bound": 15,
+  "components_baselines": 495,
+  "fixed_historical_mean": 45,
+  "imagenet_additional_baselines": 120,
+  "longer_budget": 25,
+  "lr_sweep": 30,
+  "network_alpha": 15,
+  "no_hflip_precision_bridge": 15,
+  "organsmnist_no_flip": 75,
+  "organsmnist_no_rotation": 15,
+  "organsmnist_no_vflip": 75,
+  "q2_confirmatory": 225,
+  "q2_postconfirmatory_imagenet100": 75,
+  "q2_postconfirmatory_organsmnist_no_hflip": 75
+}

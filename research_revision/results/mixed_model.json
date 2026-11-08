@@ -1,0 +1,374 @@
+{
+  "classification": "Post-review supplementary analysis of the original locked panel",
+  "outcome": "Final test macro-F1, 100 epochs, original confirmatory preprocessing and augmentations",
+  "observations": 225,
+  "outcome_cells": 45,
+  "seeds": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "contexts": [
+    [
+      "cifar100",
+      "ResNet18"
+    ],
+    [
+      "cifar100",
+      "MobileNetV2"
+    ],
+    [
+      "cifar100",
+      "EfficientNetV2S"
+    ],
+    [
+      "dermamnist",
+      "ResNet18"
+    ],
+    [
+      "dermamnist",
+      "MobileNetV2"
+    ],
+    [
+      "dermamnist",
+      "EfficientNetV2S"
+    ],
+    [
+      "organsmnist",
+      "ResNet18"
+    ],
+    [
+      "organsmnist",
+      "MobileNetV2"
+    ],
+    [
+      "organsmnist",
+      "EfficientNetV2S"
+    ]
+  ],
+  "activations": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "ACON-C",
+    "GELU",
+    "Native"
+  ],
+  "fixed_effects": "Separate mean for every activation x fixed dataset x fixed backbone combination",
+  "random_effects": "Independent Gaussian intercepts for global seed and for seed x context, plus iid Gaussian errors",
+  "target": "LGTS-Alpha minus comparator, equal weight for every one of these nine fixed contexts",
+  "variance_estimator": "Balanced-design REML, with nonnegative additive variances and pooled adjacent error strata",
+  "variance_components": {
+    "residual": 0.00013262112431285618,
+    "seed_by_context_intercept": 1.9934747758685987e-05,
+    "global_seed_intercept": 0.0
+  },
+  "error_strata": [
+    {
+      "stratum": "within_seed_context",
+      "df": 144,
+      "ss": 0.01909744190105129,
+      "mean_square": 0.00013262112431285618,
+      "fitted_eigenvalue": 0.00013262112431285618
+    },
+    {
+      "stratum": "seed_by_context",
+      "df": 32,
+      "ss": 0.007746697010055924,
+      "mean_square": 0.00024208428156424763,
+      "fitted_eigenvalue": 0.00023229486310628612
+    },
+    {
+      "stratum": "between_seed",
+      "df": 4,
+      "ss": 0.0006159180617703757,
+      "mean_square": 0.00015397951544259393,
+      "fitted_eigenvalue": 0.00023229486310628612
+    }
+  ],
+  "model_contrast_interval": "Two-sided t interval from the within-seed-context residual mean square. The numerator cancels both intercepts. Under this Gaussian model the numerator is independent of the error stratum (144 df).",
+  "whole_seed_sensitivity": "Average paired activation differences equally over the nine contexts within each seed. Student t over five seed-level averages (4 df). Allows other within-seed dependencies and context-specific variances, assumes independent, approximately normal seed averages.",
+  "interpretation": [
+    "Strict lower bound > -margin, using two-sided 95% pointwise intervals; the four-comparison Bonferroni intervals have simultaneous coverage of at least 95%.",
+    "Post-review interval criteria supplement the locked confirmatory results.",
+    "The fixed contexts do not represent draws from a population of datasets or backbones.",
+    "The model assumes common residual variance across all activation-context cells. There are only five global seeds. A zero REML variance estimate alone does not establish independence."
+  ],
+  "fixed_cell_means": [
+    {
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.726968766576047
+    },
+    {
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.7272727277118676
+    },
+    {
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.7119840835515989
+    },
+    {
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "mean_macro_f1": 0.7282306379507052
+    },
+    {
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "Native",
+      "mean_macro_f1": 0.7244403435049087
+    },
+    {
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.6169093190924702
+    },
+    {
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.5966017902994675
+    },
+    {
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.6125270193670375
+    },
+    {
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "mean_macro_f1": 0.6088233112131523
+    },
+    {
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "Native",
+      "mean_macro_f1": 0.6080499519015008
+    },
+    {
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.6049325792980554
+    },
+    {
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.609555646538249
+    },
+    {
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.61840044444293
+    },
+    {
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "mean_macro_f1": 0.6491098626205114
+    },
+    {
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "mean_macro_f1": 0.6198740875539893
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.6017039836901927
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.594631526135388
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.6287606345706765
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "mean_macro_f1": 0.6231094469832513
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "Native",
+      "mean_macro_f1": 0.6170962498977406
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.6220668113196132
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.62836067666759
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.6434321945079038
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "mean_macro_f1": 0.6298853531301499
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "Native",
+      "mean_macro_f1": 0.597295734196863
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.5843506817410886
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.5685131738200863
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.5585657620964772
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "mean_macro_f1": 0.5774020843958867
+    },
+    {
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "mean_macro_f1": 0.581504012387225
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.7710148558082122
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.7676959365311142
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.7718596674919246
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "mean_macro_f1": 0.7762491941397268
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "Native",
+      "mean_macro_f1": 0.775200334899363
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.7748722507928433
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.774156946724429
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.7814544851766632
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "mean_macro_f1": 0.7776901246202567
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "Native",
+      "mean_macro_f1": 0.7725919983211977
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "mean_macro_f1": 0.7827285928933087
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "mean_macro_f1": 0.7736122632155947
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "mean_macro_f1": 0.7850554567785186
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "mean_macro_f1": 0.7867703033040946
+    },
+    {
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "mean_macro_f1": 0.7824692273468165
+    }
+  ],
+  "versions": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0"
+  }
+}

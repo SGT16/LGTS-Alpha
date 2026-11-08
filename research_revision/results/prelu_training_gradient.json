@@ -1,0 +1,72 @@
+{
+  "capture_sha256": "407f60ef853370ab511974c1038646287c062ae3defe970a97ccc93e3ac75e53",
+  "completed": 6,
+  "excluded": 0,
+  "plan_sha256": "cb8bd794977c62b7a4dc28b815a613a4dfe3e0424f2e8451acbb6cffae897976",
+  "predecessor_sha256": "fabcdbb3649c70b942b0c9aefa4b08665516c3b2a90d1aad440cb04beb96e46b",
+  "receipt_sha256": {
+    "prelu-grad-158730895fc912cee0913c0f": "b551222ccea3ef0f879c38b1cd1e7822fcde83b19994c3c62bc620a31215e870",
+    "prelu-grad-26f67e8745dd6b18df57161a": "128c1d6c52809bbbd5ea4305dfd8bf40fc8032581925f8c4e5b56f6324c30b67",
+    "prelu-grad-abf2406d67b5298cf6287b95": "cd2fa38f6e9fa255604b8d96658c73cfdfbb61a5bdc135f43d626d0cc7cc3e45",
+    "prelu-grad-b59d17b636e100178c3ec2d0": "54dcb2c2e20888ce1cc095bdd57b2823e9f9ba404f242eda1ba6df6cfa155be5",
+    "prelu-grad-b642316259cf574211b3c5bc": "94945728250b393166ef1aeee531a03be0ec8bd4b979f37d74af22c3b8d833c9",
+    "prelu-grad-bc22e1c2f57e849b69023277": "d58912695b630501439049d2bd281e2bc1d3a87d2381c61441558390afc777c3"
+  },
+  "scope": "Supplemental native FP16 PReLU backward timings with paired real training inputs and upstream gradients from the learned checkpoint. Preserve synthetic unit-gradient exclusions.",
+  "units": {
+    "prelu-grad-158730895fc912cee0913c0f": {
+      "activation_site": "relu",
+      "batch_size": 1,
+      "error": null,
+      "kind": "activation_forward_plus_backward",
+      "median_ms": 0.35926587408966015,
+      "source_unit_id": "micro-158730895fc912cee0913c0f",
+      "status": "accepted"
+    },
+    "prelu-grad-26f67e8745dd6b18df57161a": {
+      "activation_site": "relu",
+      "batch_size": 32,
+      "error": null,
+      "kind": "activation_forward_plus_backward",
+      "median_ms": 0.37055866271068205,
+      "source_unit_id": "micro-26f67e8745dd6b18df57161a",
+      "status": "accepted"
+    },
+    "prelu-grad-abf2406d67b5298cf6287b95": {
+      "activation_site": "layer4.1.act2",
+      "batch_size": 32,
+      "error": null,
+      "kind": "activation_forward_plus_backward",
+      "median_ms": 0.33980146894845503,
+      "source_unit_id": "micro-abf2406d67b5298cf6287b95",
+      "status": "accepted"
+    },
+    "prelu-grad-b59d17b636e100178c3ec2d0": {
+      "activation_site": "relu",
+      "batch_size": 32,
+      "error": null,
+      "kind": "activation_backward_retained_graph",
+      "median_ms": 0.2035679735671797,
+      "source_unit_id": "micro-b59d17b636e100178c3ec2d0",
+      "status": "accepted"
+    },
+    "prelu-grad-b642316259cf574211b3c5bc": {
+      "activation_site": "layer4.1.act2",
+      "batch_size": 32,
+      "error": null,
+      "kind": "activation_backward_retained_graph",
+      "median_ms": 0.21641894606309192,
+      "source_unit_id": "micro-b642316259cf574211b3c5bc",
+      "status": "accepted"
+    },
+    "prelu-grad-bc22e1c2f57e849b69023277": {
+      "activation_site": "relu",
+      "batch_size": 1,
+      "error": null,
+      "kind": "activation_backward_retained_graph",
+      "median_ms": 0.227825004814949,
+      "source_unit_id": "micro-bc22e1c2f57e849b69023277",
+      "status": "accepted"
+    }
+  }
+}

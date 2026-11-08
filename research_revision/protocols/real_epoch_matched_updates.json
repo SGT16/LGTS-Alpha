@@ -1,0 +1,9 @@
+{
+  "admission": "All six original arms accepted, original matching fingerprints agree, and at least two arms have different effective optimizer update counts.",
+  "amp_initial_scale": 256.0,
+  "attempts_per_scientific_condition": 1,
+  "inference": "Separate six-arm, within-dataset/backbone comparison. Do not combine these ratios with the original initial-scale protocol to claim a 12-context mean.",
+  "measure": "Entire first training epoch with the source plan's loader, seed, model, optimizer, numerical and compile gates, warmup and clocks. Change only GradScaler's initial power-of-two scale. The ordinary growth/backoff policy is retained.",
+  "original_initial_scale": 65536.0,
+  "require_every_batch_updates": true
+}

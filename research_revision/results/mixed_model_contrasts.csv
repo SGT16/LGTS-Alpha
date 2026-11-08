@@ -1,0 +1,17 @@
+﻿method,activation,comparator,macro_f1_difference,standard_error,degrees_of_freedom,interval,lower,upper,lower_above_minus_0.005,lower_above_minus_0.010,lower_above_minus_0.020
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,LGTS-f2-Slope,0.0050163503964494585,0.002427812223315983,144,pointwise,0.00021759729132471428,0.009815103501574203,True,True,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,LGTS-f2-Slope,0.0050163503964494585,0.002427812223315983,144,bonferroni_4_contrasts,-0.0011247289250337026,0.01115742971793262,True,True,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,LGTS-f2-Slope,0.0050163503964494585,0.0025837114215856325,4,pointwise,-0.0021571825332556034,0.01218988332615452,True,True,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,LGTS-f2-Slope,0.0050163503964494585,0.0025837114215856325,4,bonferroni_4_contrasts,-0.006131475717272757,0.016164176510171675,False,True,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,ACON-C,-0.0029435451968776454,0.002427812223315983,144,pointwise,-0.00774229830200239,0.0018552079082470988,False,True,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,ACON-C,-0.0029435451968776454,0.002427812223315983,144,bonferroni_4_contrasts,-0.009084624518360807,0.0031975341246055157,False,True,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,ACON-C,-0.0029435451968776454,0.0028257662616549854,4,pointwise,-0.010789130102482697,0.004902039708727407,False,False,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,ACON-C,-0.0029435451968776454,0.0028257662616549854,4,bonferroni_4_contrasts,-0.015135754690467407,0.009248664296712117,False,False,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,GELU,-0.007969164127322601,0.002427812223315983,144,pointwise,-0.012767917232447346,-0.003170411022197857,False,False,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,GELU,-0.007969164127322601,0.002427812223315983,144,bonferroni_4_contrasts,-0.014110243448805761,-0.00182808480583944,False,False,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,GELU,-0.007969164127322601,0.0028904142585806296,4,pointwise,-0.0159942406475527,5.5912392907496444e-05,False,False,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,GELU,-0.007969164127322601,0.0028904142585806296,4,bonferroni_4_contrasts,-0.020440307491896004,0.004501979237250802,False,False,False
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,Native,0.0007806556891362954,0.002427812223315983,144,pointwise,-0.0040180974159884485,0.00557940879426104,True,True,True
+mixed_model_fixed_nine_contexts,LGTS-f4-Alpha,Native,0.0007806556891362954,0.002427812223315983,144,bonferroni_4_contrasts,-0.005360423632346865,0.006921735010619457,False,True,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,Native,0.0007806556891362954,0.002967667684910478,4,pointwise,-0.0074589107284870676,0.009020222106759658,False,True,True
+paired_whole_seed_sensitivity,LGTS-f4-Alpha,Native,0.0007806556891362954,0.002967667684910478,4,bonferroni_4_contrasts,-0.012023809638648415,0.013585121016921005,False,False,True

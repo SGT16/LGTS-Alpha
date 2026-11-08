@@ -1,0 +1,491 @@
+{
+  "completed": 27,
+  "excluded": 0,
+  "plan_sha256": "ffa2044fbd59780a87d406b63007c5c03b1181858ee2e06da359a062a2f23d13",
+  "predecessor_sha256": "41135535689063dc4db32b5c78bcf3887a6c60c68c11788e401a9d7b2238cd9a",
+  "ranges": {
+    "capture-3d53802eb77230d388927340": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "02a5b32eb43babc0f7143bb5701d03d5eb9217a32dddd05acf760b2cfaee0ad1",
+      "checkpoint_sha256": "ff142791eba757d20b9b50506a1cea06e4eba932e30ede2cc484445649b01883",
+      "dataset": "cifar100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 13.28125,
+      "minimum": -14.0390625,
+      "model": "EfficientNetV2S",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        24,
+        32,
+        32
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-8490b2f639d33a4253a201f4": {
+      "activation_site": "features.0.2",
+      "capture_sha256": "84c3277948220bba505421bd7a42efa2b61e56da9776a53972fe9a6ffa51b251",
+      "checkpoint_sha256": "8f66b6234ae8b7bd1de311ac67562be4fb73fb7e07a58ef5068b6827df917115",
+      "dataset": "imagenet100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 11.4296875,
+      "minimum": -11.0078125,
+      "model": "MobileNetV2",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 512,
+      "shape": [
+        64,
+        32,
+        80,
+        80
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-988dca30150b3c8752a8e792": {
+      "activation_site": "features.7.2",
+      "capture_sha256": "cb95620ff053b90742cbf512062cb1a679c46411f52c03f8bf40b9efd7468291",
+      "checkpoint_sha256": "ff142791eba757d20b9b50506a1cea06e4eba932e30ede2cc484445649b01883",
+      "dataset": "cifar100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 5.2265625,
+      "minimum": -5.4375,
+      "model": "EfficientNetV2S",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        1280,
+        2,
+        2
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-98cb0095171f7b45416d8db2": {
+      "activation_site": "relu",
+      "capture_sha256": "ec57bb95e9eec4094876c4910cbe71ee8d88113e5249d79d8eae38c91912711a",
+      "checkpoint_sha256": "3651633a30e0e696c024845df40ec492133185c20841d6268de976f1ceda1a70",
+      "dataset": "imagenet100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 22.125,
+      "minimum": -18.828125,
+      "model": "ResNet18",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 512,
+      "shape": [
+        64,
+        64,
+        80,
+        80
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-c1def661039aeab462bc6079": {
+      "activation_site": "layer4.1.act2",
+      "capture_sha256": "d184e8839107b655bd44a0967b8ed677a1986112a1836cf9876ea9717e8f77c6",
+      "checkpoint_sha256": "959fc0568c4bbcc3be57c9f6d6f4f740b7d3d6ec31464b3dc3d05b15047a66a3",
+      "dataset": "organsmnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 31.40625,
+      "minimum": -9.0625,
+      "model": "ResNet18",
+      "range_scope": "Extrema of eight full original training batches. The timing input uses the first requested number of examples of the first captured activation batch, without clipping.",
+      "sampled_images": 1024,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-ccce19b49be84b37ef7fbe87": {
+      "activation_site": "relu",
+      "capture_sha256": "49ecb57b1e069dbc47a38dd4b0e28673bdf8b65a156a266de093b42454c29dc8",
+      "checkpoint_sha256": "85603ae74ca0a5cb1093abb48062ef4bda5421920ac26f983550414c53db725c",
+      "dataset": "dermamnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 11.78125,
+      "minimum": -11.96875,
+      "model": "ResNet18",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-db6e50fd652a7b8b6a8831e7": {
+      "activation_site": "layer4.1.act2",
+      "capture_sha256": "5a0f1c83f1474064425233f4022c1483cbd39659712f330a448720d2981a5990",
+      "checkpoint_sha256": "3651633a30e0e696c024845df40ec492133185c20841d6268de976f1ceda1a70",
+      "dataset": "imagenet100",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 16.21875,
+      "minimum": -9.9140625,
+      "model": "ResNet18",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 512,
+      "shape": [
+        64,
+        512,
+        5,
+        5
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-eb7864d0e6a979cf2c98f381": {
+      "activation_site": "layer4.1.act2",
+      "capture_sha256": "1c510efadd7d8b44f0014bc751226373a8de4d5ff47e12deec0248b15f3d9bf2",
+      "checkpoint_sha256": "959fc0568c4bbcc3be57c9f6d6f4f740b7d3d6ec31464b3dc3d05b15047a66a3",
+      "dataset": "organsmnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 31.40625,
+      "minimum": -9.0625,
+      "model": "ResNet18",
+      "range_scope": "First eight full shuffled batches of this replay; historical epoch extrema were not recorded.",
+      "sampled_images": 1024,
+      "shape": [
+        128,
+        512,
+        8,
+        8
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    },
+    "capture-eca5f0b26265db6ec5566dfc": {
+      "activation_site": "layer4.1.act2",
+      "capture_sha256": "2f865bbe2c1aee0f1699d3e0099db2f66457843b7bcb1a5be39c105a5d319897",
+      "checkpoint_sha256": "959fc0568c4bbcc3be57c9f6d6f4f740b7d3d6ec31464b3dc3d05b15047a66a3",
+      "dataset": "organsmnist",
+      "input_origin": "Forward pre-hook on a frozen learned checkpoint replaying real training batches",
+      "maximum": 31.40625,
+      "minimum": -9.0625,
+      "model": "ResNet18",
+      "range_scope": "Extrema of eight full original training batches. The timing input uses the first requested number of examples of the first captured activation batch, without clipping.",
+      "sampled_images": 1024,
+      "shape": [
+        32,
+        512,
+        8,
+        8
+      ],
+      "source_seed": 936137,
+      "timed_batch": 1
+    }
+  },
+  "receipt_sha256": {
+    "pelu-range-054502f3b6bb97cebccde627": "40a6af7267f75f46abf21bb384483426e7fd66898820db6955b386b7f46c42d8",
+    "pelu-range-055948a5473840cdf106a040": "e4827c6e3fd7b9f8907e548f1e5df7f9b0cd55d7fd8861cdaeb5afe9454f5850",
+    "pelu-range-0c817d9cdfd361941c51b191": "53d497edcbdff70b0ea53d4a6d828cd8df57b3b0193cea46cf601f1ce902824f",
+    "pelu-range-0cc30f343046d0a0e853cedb": "6f677677767a83a15395af814f19c8df7f8de62808fc186a367351636d546f86",
+    "pelu-range-14b7f498e038fb4d11dd70ca": "5dc12e5bedd22c1230e258228406181147312dc076cd20a1b66402b4f4ae6ea1",
+    "pelu-range-3819da8343450273527c0668": "87c5d432a5fbc17a5e1083318045af0e09708e7ac5e3c897e8163f8284c4c414",
+    "pelu-range-3d828297bd60ad0068c3c324": "6f1a0572ad0d218e39ad1a3aa997452825f7156c471cdcb7e441c7dce281cb3f",
+    "pelu-range-3f7a6ace24b6a37ad7d61a70": "351633334c1792a574ec363817cbd32b0428194327689b9d59c2ce7ae2fbe918",
+    "pelu-range-4c8ba0f939c5e51d33bac582": "9d4381686fd270d7e5dd70fe5be7a4c68b1aae5b140b4ff1bfc674b039b1149e",
+    "pelu-range-61c339d224c459c536a05d6b": "cf4f792cd41137b2bcf2f68365408f4655a584e91aa142ce3a4f37545be5ac2e",
+    "pelu-range-63a3a8d5f4830587431a80dc": "5b7f366493d421ecb1e7ed882b539f40b52c15ecad4a1cf7633a0d845d80a77f",
+    "pelu-range-64e306f7509a5dbb65647f25": "5f1a22da03e5fbec33cb586e401a807d2fee6782a864ff216e7c5d4170c91005",
+    "pelu-range-70d1bc7fbc423576aac21cc4": "f3fb74509d7a8a06867567d8812c984842ed27c31c9f303e31e2235731c798a6",
+    "pelu-range-71855c2fbef8e85ccf0426ab": "761e1c8abd0a75e896d9eead6b27f8a31392e8e65e4f3b66c4bd6028c6b08f55",
+    "pelu-range-8768fc50599be5ee57123ea6": "ac97b07a9bc8b6cbcb906e0683909e349d730312327fe306e73f96c714cee986",
+    "pelu-range-8e6425b4aa587c6741e68e51": "c5175d1dea3258f110fbef698a06e7144ec0065d064eb8f564a601532910c95f",
+    "pelu-range-a2f9ddd67a946929fc4105ad": "db3455214e8b97d028564e7c584a26af3005347a5e68bd47c34ec245d593bd7e",
+    "pelu-range-a6a56f026845b225e23aa243": "e1f606e81082bcb2a5873f2dc513f95250494896175289c35fa9b30dacb9ec7d",
+    "pelu-range-a856d07e41053d4b8c8b2b1e": "e73f6e294dd471300f01006d06bab39138799973cb1a69cc841fb2c6e779407a",
+    "pelu-range-adb5ece423875c93182d7ccd": "a60ed2d2c01106de62a2a0cbab1dc185b138f456123b01752b35d55379794aa3",
+    "pelu-range-af5808a524bcb098af54c7dd": "42e6c9189da7f3b632826f5aab7f2b7e08259cc4f460056b1de5395d2be3e08a",
+    "pelu-range-bb474e4c10a1f5ca00947c19": "813eda39be323c3b27519fcd4013bf816a541e8dc56146d6dea9a9d156f095c8",
+    "pelu-range-be4d92c75b8b1410b5da7bb8": "b8871c1783c2837cf7274eaefc02153d6a2772b1451d1bc0da31de490c1e17b0",
+    "pelu-range-dd2590b743d575a0a6a9c463": "86cec042922e9adccbf6603a4e11ab1bd693f0050af1e63e6a315a67314a99e7",
+    "pelu-range-e671e3285a60ce355abdd94c": "27ecd812fcc56fb0f8a7abbbbec99ec188dc3d098638e16c2e32495f66cb0258",
+    "pelu-range-ef256a9b8677e3928c052492": "ae1c9966c20b49a84d910415196c357a910006734ada7ece92377894606a2eb8",
+    "pelu-range-f7f9f7fd55ebb17f810b0440": "1e3908384624f969c090e954313c30113a8605c880afe12fbd32753a0e39ca25"
+  },
+  "roster_sha256": "543d74386b07d5ddb3c3ca653b49ee814a471c6f1b7d7a5a3b766a54acf71c3c",
+  "scope": "Automatically admit additional verified native PELU FP16 stress overflows from the sealed WS2 activation microbenchmark. Preserve all original results and skip the first 18 assignments.",
+  "units": {
+    "pelu-range-054502f3b6bb97cebccde627": {
+      "capture_id": "capture-c1def661039aeab462bc6079",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 0.2773572713765068,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-054502f3b6bb97cebccde627",
+      "status": "accepted",
+      "throughput_per_second": 3605.458025445169
+    },
+    "pelu-range-055948a5473840cdf106a040": {
+      "capture_id": "capture-98cb0095171f7b45416d8db2",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 2.713913372200979,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-055948a5473840cdf106a040",
+      "status": "accepted",
+      "throughput_per_second": 23582.182340660383
+    },
+    "pelu-range-0c817d9cdfd361941c51b191": {
+      "capture_id": "capture-988dca30150b3c8752a8e792",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 0.2668341624467562,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-0c817d9cdfd361941c51b191",
+      "status": "accepted",
+      "throughput_per_second": 479698.6968471138
+    },
+    "pelu-range-0cc30f343046d0a0e853cedb": {
+      "capture_id": "capture-ccce19b49be84b37ef7fbe87",
+      "cell_id": "cost-dc4aef17c80c57bf2b05",
+      "error": null,
+      "median_ms": 12.004253540039063,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-0cc30f343046d0a0e853cedb",
+      "status": "accepted",
+      "throughput_per_second": 10662.887081905426
+    },
+    "pelu-range-14b7f498e038fb4d11dd70ca": {
+      "capture_id": "capture-eb7864d0e6a979cf2c98f381",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 1.1794862324323623,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-14b7f498e038fb4d11dd70ca",
+      "status": "accepted",
+      "throughput_per_second": 108521.82626670903
+    },
+    "pelu-range-3819da8343450273527c0668": {
+      "capture_id": "capture-8490b2f639d33a4253a201f4",
+      "cell_id": "cost-8d12601bcfd1c49746a1",
+      "error": null,
+      "median_ms": 1.3750283225667204,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-3819da8343450273527c0668",
+      "status": "accepted",
+      "throughput_per_second": 46544.49581120867
+    },
+    "pelu-range-3d828297bd60ad0068c3c324": {
+      "capture_id": "capture-ccce19b49be84b37ef7fbe87",
+      "cell_id": "cost-dc4aef17c80c57bf2b05",
+      "error": null,
+      "median_ms": 8.554469909667969,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-3d828297bd60ad0068c3c324",
+      "status": "accepted",
+      "throughput_per_second": 14962.93766319042
+    },
+    "pelu-range-3f7a6ace24b6a37ad7d61a70": {
+      "capture_id": "capture-988dca30150b3c8752a8e792",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 1.5601025015249794,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-3f7a6ace24b6a37ad7d61a70",
+      "status": "accepted",
+      "throughput_per_second": 82045.89113528226
+    },
+    "pelu-range-4c8ba0f939c5e51d33bac582": {
+      "capture_id": "capture-eca5f0b26265db6ec5566dfc",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 0.9257576567520922,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-4c8ba0f939c5e51d33bac582",
+      "status": "accepted",
+      "throughput_per_second": 34566.28175484726
+    },
+    "pelu-range-61c339d224c459c536a05d6b": {
+      "capture_id": "capture-3d53802eb77230d388927340",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 0.3678921315472318,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-61c339d224c459c536a05d6b",
+      "status": "accepted",
+      "throughput_per_second": 347928.07190975954
+    },
+    "pelu-range-63a3a8d5f4830587431a80dc": {
+      "capture_id": "capture-db6e50fd652a7b8b6a8831e7",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 0.26302257586927585,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-63a3a8d5f4830587431a80dc",
+      "status": "accepted",
+      "throughput_per_second": 243325.12062313795
+    },
+    "pelu-range-64e306f7509a5dbb65647f25": {
+      "capture_id": "capture-eca5f0b26265db6ec5566dfc",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 0.25274424695759484,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-64e306f7509a5dbb65647f25",
+      "status": "accepted",
+      "throughput_per_second": 126610.2013604643
+    },
+    "pelu-range-70d1bc7fbc423576aac21cc4": {
+      "capture_id": "capture-3d53802eb77230d388927340",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 1.2988170429738701,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-70d1bc7fbc423576aac21cc4",
+      "status": "accepted",
+      "throughput_per_second": 98551.21681104637
+    },
+    "pelu-range-71855c2fbef8e85ccf0426ab": {
+      "capture_id": "capture-c1def661039aeab462bc6079",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 1.2843146340039682,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-71855c2fbef8e85ccf0426ab",
+      "status": "accepted",
+      "throughput_per_second": 778.6254034047784
+    },
+    "pelu-range-8768fc50599be5ee57123ea6": {
+      "capture_id": "capture-ccce19b49be84b37ef7fbe87",
+      "cell_id": "cost-dc4aef17c80c57bf2b05",
+      "error": null,
+      "median_ms": 3.530635381614938,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-8768fc50599be5ee57123ea6",
+      "status": "accepted",
+      "throughput_per_second": 36254.097680699015
+    },
+    "pelu-range-8e6425b4aa587c6741e68e51": {
+      "capture_id": "capture-988dca30150b3c8752a8e792",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 1.0075249698010182,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-8e6425b4aa587c6741e68e51",
+      "status": "accepted",
+      "throughput_per_second": 127043.99775350426
+    },
+    "pelu-range-a2f9ddd67a946929fc4105ad": {
+      "capture_id": "capture-eb7864d0e6a979cf2c98f381",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 0.4700574079873632,
+      "operation": "activation_forward",
+      "source_unit_id": "micro-a2f9ddd67a946929fc4105ad",
+      "status": "accepted",
+      "throughput_per_second": 272307.1646675146
+    },
+    "pelu-range-a6a56f026845b225e23aa243": {
+      "capture_id": "capture-db6e50fd652a7b8b6a8831e7",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 1.2951194426568629,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-a6a56f026845b225e23aa243",
+      "status": "accepted",
+      "throughput_per_second": 49416.29157285114
+    },
+    "pelu-range-a856d07e41053d4b8c8b2b1e": {
+      "capture_id": "capture-98cb0095171f7b45416d8db2",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 9.381795959472656,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-a856d07e41053d4b8c8b2b1e",
+      "status": "accepted",
+      "throughput_per_second": 6821.721584701507
+    },
+    "pelu-range-adb5ece423875c93182d7ccd": {
+      "capture_id": "capture-8490b2f639d33a4253a201f4",
+      "cell_id": "cost-8d12601bcfd1c49746a1",
+      "error": null,
+      "median_ms": 4.738645587380477,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-adb5ece423875c93182d7ccd",
+      "status": "accepted",
+      "throughput_per_second": 13505.96891450141
+    },
+    "pelu-range-af5808a524bcb098af54c7dd": {
+      "capture_id": "capture-8490b2f639d33a4253a201f4",
+      "cell_id": "cost-8d12601bcfd1c49746a1",
+      "error": null,
+      "median_ms": 3.3507272280824214,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-af5808a524bcb098af54c7dd",
+      "status": "accepted",
+      "throughput_per_second": 19100.331254545716
+    },
+    "pelu-range-bb474e4c10a1f5ca00947c19": {
+      "capture_id": "capture-c1def661039aeab462bc6079",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 0.7997532567639618,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-bb474e4c10a1f5ca00947c19",
+      "status": "accepted",
+      "throughput_per_second": 1250.3856552535913
+    },
+    "pelu-range-be4d92c75b8b1410b5da7bb8": {
+      "capture_id": "capture-3d53802eb77230d388927340",
+      "cell_id": "cost-75ce5d48a4654396f845",
+      "error": null,
+      "median_ms": 0.9245943417402311,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-be4d92c75b8b1410b5da7bb8",
+      "status": "accepted",
+      "throughput_per_second": 138439.0907682649
+    },
+    "pelu-range-dd2590b743d575a0a6a9c463": {
+      "capture_id": "capture-db6e50fd652a7b8b6a8831e7",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 0.8727717454070922,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-dd2590b743d575a0a6a9c463",
+      "status": "accepted",
+      "throughput_per_second": 73329.59658329462
+    },
+    "pelu-range-e671e3285a60ce355abdd94c": {
+      "capture_id": "capture-eca5f0b26265db6ec5566dfc",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 1.287204171890876,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-e671e3285a60ce355abdd94c",
+      "status": "accepted",
+      "throughput_per_second": 24860.08101806621
+    },
+    "pelu-range-ef256a9b8677e3928c052492": {
+      "capture_id": "capture-98cb0095171f7b45416d8db2",
+      "cell_id": "cost-b2e8868b6ccf22152aa8",
+      "error": null,
+      "median_ms": 6.593400775261645,
+      "operation": "activation_backward_retained_graph",
+      "source_unit_id": "micro-ef256a9b8677e3928c052492",
+      "status": "accepted",
+      "throughput_per_second": 9706.675232017926
+    },
+    "pelu-range-f7f9f7fd55ebb17f810b0440": {
+      "capture_id": "capture-eb7864d0e6a979cf2c98f381",
+      "cell_id": "cost-dc52b971ceca9cac5a35",
+      "error": null,
+      "median_ms": 1.6518288512561297,
+      "operation": "activation_forward_plus_backward",
+      "source_unit_id": "micro-f7f9f7fd55ebb17f810b0440",
+      "status": "accepted",
+      "throughput_per_second": 77489.8682164697
+    }
+  }
+}

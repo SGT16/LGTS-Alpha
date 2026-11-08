@@ -1,0 +1,18 @@
+{
+  "protocol": "native_prelu_legacy_gaussian_unit_upstream_fp16_slope_audit_v1",
+  "precision": {
+    "autocast": "float16",
+    "channels_last": false,
+    "cudnn_benchmark": true,
+    "intermediate_policy": "Sealed stable revision LGTS/PELU FP32 intermediates; other modules retain native policy",
+    "performance_mode": false,
+    "tf32": true
+  },
+  "measurement_order_seed": 20261102,
+  "warmup_iterations": 50,
+  "minimum_block_seconds": 0.5,
+  "minimum_iterations_per_block": 100,
+  "blocks": 10,
+  "upstream": "torch.ones_like(output), unscaled",
+  "rng_reconstruction": "CUDA Gaussian draws in legacy expanded-site order from seed 20261102: early learned, early declared initialization (input draw only), late learned. The two operations share one input per site. The original run did not preserve inputs or RNG-state hashes."
+}

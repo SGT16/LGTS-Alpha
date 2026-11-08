@@ -1,0 +1,284 @@
+{
+  "completed": 72,
+  "contexts": [
+    {
+      "accepted": 6,
+      "dataset": "cifar100",
+      "eager_over_compiled": {
+        "GELU": 1.0404357368824904,
+        "LGTS-f4-Alpha": 1.0809723391517145,
+        "Native": 1.035486067123758
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "ResNet18",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.5272380239209329,
+          "alpha_over_native": 1.5202727649781236
+        },
+        "eager": {
+          "alpha_over_gelu": 1.586741016899259,
+          "alpha_over_native": 1.587054484925905
+        }
+      },
+      "steps": 391
+    },
+    {
+      "accepted": 6,
+      "dataset": "cifar100",
+      "eager_over_compiled": {
+        "GELU": 1.0856708095647625,
+        "LGTS-f4-Alpha": 1.256930620621001,
+        "Native": 1.1018597337539813
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "MobileNetV2",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.4520433114405566,
+          "alpha_over_native": 1.4691817315608644
+        },
+        "eager": {
+          "alpha_over_gelu": 1.6810967786351634,
+          "alpha_over_native": 1.675947898889414
+        }
+      },
+      "steps": 391
+    },
+    {
+      "accepted": 6,
+      "dataset": "cifar100",
+      "eager_over_compiled": {
+        "GELU": 1.319448027043773,
+        "LGTS-f4-Alpha": 1.7248824567018575,
+        "Native": 1.425117606161244
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "EfficientNetV2S",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.6267521026159264,
+          "alpha_over_native": 1.5808406422575993
+        },
+        "eager": {
+          "alpha_over_gelu": 2.126613633650902,
+          "alpha_over_native": 1.9133608895734266
+        }
+      },
+      "steps": 391
+    },
+    {
+      "accepted": 6,
+      "dataset": "dermamnist",
+      "eager_over_compiled": {
+        "GELU": 0.9969731951951321,
+        "LGTS-f4-Alpha": 1.0111544137869013,
+        "Native": 0.7613517392039048
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "ResNet18",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.3712019506808417,
+          "alpha_over_native": 1.0454378005476717
+        },
+        "eager": {
+          "alpha_over_gelu": 1.3907063011385885,
+          "alpha_over_native": 1.3884502942999606
+        }
+      },
+      "steps": 63
+    },
+    {
+      "accepted": 6,
+      "dataset": "dermamnist",
+      "eager_over_compiled": {
+        "GELU": 1.0003714060648614,
+        "LGTS-f4-Alpha": 0.9815395782928896,
+        "Native": 0.9954231611863157
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "MobileNetV2",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.3812561786532778,
+          "alpha_over_native": 1.3656324046457118
+        },
+        "eager": {
+          "alpha_over_gelu": 1.355254257459137,
+          "alpha_over_native": 1.3465853586946694
+        }
+      },
+      "steps": 63
+    },
+    {
+      "accepted": 6,
+      "dataset": "dermamnist",
+      "eager_over_compiled": {
+        "GELU": 1.0309080390515342,
+        "LGTS-f4-Alpha": 1.0191614996248821,
+        "Native": 1.0137911433900868
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "EfficientNetV2S",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.5725350979203656,
+          "alpha_over_native": 1.5501529274126042
+        },
+        "eager": {
+          "alpha_over_gelu": 1.5546170636944319,
+          "alpha_over_native": 1.558364553143303
+        }
+      },
+      "steps": 63
+    },
+    {
+      "accepted": 6,
+      "dataset": "organsmnist",
+      "eager_over_compiled": {
+        "GELU": 0.9845210026824812,
+        "LGTS-f4-Alpha": 0.9937779543803785,
+        "Native": 0.9525422184584182
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "ResNet18",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.664200114849502,
+          "alpha_over_native": 1.6672924740009718
+        },
+        "eager": {
+          "alpha_over_gelu": 1.6798477445464026,
+          "alpha_over_native": 1.7394698860151534
+        }
+      },
+      "steps": 128
+    },
+    {
+      "accepted": 6,
+      "dataset": "organsmnist",
+      "eager_over_compiled": {
+        "GELU": 0.9842541661851162,
+        "LGTS-f4-Alpha": 1.003388606819403,
+        "Native": 1.0006958999688507
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "MobileNetV2",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.6547001459355248,
+          "alpha_over_native": 1.6734091000732116
+        },
+        "eager": {
+          "alpha_over_gelu": 1.6868684240060836,
+          "alpha_over_native": 1.6779119666760267
+        }
+      },
+      "steps": 128
+    },
+    {
+      "accepted": 6,
+      "dataset": "organsmnist",
+      "eager_over_compiled": {
+        "GELU": 1.0560473538903814,
+        "LGTS-f4-Alpha": 1.010794574491353,
+        "Native": 1.0409217497665166
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "EfficientNetV2S",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.9971486687505955,
+          "alpha_over_native": 1.9218184325291057
+        },
+        "eager": {
+          "alpha_over_gelu": 1.911568672928348,
+          "alpha_over_native": 1.8661956532214086
+        }
+      },
+      "steps": 128
+    },
+    {
+      "accepted": 6,
+      "dataset": "imagenet100",
+      "eager_over_compiled": {
+        "GELU": 1.0177863900281712,
+        "LGTS-f4-Alpha": 1.0588319895195677,
+        "Native": 1.0358369910140721
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "ResNet18",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 1.4116115636917734,
+          "alpha_over_native": 1.4065847091231507
+        },
+        "eager": {
+          "alpha_over_gelu": 1.4685394647212937,
+          "alpha_over_native": 1.4378100984119375
+        }
+      },
+      "steps": 1980
+    },
+    {
+      "accepted": 6,
+      "dataset": "imagenet100",
+      "eager_over_compiled": {
+        "GELU": 0.9774299684774481,
+        "LGTS-f4-Alpha": 0.995515450038257,
+        "Native": 1.001376134526902
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "MobileNetV2",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 2.875111089117193,
+          "alpha_over_native": 2.9167478287455313
+        },
+        "eager": {
+          "alpha_over_gelu": 2.9283095486124586,
+          "alpha_over_native": 2.8996771814953908
+        }
+      },
+      "steps": 1980
+    },
+    {
+      "accepted": 6,
+      "dataset": "imagenet100",
+      "eager_over_compiled": {
+        "GELU": 1.2744623811247295,
+        "LGTS-f4-Alpha": 1.0799592102170243,
+        "Native": 1.255788520225266
+      },
+      "excluded": 0,
+      "exclusions": [],
+      "model": "EfficientNetV2S",
+      "ratios_by_backend": {
+        "cudagraphs": {
+          "alpha_over_gelu": 3.3525371279585094,
+          "alpha_over_native": 3.2146272196519976
+        },
+        "eager": {
+          "alpha_over_gelu": 2.8408867947424965,
+          "alpha_over_native": 2.7645309838114818
+        }
+      },
+      "steps": 1980
+    }
+  ],
+  "excluded": 0,
+  "initial_scale": 256,
+  "total": 72
+}

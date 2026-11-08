@@ -144,3 +144,7 @@ The OrganSMNIST paired sensitivity analysis can be regenerated with:
 
 The software is released under the MIT License. Third-party datasets are not
 included and remain subject to their original terms.
+
+## Revised experiments and measurements
+
+The revision release contains the stable PyTorch training engine, complete panel and seed tables, timing protocols, numerical diagnostics, and a CPU analysis verifier. See [research_revision/README.md](research_revision/README.md).

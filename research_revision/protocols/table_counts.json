@@ -1,0 +1,19 @@
+{
+  "run_settings": 1335,
+  "seed_results": 1335,
+  "condition_summaries": 11730,
+  "training_history": 136000,
+  "class_metrics": 64395,
+  "measurement_cells": 158,
+  "timing_measurements": 3475,
+  "timing_blocks": 34750,
+  "timing_memory": 20850,
+  "timing_exclusions": 619,
+  "latency_ratios": 2565,
+  "real_epochs": 144,
+  "real_epoch_ratios": 24,
+  "real_epoch_ratio_members": 144,
+  "loss_landscape_grid": 882,
+  "four_dataset_accuracy_f1": 60,
+  "candidate_validation": 863
+}

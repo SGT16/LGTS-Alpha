@@ -1,0 +1,101 @@
+{
+  "protocol_version": "imagenet100-postconfirmatory-1.0.0",
+  "status": "locked_before_any_imagenet100_extension_training",
+  "locked_at": "2026-09-02",
+  "purpose": "Evaluate scale and natural-image generalization of the locked activation panel on the CMC ImageNet-100 subset without altering the completed 225-run primary confirmatory analysis.",
+  "analysis_role": "post-confirmatory generalization extension; reported separately from primary confirmatory inference",
+  "primary_confirmatory_statistics_remain_unchanged": true,
+  "dataset": {
+    "name": "imagenet100",
+    "source": "HuggingFace/clane9/imagenet-100; CMC ImageNet-100 subset",
+    "revision": "0519dc2f402a3a18c6e57f7913db059215eee25b",
+    "classes": 100,
+    "source_resolution_contract": "upstream CMC images have short side resized to 160 pixels",
+    "development_train": 114020,
+    "development_validation": 12669,
+    "full_train_count": 126689,
+    "held_out_evaluation_count": 5000,
+    "held_out_evaluation_role": "upstream official validation split, used once as the held-out evaluation set",
+    "split_seed": 2026,
+    "dataset_fingerprint_sha256": "986e7cf4a1ccdf5a615b1a15920a8c9e8f6681cee6ca370a7d8305ee63bda873"
+  },
+  "models": [
+    "ResNet18",
+    "MobileNetV2",
+    "EfficientNetV2S"
+  ],
+  "activations": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "ACON-C",
+    "GELU",
+    "Native"
+  ],
+  "primary_method": "LGTS-f4-Alpha",
+  "activation_scope": "full_backbone",
+  "alpha_initial": 0.4,
+  "alpha_constraint": [0.05, 1.5],
+  "beta": 1.0,
+  "beta_learning": false,
+  "seeds": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "planned_runs": 75,
+  "training": {
+    "protocol": "full_train",
+    "train_partition": "development train plus development validation",
+    "evaluation_partition": "upstream official validation split, evaluated once after the fixed training budget",
+    "pretrained": false,
+    "epochs": 100,
+    "early_stopping": false,
+    "checkpoint_selection": "none; final epoch under a fixed budget",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "minimum_learning_rate": 0.000001,
+    "augmentation": "RandomResizedCrop(160, scale=[0.08,1.0]) plus RandomHorizontalFlip",
+    "normalization": "ImageNet mean and standard deviation",
+    "image_size": 160,
+    "batch_size": 64,
+    "class_weight": "none",
+    "runtime": {
+      "amp": true,
+      "tf32": true,
+      "cudnn_benchmark": true,
+      "channels_last": false,
+      "fused_optimizer": true,
+      "num_workers": 4,
+      "prefetch_factor": 4
+    }
+  },
+  "reporting": {
+    "primary_descriptive_metric": "held-out macro-F1",
+    "secondary_metrics": [
+      "top-1 accuracy",
+      "top-5 accuracy",
+      "macro precision",
+      "macro recall",
+      "balanced accuracy",
+      "MCC",
+      "macro one-vs-rest ROC-AUC",
+      "macro PR-AUC",
+      "NLL",
+      "Brier score",
+      "ECE",
+      "epoch and training time",
+      "inference latency and throughput",
+      "peak training and inference GPU memory",
+      "total and trainable parameters",
+      "learned activation parameters"
+    ],
+    "summary": "mean and sample standard deviation across five paired seeds for every model-activation condition",
+    "paired_reporting": "seed-paired LGTS-f4-Alpha minus comparator differences within each backbone",
+    "inference_boundary": "descriptive post-confirmatory evidence only; no re-pooling with or replacement of the locked primary analysis"
+  },
+  "resume_policy": "Completed runs are skipped using run-level done.json. An interrupted run has no epoch checkpoint and restarts from epoch 1."
+}

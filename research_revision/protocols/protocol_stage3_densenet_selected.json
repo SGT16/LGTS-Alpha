@@ -1,0 +1,54 @@
+{
+  "protocol_version": "v2-stage3-densenet121-selected-panel-1.0.0",
+  "status": "prespecified_before_stage3_densenet121_results",
+  "purpose": "Test whether the Stage 2 activation ranking transfers to a dense-connectivity backbone without reopening the superseded transfer panel.",
+  "datasets": [
+    "dermamnist",
+    "organsmnist"
+  ],
+  "model": "DenseNet121",
+  "connectivity": "feature concatenation rather than residual addition",
+  "activation_scope": "full_backbone",
+  "activation_site_policy": "independent modules plus an explicit replaceable final activation",
+  "small_input_stem": "3x3 stride-1 convolution; no initial max-pool",
+  "selected_panel": [
+    "LGTS-f4-Alpha",
+    "LGTS-f2-Slope",
+    "Native",
+    "ACON-C",
+    "Qian-Gated",
+    "GELU",
+    "Softplus"
+  ],
+  "selection_rationale": "LGTS-f4-Alpha was selected after the completed Stage 1 component ablation using macro-F1, paired seed differences, average rank and the simplicity principle. The remaining activations are the locked structural and classical controls from Stage 2.",
+  "duplicate_policy": "No explicit ReLU condition is included because DenseNet121 Native is ReLU at the same replaceable activation sites.",
+  "training_seeds": [42, 123, 456, 789, 2026],
+  "conditions_per_dataset": 35,
+  "planned_runs": 70,
+  "training": {
+    "pretrained": false,
+    "epochs": 100,
+    "patience": 0,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "minimum_learning_rate": 0.000001,
+    "batch_size": 64,
+    "batch_size_rationale": "DenseNet121 full-backbone LGTS at batch 128 saturated the 24 GB GPU and triggered WDDM shared-memory thrashing before the first completed epoch. Batch 64 was locked before any Stage 3 result was produced and is held constant for every activation and seed.",
+    "runtime_acceleration": {
+      "tf32": true,
+      "cudnn_benchmark": true,
+      "channels_last": false,
+      "performance_mode": false,
+      "deterministic_seed_policy": true,
+      "rationale": "TF32 and deterministic cuDNN kernel benchmarking were locked before any completed Stage 3 run. channels-last was rejected during a pre-result timing check because it was slower for DenseNet121 with 64x64 inputs and the custom full-backbone activation. performance_mode remains disabled."
+    },
+    "augmentation": "standard",
+    "normalization": "dataset",
+    "selection_metric": "validation macro-F1"
+  },
+  "test_policy": "Official test partitions remain sealed during validation-based model selection.",
+  "resume_policy": "Each activation-seed condition runs in a fresh Python process; completed conditions are skipped and an interrupted condition restarts from epoch 1. A named mutex prevents duplicate launchers.",
+  "supersedes_for_future_execution": "The unfinished 465-run legacy transfer panel and 220-run legacy DenseNet121 panel are retained as historical artifacts but are not resumed."
+}
