@@ -47,7 +47,6 @@ MEDMNIST_MD5 = {
 
 
 def declared_dataset_contract() -> dict[str, Any]:
-    """Immutable upstream identifiers included in every experiment identity."""
     return {
         "holdout_seed": HOLDOUT_SEED,
         "imagenet100": {
@@ -142,7 +141,6 @@ class HFBeansView(Dataset):
 
 
 class HFImageView(Dataset):
-    """Pickle-safe view over a Hugging Face image-classification split."""
 
     def __init__(self, split, image_key: str = "image", label_key: str = "label"):
         self.split = split
@@ -179,8 +177,6 @@ def load_bundle(name: str, root: str | Path, med_size: int = 64, download: bool 
     if name == "cifar10":
         train_all = tv_datasets.CIFAR10(root / "torchvision", train=True, download=download)
         test = tv_datasets.CIFAR10(root / "torchvision", train=False, download=download)
-        # The official dataset has no validation split. Keep an auditable 90/10
-        # HOLDOUT_SEED=2026 defines the fixed stratified validation split.
         labels = _targets(train_all)
         train_idx, val_idx = _stratified_indices(labels)
         train = torch.utils.data.Subset(train_all, train_idx.tolist())
@@ -335,7 +331,6 @@ class TransformDataset(Dataset):
 
 
 class ConvertToRGB:
-    """Pickle-safe RGB conversion for Windows DataLoader workers."""
 
     def __call__(self, image: Image.Image) -> Image.Image:
         return image.convert("RGB")
@@ -352,7 +347,6 @@ def normalization_stats(dataset_name: str, in_channels: int, profile: str = "dat
         return ([0.4914, 0.4822, 0.4465], [0.2470, 0.2435, 0.2616])
     if dataset_name == "cifar100":
         return ([0.5071, 0.4867, 0.4408], [0.2675, 0.2565, 0.2761])
-    # MedMNIST's reference preprocessing maps each RGB channel to [-1, 1].
     return ([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 
 
@@ -394,9 +388,6 @@ def build_transforms(
     elif dataset_name in MEDMNIST_2D_DATASETS:
         train_spatial = [transforms.Resize((image_size, image_size), antialias=True)]
         if augmentation != "none":
-            # These are image-axis sensitivity conditions, not assertions
-            # about left/right anatomy in a sagittal projection. Rotation,
-            # resizing, probabilities and normalization remain unchanged.
             if augmentation not in {"organsmnist_no_hflip", "organsmnist_no_flip"}:
                 train_spatial.append(transforms.RandomHorizontalFlip())
             if augmentation not in {"organsmnist_no_vflip", "organsmnist_no_flip"}:

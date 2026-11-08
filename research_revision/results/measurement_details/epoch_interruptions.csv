@@ -1,0 +1,2 @@
+unit_id,protocol,dataset,model,activation,seed,backend,status,at,plan_sha256,protocol_sha256,reviewer_ids,device_index,reason_code,later_accepted_unit_id
+ep-4f97c9fba53035c0d442,imagenet_real_epoch_20261107,imagenet100,MobileNetV2,LGTS-f4-Alpha,936137,eager,failed,2026-11-08T01:17:45.158791+00:00,f4a07e9895ac7d787865ea9e5cbdf612b4dee648ffb13f259af7e3eac2b99a5c,aeb240f4d788f9a08318248a1646f0bb22f4faddab751ff416e992c8844edc8b,"H1-M3,H7-06,H8-05",2,gpu_context_conflict,ep-4f97c9fba53035c0d442

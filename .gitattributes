@@ -16,3 +16,5 @@ reproducibility/source_snapshot_*/** binary
 
 # Preserve the byte-level revision manifest on all checkout platforms.
 research_revision/** -text
+research_revision/benchmarks/protocol_data/*.json whitespace=trailing-space,space-before-tab,cr-at-eol
+research_revision/results/diagnostics/*.svg -whitespace

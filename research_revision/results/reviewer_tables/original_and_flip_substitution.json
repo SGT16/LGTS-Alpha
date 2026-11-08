@@ -1,0 +1,2231 @@
+{
+  "classification": "Post-review descriptive sensitivity; not a modification of original confirmatory inference",
+  "seed_ids": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "replacement_rule": "Replace only the 75 historical OrganSMNIST standard runs with their historical no-hflip counterparts; preserve other 150 runs exactly",
+  "limitations": [
+    "Only 9 crossed dataset/backbone contexts and 5 paired seeds.",
+    "Chi-square Friedman p is asymptotic; block dependence remains in the requested reconstruction.",
+    "Exact paired seed tests have minimum two-sided p=0.0625 with 5 nonzero pairs.",
+    "Bootstrap intervals are exploratory, unadjusted and fragile at these sample sizes.",
+    "Historical standard and no-hflip sources have separately recorded code hashes; neither is the stabilized revision engine.",
+    "Vertical flipping and rotation remain in historical no-hflip; no claim of anatomical safety.",
+    "No favorable rank pattern or superiority is assumed before calculation."
+  ],
+  "panels": [
+    {
+      "name": "original_225_recomputed",
+      "records": 225,
+      "blocks": [
+        {
+          "dataset": "cifar100",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.726968766576047,
+            "LGTS-f2-Slope": 0.7272727277118676,
+            "ACON-C": 0.7119840835515989,
+            "GELU": 0.7282306379507052,
+            "Native": 0.7244403435049087
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 3.0,
+            "LGTS-f2-Slope": 2.0,
+            "ACON-C": 5.0,
+            "GELU": 1.0,
+            "Native": 4.0
+          }
+        },
+        {
+          "dataset": "cifar100",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6169093190924702,
+            "LGTS-f2-Slope": 0.5966017902994675,
+            "ACON-C": 0.6125270193670375,
+            "GELU": 0.6088233112131523,
+            "Native": 0.6080499519015008
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 1.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 2.0,
+            "GELU": 3.0,
+            "Native": 4.0
+          }
+        },
+        {
+          "dataset": "cifar100",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6049325792980554,
+            "LGTS-f2-Slope": 0.609555646538249,
+            "ACON-C": 0.61840044444293,
+            "GELU": 0.6491098626205114,
+            "Native": 0.6198740875539893
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 5.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 3.0,
+            "GELU": 1.0,
+            "Native": 2.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6017039836901927,
+            "LGTS-f2-Slope": 0.594631526135388,
+            "ACON-C": 0.6287606345706765,
+            "GELU": 0.6231094469832513,
+            "Native": 0.6170962498977406
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 4.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 1.0,
+            "GELU": 2.0,
+            "Native": 3.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6220668113196132,
+            "LGTS-f2-Slope": 0.62836067666759,
+            "ACON-C": 0.6434321945079038,
+            "GELU": 0.6298853531301499,
+            "Native": 0.597295734196863
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 4.0,
+            "LGTS-f2-Slope": 3.0,
+            "ACON-C": 1.0,
+            "GELU": 2.0,
+            "Native": 5.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.5843506817410886,
+            "LGTS-f2-Slope": 0.5685131738200863,
+            "ACON-C": 0.5585657620964772,
+            "GELU": 0.5774020843958867,
+            "Native": 0.581504012387225
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 1.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 5.0,
+            "GELU": 3.0,
+            "Native": 2.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.7710148558082122,
+            "LGTS-f2-Slope": 0.7676959365311142,
+            "ACON-C": 0.7718596674919246,
+            "GELU": 0.7762491941397268,
+            "Native": 0.775200334899363
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 4.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 3.0,
+            "GELU": 1.0,
+            "Native": 2.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.7748722507928433,
+            "LGTS-f2-Slope": 0.774156946724429,
+            "ACON-C": 0.7814544851766632,
+            "GELU": 0.7776901246202567,
+            "Native": 0.7725919983211977
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 3.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 1.0,
+            "GELU": 2.0,
+            "Native": 5.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.7827285928933087,
+            "LGTS-f2-Slope": 0.7736122632155947,
+            "ACON-C": 0.7850554567785186,
+            "GELU": 0.7867703033040946,
+            "Native": 0.7824692273468165
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 3.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 2.0,
+            "GELU": 1.0,
+            "Native": 4.0
+          }
+        }
+      ],
+      "friedman": {
+        "statistic": 11.288888888888891,
+        "p_chi_square_approximation": 0.023502150278057205,
+        "df": 4,
+        "n_blocks": 9,
+        "warning": "Small block count and cross-context dependence limit inference; requested sensitivity, not new confirmatory evidence"
+      },
+      "average_ranks": {
+        "LGTS-f4-Alpha": 3.111111111111111,
+        "LGTS-f2-Slope": 4.111111111111111,
+        "ACON-C": 2.5555555555555554,
+        "GELU": 1.7777777777777777,
+        "Native": 3.4444444444444446
+      },
+      "block_pairwise": [
+        {
+          "panel": "original_225_recomputed",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "LGTS-f2-Slope",
+          "family": "original_225_recomputed:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            -0.00030396113582054074,
+            0.020307528793002683,
+            -0.004623067240193568,
+            0.007072457554804679,
+            -0.006293865347976824,
+            0.01583750792100236,
+            0.0033189192770979314,
+            0.0007153040684142464,
+            0.009116329677713919
+          ],
+          "mean_difference": 0.005016350396449432,
+          "median_difference": 0.0033189192770979314,
+          "wins": 6,
+          "ties": 0,
+          "losses": 3,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 35.0,
+            "w_minus": 10.0,
+            "statistic": 10.0,
+            "p_exact": 0.1640625,
+            "rank_biserial": 0.5555555555555556,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 10.0,
+          "original_setting_wilcoxon_p": 0.1640625,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.65625,
+          "p_holm_original_setting": 0.65625
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "ACON-C",
+          "family": "original_225_recomputed:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.014984683024448109,
+            0.004382299725432692,
+            -0.013467865144874525,
+            -0.027056650880483812,
+            -0.02136538318829062,
+            0.02578491964461138,
+            -0.0008448116837124209,
+            -0.006582234383819885,
+            -0.0023268638852099732
+          ],
+          "mean_difference": -0.0029435451968776727,
+          "median_difference": -0.0023268638852099732,
+          "wins": 3,
+          "ties": 0,
+          "losses": 6,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 17.0,
+            "w_minus": 28.0,
+            "statistic": 17.0,
+            "p_exact": 0.5703125,
+            "rank_biserial": -0.24444444444444444,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 17.0,
+          "original_setting_wilcoxon_p": 0.5703125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "GELU",
+          "family": "original_225_recomputed:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            -0.0012618713746581633,
+            0.008086007879317902,
+            -0.04417728332245596,
+            -0.02140546329305859,
+            -0.007818541810536761,
+            0.006948597345201923,
+            -0.005234338331514654,
+            -0.0028178738274133863,
+            -0.004041710410785937
+          ],
+          "mean_difference": -0.007969164127322625,
+          "median_difference": -0.004041710410785937,
+          "wins": 2,
+          "ties": 0,
+          "losses": 7,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 12.0,
+            "w_minus": 33.0,
+            "statistic": 12.0,
+            "p_exact": 0.25,
+            "rank_biserial": -0.4666666666666667,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 12.0,
+          "original_setting_wilcoxon_p": 0.25,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.75,
+          "p_holm_original_setting": 0.75
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "Native",
+          "family": "original_225_recomputed:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0025284230711383193,
+            0.008859367190969358,
+            -0.014941508255933877,
+            -0.015392266207547856,
+            0.024771077122750174,
+            0.0028466693538635734,
+            -0.004185479091150857,
+            0.0022802524716455386,
+            0.00025936554649219623
+          ],
+          "mean_difference": 0.0007806556891362856,
+          "median_difference": 0.0022802524716455386,
+          "wins": 6,
+          "ties": 0,
+          "losses": 3,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 25.0,
+            "w_minus": 20.0,
+            "statistic": 20.0,
+            "p_exact": 0.8203125,
+            "rank_biserial": 0.1111111111111111,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 20.0,
+          "original_setting_wilcoxon_p": 0.8203125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "GELU",
+          "comparator": "LGTS-f4-Alpha",
+          "family": "original_225_recomputed:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0012618713746581633,
+            -0.008086007879317902,
+            0.04417728332245596,
+            0.02140546329305859,
+            0.007818541810536761,
+            -0.006948597345201923,
+            0.005234338331514654,
+            0.0028178738274133863,
+            0.004041710410785937
+          ],
+          "mean_difference": 0.007969164127322625,
+          "median_difference": 0.004041710410785937,
+          "wins": 7,
+          "ties": 0,
+          "losses": 2,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 33.0,
+            "w_minus": 12.0,
+            "statistic": 12.0,
+            "p_exact": 0.25,
+            "rank_biserial": 0.4666666666666667,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 12.0,
+          "original_setting_wilcoxon_p": 0.25,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.5,
+          "p_holm_original_setting": 0.5
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "GELU",
+          "comparator": "LGTS-f2-Slope",
+          "family": "original_225_recomputed:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0009579102388376226,
+            0.01222152091368478,
+            0.039554216082262394,
+            0.02847792084786327,
+            0.0015246764625599374,
+            0.008888910575800435,
+            0.008553257608612586,
+            0.0035331778958276328,
+            0.013158040088499856
+          ],
+          "mean_difference": 0.012985514523772057,
+          "median_difference": 0.008888910575800435,
+          "wins": 9,
+          "ties": 0,
+          "losses": 0,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 45.0,
+            "w_minus": 0.0,
+            "statistic": 0.0,
+            "p_exact": 0.00390625,
+            "rank_biserial": 1.0,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 0.0,
+          "original_setting_wilcoxon_p": 0.00390625,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.015625,
+          "p_holm_original_setting": 0.015625
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "GELU",
+          "comparator": "ACON-C",
+          "family": "original_225_recomputed:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.016246554399106272,
+            -0.00370370815388521,
+            0.030709418177581438,
+            -0.0056511875874252215,
+            -0.01354684137775386,
+            0.018836322299409458,
+            0.004389526647802233,
+            -0.0037643605564064986,
+            0.0017148465255759637
+          ],
+          "mean_difference": 0.005025618930444953,
+          "median_difference": 0.0017148465255759637,
+          "wins": 5,
+          "ties": 0,
+          "losses": 4,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 29.0,
+            "w_minus": 16.0,
+            "statistic": 16.0,
+            "p_exact": 0.49609375,
+            "rank_biserial": 0.28888888888888886,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 16.0,
+          "original_setting_wilcoxon_p": 0.49609375,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.5,
+          "p_holm_original_setting": 0.5
+        },
+        {
+          "panel": "original_225_recomputed",
+          "reference": "GELU",
+          "comparator": "Native",
+          "family": "original_225_recomputed:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0037902944457964827,
+            0.0007733593116514559,
+            0.029235775066522085,
+            0.006013197085510735,
+            0.032589618933286935,
+            -0.00410192799133835,
+            0.0010488592403637975,
+            0.005098126299058925,
+            0.004301075957278133
+          ],
+          "mean_difference": 0.008749819816458912,
+          "median_difference": 0.004301075957278133,
+          "wins": 8,
+          "ties": 0,
+          "losses": 1,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 41.0,
+            "w_minus": 4.0,
+            "statistic": 4.0,
+            "p_exact": 0.02734375,
+            "rank_biserial": 0.8222222222222222,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 4.0,
+          "original_setting_wilcoxon_p": 0.02734375,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.08203125,
+          "p_holm_original_setting": 0.08203125
+        }
+      ],
+      "seed_aggregate_tests": [
+        {
+          "comparator": "LGTS-f2-Slope",
+          "seed_differences": [
+            0.0038059204489860024,
+            -0.0003384303564190061,
+            0.002605988774763985,
+            0.01485587385624523,
+            0.004152399258671082
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 14.0,
+          "w_minus": 1.0,
+          "statistic": 1.0,
+          "p_exact": 0.125,
+          "rank_biserial": 0.8666666666666667,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": 0.0050163503964494585,
+          "sd_difference": 0.005777354372908093,
+          "ci_lower": 0.0013193099657429974,
+          "ci_upper": 0.01026520192043415,
+          "bootstrap_reps": 10000,
+          "rng_seed": 12961397523275866540,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 0.5
+        },
+        {
+          "comparator": "ACON-C",
+          "seed_differences": [
+            0.003931636774683704,
+            -0.008700481286338836,
+            -0.0030584593806225347,
+            0.0028306202340159484,
+            -0.009721042326126509
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 4.0,
+          "w_minus": 11.0,
+          "statistic": 4.0,
+          "p_exact": 0.4375,
+          "rank_biserial": -0.4666666666666667,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": -0.0029435451968776454,
+          "sd_difference": 0.006318605449586005,
+          "ci_lower": -0.007980301321110644,
+          "ci_upper": 0.002093210927355354,
+          "bootstrap_reps": 10000,
+          "rng_seed": 18356626049611545060,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 0.875
+        },
+        {
+          "comparator": "GELU",
+          "seed_differences": [
+            -0.0025777280570429394,
+            -0.012311541787549821,
+            -0.011778493391117584,
+            0.0005118701175560089,
+            -0.013689927518458668
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 1.0,
+          "w_minus": 14.0,
+          "statistic": 1.0,
+          "p_exact": 0.125,
+          "rank_biserial": -0.8666666666666667,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": -0.007969164127322601,
+          "sd_difference": 0.006463162765320943,
+          "ci_lower": -0.012756286400626912,
+          "ci_upper": -0.0026707318983849463,
+          "bootstrap_reps": 10000,
+          "rng_seed": 10243240471027491294,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 0.5
+        },
+        {
+          "comparator": "Native",
+          "seed_differences": [
+            0.0015839975325359942,
+            0.00425224756929057,
+            -0.006050864872862636,
+            0.009592407150362433,
+            -0.005474508933644885
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 8.0,
+          "w_minus": 7.0,
+          "statistic": 7.0,
+          "p_exact": 1.0,
+          "rank_biserial": 0.06666666666666667,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": 0.0007806556891362954,
+          "sd_difference": 0.006635906678089256,
+          "ci_lower": -0.004293350016095809,
+          "ci_upper": 0.0058546613943684005,
+          "bootstrap_reps": 10000,
+          "rng_seed": 4617919590806310754,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 1.0
+        }
+      ],
+      "crossed_bootstrap": [
+        {
+          "comparator": "LGTS-f2-Slope",
+          "mean_difference": 0.0050163503964494585,
+          "ci_lower": -0.004575494456508383,
+          "ci_upper": 0.01502627312375431,
+          "bootstrap_reps": 10000,
+          "rng_seed": 9759506757606124741,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "ACON-C",
+          "mean_difference": -0.0029435451968776454,
+          "ci_lower": -0.020013394945163344,
+          "ci_upper": 0.011489504475470399,
+          "bootstrap_reps": 10000,
+          "rng_seed": 17249892552264937010,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "GELU",
+          "mean_difference": -0.007969164127322601,
+          "ci_lower": -0.024827565523267585,
+          "ci_upper": 0.0036251596484574065,
+          "bootstrap_reps": 10000,
+          "rng_seed": 13461601382624380277,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "Native",
+          "mean_difference": 0.0007806556891362954,
+          "ci_lower": -0.013135927275217315,
+          "ci_upper": 0.014936650644794732,
+          "bootstrap_reps": 10000,
+          "rng_seed": 9811346533105005577,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        }
+      ]
+    },
+    {
+      "name": "historical_no_hflip_substituted_225",
+      "records": 225,
+      "blocks": [
+        {
+          "dataset": "cifar100",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.726968766576047,
+            "LGTS-f2-Slope": 0.7272727277118676,
+            "ACON-C": 0.7119840835515989,
+            "GELU": 0.7282306379507052,
+            "Native": 0.7244403435049087
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 3.0,
+            "LGTS-f2-Slope": 2.0,
+            "ACON-C": 5.0,
+            "GELU": 1.0,
+            "Native": 4.0
+          }
+        },
+        {
+          "dataset": "cifar100",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6169093190924702,
+            "LGTS-f2-Slope": 0.5966017902994675,
+            "ACON-C": 0.6125270193670375,
+            "GELU": 0.6088233112131523,
+            "Native": 0.6080499519015008
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 1.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 2.0,
+            "GELU": 3.0,
+            "Native": 4.0
+          }
+        },
+        {
+          "dataset": "cifar100",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6049325792980554,
+            "LGTS-f2-Slope": 0.609555646538249,
+            "ACON-C": 0.61840044444293,
+            "GELU": 0.6491098626205114,
+            "Native": 0.6198740875539893
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 5.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 3.0,
+            "GELU": 1.0,
+            "Native": 2.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6017039836901927,
+            "LGTS-f2-Slope": 0.594631526135388,
+            "ACON-C": 0.6287606345706765,
+            "GELU": 0.6231094469832513,
+            "Native": 0.6170962498977406
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 4.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 1.0,
+            "GELU": 2.0,
+            "Native": 3.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.6220668113196132,
+            "LGTS-f2-Slope": 0.62836067666759,
+            "ACON-C": 0.6434321945079038,
+            "GELU": 0.6298853531301499,
+            "Native": 0.597295734196863
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 4.0,
+            "LGTS-f2-Slope": 3.0,
+            "ACON-C": 1.0,
+            "GELU": 2.0,
+            "Native": 5.0
+          }
+        },
+        {
+          "dataset": "dermamnist",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.5843506817410886,
+            "LGTS-f2-Slope": 0.5685131738200863,
+            "ACON-C": 0.5585657620964772,
+            "GELU": 0.5774020843958867,
+            "Native": 0.581504012387225
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 1.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 5.0,
+            "GELU": 3.0,
+            "Native": 2.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "ResNet18",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.794569669037329,
+            "LGTS-f2-Slope": 0.7910374940909939,
+            "ACON-C": 0.7946554577897589,
+            "GELU": 0.7914814561192751,
+            "Native": 0.7898924089639628
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 2.0,
+            "LGTS-f2-Slope": 4.0,
+            "ACON-C": 1.0,
+            "GELU": 3.0,
+            "Native": 5.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "MobileNetV2",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.7829418539731062,
+            "LGTS-f2-Slope": 0.7838414474258228,
+            "ACON-C": 0.7802124493764573,
+            "GELU": 0.7837890709235164,
+            "Native": 0.7825140258405414
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 3.0,
+            "LGTS-f2-Slope": 1.0,
+            "ACON-C": 5.0,
+            "GELU": 2.0,
+            "Native": 4.0
+          }
+        },
+        {
+          "dataset": "organsmnist",
+          "model": "EfficientNetV2S",
+          "activation_mean_f1": {
+            "LGTS-f4-Alpha": 0.7927167993048444,
+            "LGTS-f2-Slope": 0.7844234593239472,
+            "ACON-C": 0.7920693186110683,
+            "GELU": 0.7976502623151656,
+            "Native": 0.7915932831610697
+          },
+          "activation_rank": {
+            "LGTS-f4-Alpha": 2.0,
+            "LGTS-f2-Slope": 5.0,
+            "ACON-C": 3.0,
+            "GELU": 1.0,
+            "Native": 4.0
+          }
+        }
+      ],
+      "friedman": {
+        "statistic": 7.02222222222224,
+        "p_chi_square_approximation": 0.1347185324556751,
+        "df": 4,
+        "n_blocks": 9,
+        "warning": "Small block count and cross-context dependence limit inference; requested sensitivity, not new confirmatory evidence"
+      },
+      "average_ranks": {
+        "LGTS-f4-Alpha": 2.7777777777777777,
+        "LGTS-f2-Slope": 3.6666666666666665,
+        "ACON-C": 2.888888888888889,
+        "GELU": 2.0,
+        "Native": 3.6666666666666665
+      },
+      "block_pairwise": [
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "LGTS-f2-Slope",
+          "family": "historical_no_hflip_substituted_225:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            -0.00030396113582054074,
+            0.020307528793002683,
+            -0.004623067240193568,
+            0.007072457554804679,
+            -0.006293865347976824,
+            0.01583750792100236,
+            0.003532174946335065,
+            -0.0008995934527166183,
+            0.008293339980897207
+          ],
+          "mean_difference": 0.004769169113259382,
+          "median_difference": 0.003532174946335065,
+          "wins": 5,
+          "ties": 0,
+          "losses": 4,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 33.0,
+            "w_minus": 12.0,
+            "statistic": 12.0,
+            "p_exact": 0.25,
+            "rank_biserial": 0.4666666666666667,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 12.0,
+          "original_setting_wilcoxon_p": 0.25,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "ACON-C",
+          "family": "historical_no_hflip_substituted_225:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.014984683024448109,
+            0.004382299725432692,
+            -0.013467865144874525,
+            -0.027056650880483812,
+            -0.02136538318829062,
+            0.02578491964461138,
+            -8.578875242992723e-05,
+            0.0027294045966489433,
+            0.0006474806937760702
+          ],
+          "mean_difference": -0.0014941000312401877,
+          "median_difference": 0.0006474806937760702,
+          "wins": 5,
+          "ties": 0,
+          "losses": 4,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 23.0,
+            "w_minus": 22.0,
+            "statistic": 22.0,
+            "p_exact": 1.0,
+            "rank_biserial": 0.022222222222222223,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 22.0,
+          "original_setting_wilcoxon_p": 1.0,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "GELU",
+          "family": "historical_no_hflip_substituted_225:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            -0.0012618713746581633,
+            0.008086007879317902,
+            -0.04417728332245596,
+            -0.02140546329305859,
+            -0.007818541810536761,
+            0.006948597345201923,
+            0.0030882129180538342,
+            -0.0008472169504101235,
+            -0.00493346301032116
+          ],
+          "mean_difference": -0.0069245579576519,
+          "median_difference": -0.0012618713746581633,
+          "wins": 3,
+          "ties": 0,
+          "losses": 6,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 15.0,
+            "w_minus": 30.0,
+            "statistic": 15.0,
+            "p_exact": 0.42578125,
+            "rank_biserial": -0.3333333333333333,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 15.0,
+          "original_setting_wilcoxon_p": 0.42578125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "LGTS-f4-Alpha",
+          "comparator": "Native",
+          "family": "historical_no_hflip_substituted_225:LGTS-f4-Alpha_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0025284230711383193,
+            0.008859367190969358,
+            -0.014941508255933877,
+            -0.015392266207547856,
+            0.024771077122750174,
+            0.0028466693538635734,
+            0.004677260073366107,
+            0.00042782813256481145,
+            0.0011235161437747054
+          ],
+          "mean_difference": 0.0016555962916605907,
+          "median_difference": 0.0025284230711383193,
+          "wins": 7,
+          "ties": 0,
+          "losses": 2,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 30.0,
+            "w_minus": 15.0,
+            "statistic": 15.0,
+            "p_exact": 0.42578125,
+            "rank_biserial": 0.3333333333333333,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 15.0,
+          "original_setting_wilcoxon_p": 0.42578125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 1.0,
+          "p_holm_original_setting": 1.0
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "GELU",
+          "comparator": "LGTS-f4-Alpha",
+          "family": "historical_no_hflip_substituted_225:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0012618713746581633,
+            -0.008086007879317902,
+            0.04417728332245596,
+            0.02140546329305859,
+            0.007818541810536761,
+            -0.006948597345201923,
+            -0.0030882129180538342,
+            0.0008472169504101235,
+            0.00493346301032116
+          ],
+          "mean_difference": 0.0069245579576519,
+          "median_difference": 0.0012618713746581633,
+          "wins": 6,
+          "ties": 0,
+          "losses": 3,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 30.0,
+            "w_minus": 15.0,
+            "statistic": 15.0,
+            "p_exact": 0.42578125,
+            "rank_biserial": 0.3333333333333333,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 15.0,
+          "original_setting_wilcoxon_p": 0.42578125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.8515625,
+          "p_holm_original_setting": 0.8515625
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "GELU",
+          "comparator": "LGTS-f2-Slope",
+          "family": "historical_no_hflip_substituted_225:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0009579102388376226,
+            0.01222152091368478,
+            0.039554216082262394,
+            0.02847792084786327,
+            0.0015246764625599374,
+            0.008888910575800435,
+            0.00044396202828123066,
+            -5.237650230649482e-05,
+            0.013226802991218367
+          ],
+          "mean_difference": 0.011693727070911283,
+          "median_difference": 0.008888910575800435,
+          "wins": 8,
+          "ties": 0,
+          "losses": 1,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 44.0,
+            "w_minus": 1.0,
+            "statistic": 1.0,
+            "p_exact": 0.0078125,
+            "rank_biserial": 0.9555555555555556,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 1.0,
+          "original_setting_wilcoxon_p": 0.0078125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.03125,
+          "p_holm_original_setting": 0.03125
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "GELU",
+          "comparator": "ACON-C",
+          "family": "historical_no_hflip_substituted_225:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.016246554399106272,
+            -0.00370370815388521,
+            0.030709418177581438,
+            -0.0056511875874252215,
+            -0.01354684137775386,
+            0.018836322299409458,
+            -0.0031740016704837615,
+            0.0035766215470590668,
+            0.00558094370409723
+          ],
+          "mean_difference": 0.005430457926411713,
+          "median_difference": 0.0035766215470590668,
+          "wins": 5,
+          "ties": 0,
+          "losses": 4,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 30.0,
+            "w_minus": 15.0,
+            "statistic": 15.0,
+            "p_exact": 0.42578125,
+            "rank_biserial": 0.3333333333333333,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 15.0,
+          "original_setting_wilcoxon_p": 0.42578125,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.8515625,
+          "p_holm_original_setting": 0.8515625
+        },
+        {
+          "panel": "historical_no_hflip_substituted_225",
+          "reference": "GELU",
+          "comparator": "Native",
+          "family": "historical_no_hflip_substituted_225:GELU_vs_4_controls_9block",
+          "n_blocks": 9,
+          "block_differences": [
+            0.0037902944457964827,
+            0.0007733593116514559,
+            0.029235775066522085,
+            0.006013197085510735,
+            0.032589618933286935,
+            -0.00410192799133835,
+            0.0015890471553122731,
+            0.001275045082974935,
+            0.006056979154095865
+          ],
+          "mean_difference": 0.00858015424931249,
+          "median_difference": 0.0037902944457964827,
+          "wins": 8,
+          "ties": 0,
+          "losses": 1,
+          "exact_signed_rank": {
+            "n": 9,
+            "n_nonzero": 9,
+            "w_plus": 40.0,
+            "w_minus": 5.0,
+            "statistic": 5.0,
+            "p_exact": 0.0390625,
+            "rank_biserial": 0.7777777777777778,
+            "permutations": 512,
+            "rank_rounding_decimals": 12
+          },
+          "original_setting_wilcoxon_statistic": 5.0,
+          "original_setting_wilcoxon_p": 0.0390625,
+          "original_setting_method": "scipy wilcoxon, zero_method=zsplit, two-sided, method=auto",
+          "dependence_warning": "The 9 dataset/backbone blocks are dependent; this reproduces the requested block-level sensitivity, not independent-population inference",
+          "p_holm_exact": 0.1171875,
+          "p_holm_original_setting": 0.1171875
+        }
+      ],
+      "seed_aggregate_tests": [
+        {
+          "comparator": "LGTS-f2-Slope",
+          "seed_differences": [
+            0.0019136288461518343,
+            -0.0013678144430539312,
+            0.0025380373421883817,
+            0.016448118885311367,
+            0.004313874935699408
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 14.0,
+          "w_minus": 1.0,
+          "statistic": 1.0,
+          "p_exact": 0.125,
+          "rank_biserial": 0.8666666666666667,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": 0.0047691691132594125,
+          "sd_difference": 0.006844702092378605,
+          "ci_lower": 0.0005496937897451993,
+          "ci_upper": 0.010884086268062174,
+          "bootstrap_reps": 10000,
+          "rng_seed": 3123065036102343689,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 0.5
+        },
+        {
+          "comparator": "ACON-C",
+          "seed_differences": [
+            0.004692974374614677,
+            -0.0068270409408651206,
+            -0.0015467232244763417,
+            0.005714747380608583,
+            -0.009504457746082488
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 5.0,
+          "w_minus": 10.0,
+          "statistic": 5.0,
+          "p_exact": 0.625,
+          "rank_biserial": -0.3333333333333333,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": -0.0014941000312401382,
+          "sd_difference": 0.006761217149608756,
+          "ci_lower": -0.006841944119674312,
+          "ci_upper": 0.0038537440571940356,
+          "bootstrap_reps": 10000,
+          "rng_seed": 8874460276478979511,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 1.0
+        },
+        {
+          "comparator": "GELU",
+          "seed_differences": [
+            -0.001115509245840412,
+            -0.014526011428178479,
+            -0.01186162372262451,
+            0.002692302935340717,
+            -0.009811948326956667
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 2.0,
+          "w_minus": 13.0,
+          "statistic": 2.0,
+          "p_exact": 0.1875,
+          "rank_biserial": -0.7333333333333333,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": -0.00692455795765187,
+          "sd_difference": 0.007360753982242046,
+          "ci_lower": -0.01251744372571253,
+          "ci_upper": -0.0009800448324885544,
+          "bootstrap_reps": 10000,
+          "rng_seed": 8304334590165781506,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 0.5625
+        },
+        {
+          "comparator": "Native",
+          "seed_differences": [
+            0.0016667446471326786,
+            0.0049131650117091065,
+            -0.004857178710349741,
+            0.0113292247883494,
+            -0.004773974278538293
+          ],
+          "n": 5,
+          "n_nonzero": 5,
+          "w_plus": 10.0,
+          "w_minus": 5.0,
+          "statistic": 5.0,
+          "p_exact": 0.625,
+          "rank_biserial": 0.3333333333333333,
+          "permutations": 32,
+          "rank_rounding_decimals": 12,
+          "mean_difference": 0.0016555962916606302,
+          "sd_difference": 0.006854680563082359,
+          "ci_lower": -0.0035024713797663885,
+          "ci_upper": 0.006830304849449939,
+          "bootstrap_reps": 10000,
+          "rng_seed": 4150078820421148122,
+          "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+          "p_holm": 1.0
+        }
+      ],
+      "crossed_bootstrap": [
+        {
+          "comparator": "LGTS-f2-Slope",
+          "mean_difference": 0.004769169113259412,
+          "ci_lower": -0.004952492412433683,
+          "ci_upper": 0.014850140640951158,
+          "bootstrap_reps": 10000,
+          "rng_seed": 1314752010022191380,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "ACON-C",
+          "mean_difference": -0.0014941000312401382,
+          "ci_lower": -0.01865606059726505,
+          "ci_upper": 0.012730739426343507,
+          "bootstrap_reps": 10000,
+          "rng_seed": 11845453364761886121,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "GELU",
+          "mean_difference": -0.006924557957651871,
+          "ci_lower": -0.025567968742416958,
+          "ci_upper": 0.004185520904039532,
+          "bootstrap_reps": 10000,
+          "rng_seed": 8271931515164468791,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        },
+        {
+          "comparator": "Native",
+          "mean_difference": 0.0016555962916606302,
+          "ci_lower": -0.01205727182437657,
+          "ci_upper": 0.014957996716382711,
+          "bootstrap_reps": 10000,
+          "rng_seed": 10421553288231679115,
+          "factor_sizes": [
+            3,
+            3,
+            5
+          ],
+          "ci_method": "crossed product percentile bootstrap 95%; exploratory; unadjusted",
+          "limitation": "Only three dataset and three backbone levels; not 45 independent observations; no population generalization established"
+        }
+      ]
+    }
+  ],
+  "paired_augmentation_effects": [
+    {
+      "model": "ResNet18",
+      "activation": "LGTS-f4-Alpha",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7711057388376272,
+        0.7759189545305115,
+        0.7648419075475633,
+        0.7672207193651294,
+        0.7759869587602295
+      ],
+      "no_hflip_f1": [
+        0.7869494065918139,
+        0.8005841823512555,
+        0.7869736726226488,
+        0.7991562970489002,
+        0.7991847865720261
+      ],
+      "paired_differences": [
+        0.015843667754186663,
+        0.024665227820743985,
+        0.02213176507508552,
+        0.031935577683770866,
+        0.02319782781179658
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7710148558082122,
+      "no_hflip_mean": 0.794569669037329,
+      "original_sd": 0.005031923423153663,
+      "no_hflip_sd": 0.006969189300940233,
+      "mean_difference": 0.023554813229116723,
+      "sd_difference": 0.005768112832246312,
+      "ci_lower": 0.0188655992316779,
+      "ci_upper": 0.02852074518942842,
+      "bootstrap_reps": 10000,
+      "rng_seed": 12480208954007172185,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "ResNet18",
+      "activation": "LGTS-f2-Slope",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7660795337782837,
+        0.7697152269291766,
+        0.7687815393758075,
+        0.7658674658841094,
+        0.7680359166881945
+      ],
+      "no_hflip_f1": [
+        0.7918507375874143,
+        0.7944423807205973,
+        0.79218218150052,
+        0.786421861574336,
+        0.7902903090721015
+      ],
+      "paired_differences": [
+        0.02577120380913056,
+        0.024727153791420653,
+        0.02340064212471249,
+        0.020554395690226657,
+        0.02225439238390703
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7676959365311142,
+      "no_hflip_mean": 0.7910374940909939,
+      "original_sd": 0.001682833660944961,
+      "no_hflip_sd": 0.0029760408343861853,
+      "mean_difference": 0.02334155755987948,
+      "sd_difference": 0.0020479714479611456,
+      "ci_lower": 0.021728946649201532,
+      "ci_upper": 0.024879471465162985,
+      "bootstrap_reps": 10000,
+      "rng_seed": 3646999559894511938,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "ResNet18",
+      "activation": "ACON-C",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7689031177081531,
+        0.773495491840272,
+        0.7660757576965807,
+        0.7759832275976083,
+        0.7748407426170091
+      ],
+      "no_hflip_f1": [
+        0.7920678628374614,
+        0.7957504123903058,
+        0.7902645606479428,
+        0.7970670887362071,
+        0.7981273643368769
+      ],
+      "paired_differences": [
+        0.02316474512930833,
+        0.022254920550033752,
+        0.024188802951362165,
+        0.021083861138598836,
+        0.02328662171986784
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7718596674919246,
+      "no_hflip_mean": 0.7946554577897589,
+      "original_sd": 0.0042059861296081524,
+      "no_hflip_sd": 0.0033557655541698087,
+      "mean_difference": 0.022795790297834184,
+      "sd_difference": 0.001176941899132951,
+      "ci_lower": 0.02175862513713962,
+      "ci_upper": 0.023623118894353666,
+      "bootstrap_reps": 10000,
+      "rng_seed": 467173351099873655,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7755277707930563,
+        0.7726690653656353,
+        0.7780731583095176,
+        0.775075125375949,
+        0.7799008508544762
+      ],
+      "no_hflip_f1": [
+        0.7931391096059005,
+        0.7934924874232169,
+        0.790062602783712,
+        0.7925405531226614,
+        0.7881725276608846
+      ],
+      "paired_differences": [
+        0.017611338812844157,
+        0.020823422057581586,
+        0.011989444474194366,
+        0.017465427746712336,
+        0.00827167680640839
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7762491941397268,
+      "no_hflip_mean": 0.7914814561192751,
+      "original_sd": 0.0028007879784684385,
+      "no_hflip_sd": 0.002284507648286701,
+      "mean_difference": 0.015232261979548167,
+      "sd_difference": 0.005021795452478044,
+      "ci_lower": 0.010883162741252738,
+      "ci_upper": 0.018866989897512766,
+      "bootstrap_reps": 10000,
+      "rng_seed": 3847984929682645644,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "ResNet18",
+      "activation": "Native",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7735438898144217,
+        0.7784625350648195,
+        0.7758518086742074,
+        0.7756349319027894,
+        0.772508509040577
+      ],
+      "no_hflip_f1": [
+        0.792767103129756,
+        0.7929775950131858,
+        0.7898199033317925,
+        0.7865288787720593,
+        0.7873685645730205
+      ],
+      "paired_differences": [
+        0.019223213315334275,
+        0.014515059948366216,
+        0.013968094657585084,
+        0.010893946869269922,
+        0.014860055532443517
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.775200334899363,
+      "no_hflip_mean": 0.7898924089639628,
+      "original_sd": 0.002304613814050919,
+      "no_hflip_sd": 0.002977860911518474,
+      "mean_difference": 0.014692074064599802,
+      "sd_difference": 0.002980800691681568,
+      "ci_lower": 0.012411391217723899,
+      "ci_upper": 0.017299558027206285,
+      "bootstrap_reps": 10000,
+      "rng_seed": 15305880474808788576,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "MobileNetV2",
+      "activation": "LGTS-f4-Alpha",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.772852064418909,
+        0.7845556817622131,
+        0.7728366261278844,
+        0.7715871934623116,
+        0.7725296881928979
+      ],
+      "no_hflip_f1": [
+        0.7840458416602754,
+        0.7816851442736336,
+        0.7828990089637756,
+        0.7846616283305475,
+        0.7814176466372991
+      ],
+      "paired_differences": [
+        0.011193777241366387,
+        -0.002870537488579572,
+        0.010062382835891226,
+        0.013074434868235896,
+        0.008887958444401156
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7748722507928433,
+      "no_hflip_mean": 0.7829418539731062,
+      "original_sd": 0.005437668556010756,
+      "no_hflip_sd": 0.00142133525426228,
+      "mean_difference": 0.008069603180263018,
+      "sd_difference": 0.006307462995081708,
+      "ci_lower": 0.0025289095223037794,
+      "ci_upper": 0.011861008058095045,
+      "bootstrap_reps": 10000,
+      "rng_seed": 209375946920295634,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 14.0,
+        "w_minus": 1.0,
+        "statistic": 1.0,
+        "p_exact": 0.125,
+        "rank_biserial": 0.8666666666666667,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "MobileNetV2",
+      "activation": "LGTS-f2-Slope",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.776405918705474,
+        0.7792621746997874,
+        0.7687552404760674,
+        0.7701405307035819,
+        0.776220869037234
+      ],
+      "no_hflip_f1": [
+        0.7878479111841208,
+        0.7830200045481572,
+        0.7821952999980194,
+        0.784858121175196,
+        0.781285900223621
+      ],
+      "paired_differences": [
+        0.011441992478646745,
+        0.003757829848369809,
+        0.013440059521952041,
+        0.01471759047161414,
+        0.0050650311863870146
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.774156946724429,
+      "no_hflip_mean": 0.7838414474258228,
+      "original_sd": 0.004491409328131555,
+      "no_hflip_sd": 0.002598113191203985,
+      "mean_difference": 0.00968450070139395,
+      "sd_difference": 0.004974683860232786,
+      "ci_lower": 0.005817542909632078,
+      "ci_upper": 0.01355145849315582,
+      "bootstrap_reps": 10000,
+      "rng_seed": 13695510225001546746,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "MobileNetV2",
+      "activation": "ACON-C",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7858821034870747,
+        0.784397814795872,
+        0.7799746919354291,
+        0.7775473796552516,
+        0.7794704360096887
+      ],
+      "no_hflip_f1": [
+        0.7858903830500311,
+        0.7771166199209208,
+        0.7749044812603667,
+        0.7811302314338806,
+        0.7820205312170873
+      ],
+      "paired_differences": [
+        8.279562956459152e-06,
+        -0.007281194874951158,
+        -0.005070210675062414,
+        0.003582851778629048,
+        0.0025500952073985728
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7814544851766632,
+      "no_hflip_mean": 0.7802124493764573,
+      "original_sd": 0.003523446673330758,
+      "no_hflip_sd": 0.0043043321255465655,
+      "mean_difference": -0.0012420358002058983,
+      "sd_difference": 0.00475261642248645,
+      "ci_lower": -0.004938906307414137,
+      "ci_upper": 0.0024548347070023403,
+      "bootstrap_reps": 10000,
+      "rng_seed": 104349578057657960,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 6.0,
+        "w_minus": 9.0,
+        "statistic": 6.0,
+        "p_exact": 0.8125,
+        "rank_biserial": -0.2,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7827582957853694,
+        0.7735404357512853,
+        0.7686919837231059,
+        0.781072011455554,
+        0.7823878963859691
+      ],
+      "no_hflip_f1": [
+        0.7864496082528512,
+        0.7900272056045726,
+        0.7822538533268509,
+        0.7865642717260349,
+        0.7736504157072727
+      ],
+      "paired_differences": [
+        0.0036913124674817777,
+        0.016486769853287342,
+        0.013561869603745058,
+        0.0054922602704808865,
+        -0.008737480678696397
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7776901246202567,
+      "no_hflip_mean": 0.7837890709235164,
+      "original_sd": 0.006272540043766258,
+      "no_hflip_sd": 0.006301661394764424,
+      "mean_difference": 0.006098946303259733,
+      "sd_difference": 0.009872771096757773,
+      "ci_lower": -0.0017918519929724709,
+      "ci_upper": 0.013342698326217772,
+      "bootstrap_reps": 10000,
+      "rng_seed": 18327751232975319778,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 12.0,
+        "w_minus": 3.0,
+        "statistic": 3.0,
+        "p_exact": 0.3125,
+        "rank_biserial": 0.6,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "MobileNetV2",
+      "activation": "Native",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7733794775532467,
+        0.7718912166432393,
+        0.772156705307316,
+        0.7751722095470545,
+        0.7703603825551323
+      ],
+      "no_hflip_f1": [
+        0.7829002995724672,
+        0.7790862089686936,
+        0.7808622175837371,
+        0.7884475083610577,
+        0.7812738947167509
+      ],
+      "paired_differences": [
+        0.009520822019220554,
+        0.007194992325454286,
+        0.008705512276421135,
+        0.013275298814003245,
+        0.010913512161618621
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7725919983211977,
+      "no_hflip_mean": 0.7825140258405414,
+      "original_sd": 0.001798492243963938,
+      "no_hflip_sd": 0.0035837043141703747,
+      "mean_difference": 0.009922027519343568,
+      "sd_difference": 0.002307870572072783,
+      "ci_lower": 0.008240800282880522,
+      "ci_upper": 0.011773508096090169,
+      "bootstrap_reps": 10000,
+      "rng_seed": 1392616864694593096,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7846479595398116,
+        0.7799928388299286,
+        0.7799500767785186,
+        0.7841320333219439,
+        0.7849200559963407
+      ],
+      "no_hflip_f1": [
+        0.7940278889790681,
+        0.7940077335077418,
+        0.7895331022611694,
+        0.7936592081760765,
+        0.7923560636001669
+      ],
+      "paired_differences": [
+        0.009379929439256474,
+        0.014014894677813139,
+        0.009583025482650775,
+        0.00952717485413257,
+        0.0074360076038261225
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7827285928933087,
+      "no_hflip_mean": 0.7927167993048444,
+      "original_sd": 0.0025328159224386627,
+      "no_hflip_sd": 0.0019065452292810693,
+      "mean_difference": 0.009988206411535815,
+      "sd_difference": 0.002422532750289941,
+      "ci_lower": 0.008283644629652342,
+      "ci_upper": 0.012201527791069334,
+      "bootstrap_reps": 10000,
+      "rng_seed": 10023571174403573770,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7706288953145055,
+        0.7652940064934743,
+        0.7762484659126002,
+        0.7779750496427539,
+        0.7779148987146395
+      ],
+      "no_hflip_f1": [
+        0.7868636978870452,
+        0.7818830646433758,
+        0.7817965005527436,
+        0.7829100456254572,
+        0.7886639879111144
+      ],
+      "paired_differences": [
+        0.01623480257253973,
+        0.016589058149901414,
+        0.005548034640143418,
+        0.004934995982703305,
+        0.010749089196474881
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7736122632155947,
+      "no_hflip_mean": 0.7844234593239472,
+      "original_sd": 0.00553601890429155,
+      "no_hflip_sd": 0.0031457028421669527,
+      "mean_difference": 0.01081119610835255,
+      "sd_difference": 0.005590922345086915,
+      "ci_lower": 0.006343030088433665,
+      "ci_upper": 0.015279362128271435,
+      "bootstrap_reps": 10000,
+      "rng_seed": 10679079130130457743,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7797135784846347,
+        0.7888682622992941,
+        0.7857755979178983,
+        0.7852325419022912,
+        0.7856873032884749
+      ],
+      "no_hflip_f1": [
+        0.7861058898278007,
+        0.7928431585249256,
+        0.7948285536299103,
+        0.7891458720718689,
+        0.7974231190008362
+      ],
+      "paired_differences": [
+        0.0063923113431659795,
+        0.003974896225631519,
+        0.009052955712012034,
+        0.003913330169577733,
+        0.011735815712361264
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7850554567785186,
+      "no_hflip_mean": 0.7920693186110683,
+      "original_sd": 0.0033174667315496974,
+      "no_hflip_sd": 0.004499566846809331,
+      "mean_difference": 0.007013861832549706,
+      "sd_difference": 0.0033797073044978566,
+      "ci_lower": 0.004433752826716897,
+      "ci_upper": 0.009634746603734711,
+      "bootstrap_reps": 10000,
+      "rng_seed": 8364712663015224166,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7895935251785322,
+        0.7781023244292747,
+        0.7862338689357571,
+        0.7882523372385034,
+        0.7916694607384053
+      ],
+      "no_hflip_f1": [
+        0.791548279032193,
+        0.7965319442940413,
+        0.8032079012350075,
+        0.8002079412673871,
+        0.7967552457471991
+      ],
+      "paired_differences": [
+        0.00195475385366084,
+        0.018429619864766544,
+        0.01697403229925043,
+        0.011955604028883737,
+        0.005085785008793864
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7867703033040946,
+      "no_hflip_mean": 0.7976502623151656,
+      "original_sd": 0.00523427094988072,
+      "no_hflip_sd": 0.00437935388570509,
+      "mean_difference": 0.010879959011071083,
+      "sd_difference": 0.007220177628050356,
+      "ci_lower": 0.005207336350758629,
+      "ci_upper": 0.016552581671383536,
+      "bootstrap_reps": 10000,
+      "rng_seed": 2803175803037730610,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    },
+    {
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed_ids": [
+        936137,
+        529212,
+        448132,
+        942529,
+        110107
+      ],
+      "original_f1": [
+        0.7856965816502918,
+        0.7828929223571076,
+        0.7789510768058111,
+        0.7788016535161543,
+        0.7860039024047176
+      ],
+      "no_hflip_f1": [
+        0.7926251967191763,
+        0.7910441981114978,
+        0.7873114678028164,
+        0.7935382364971377,
+        0.79344731667472
+      ],
+      "paired_differences": [
+        0.006928615068884536,
+        0.00815127575439023,
+        0.008360390997005251,
+        0.01473658298098346,
+        0.007443414270002391
+      ],
+      "direction": "historical no-hflip minus historical standard",
+      "original_mean": 0.7824692273468165,
+      "no_hflip_mean": 0.7915932831610697,
+      "original_sd": 0.0034970609824318635,
+      "no_hflip_sd": 0.00259425165001694,
+      "mean_difference": 0.009124055814253174,
+      "sd_difference": 0.0031888266753596533,
+      "ci_lower": 0.007379066886432817,
+      "ci_upper": 0.012002710841991605,
+      "bootstrap_reps": 10000,
+      "rng_seed": 3945954387510370708,
+      "ci_method": "paired percentile bootstrap 95%; exploratory; unadjusted",
+      "exact": {
+        "n": 5,
+        "n_nonzero": 5,
+        "w_plus": 15.0,
+        "w_minus": 0.0,
+        "statistic": 0.0,
+        "p_exact": 0.0625,
+        "rank_biserial": 1.0,
+        "permutations": 32,
+        "rank_rounding_decimals": 12
+      },
+      "p_holm": 0.9375,
+      "holm_family": "15_historical_model_activation_augmentation_contrasts"
+    }
+  ]
+}

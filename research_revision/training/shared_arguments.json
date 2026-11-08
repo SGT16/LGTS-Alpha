@@ -1,0 +1,399 @@
+{
+  "base": {
+    "--seed_order": [
+      "936137",
+      "529212",
+      "448132",
+      "942529",
+      "110107"
+    ],
+    "--patience": [
+      "0"
+    ],
+    "--protocol": [
+      "full_train"
+    ],
+    "--activation_scope": [
+      "full_backbone"
+    ],
+    "--lgts_beta": [
+      "1"
+    ],
+    "--lgts_beta_min": [
+      ".5"
+    ],
+    "--lgts_beta_max": [
+      "3"
+    ],
+    "--no_pretrained": [],
+    "--batch_size": [
+      "128"
+    ],
+    "--med_batch_size": [
+      "128"
+    ],
+    "--num_workers": [
+      "4"
+    ],
+    "--prefetch_factor": [
+      "4"
+    ],
+    "--optimizer": [
+      "adamw"
+    ],
+    "--learning_rate": [
+      ".001"
+    ],
+    "--weight_decay": [
+      ".0001"
+    ],
+    "--scheduler": [
+      "cosine"
+    ],
+    "--min_learning_rate": [
+      ".000001"
+    ],
+    "--fused_optimizer": [],
+    "--tf32": [],
+    "--cudnn_benchmark": [],
+    "--normalization": [
+      "dataset"
+    ],
+    "--small_input_stem": [
+      "auto"
+    ],
+    "--class_weight": [
+      "auto"
+    ],
+    "--med_size": [
+      "64"
+    ],
+    "--plots": [
+      "none"
+    ],
+    "--device": [
+      "cuda"
+    ],
+    "--best_state_device": [
+      "cpu"
+    ],
+    "--gradient_log": []
+  },
+  "lr": {
+    "--device": [
+      "cuda"
+    ],
+    "--num-workers": [
+      "4"
+    ]
+  },
+  "imagenet": {
+    "--datasets": [
+      "imagenet100"
+    ],
+    "--seed_order": [
+      "936137",
+      "529212",
+      "448132",
+      "942529",
+      "110107"
+    ],
+    "--epochs": [
+      "100"
+    ],
+    "--patience": [
+      "0"
+    ],
+    "--protocol": [
+      "full_train"
+    ],
+    "--activation_scope": [
+      "full_backbone"
+    ],
+    "--activation_sharing": [
+      "site"
+    ],
+    "--lgts_alphas": [
+      ".4"
+    ],
+    "--lgts_alpha_min": [
+      ".05"
+    ],
+    "--lgts_alpha_max": [
+      "1.5"
+    ],
+    "--lgts_beta": [
+      "1"
+    ],
+    "--lgts_beta_min": [
+      ".5"
+    ],
+    "--lgts_beta_max": [
+      "3"
+    ],
+    "--no_pretrained": [],
+    "--batch_size": [
+      "64"
+    ],
+    "--imagenet_batch_size": [
+      "64"
+    ],
+    "--imagenet_size": [
+      "160"
+    ],
+    "--num_workers": [
+      "4"
+    ],
+    "--prefetch_factor": [
+      "4"
+    ],
+    "--optimizer": [
+      "adamw"
+    ],
+    "--learning_rate": [
+      ".001"
+    ],
+    "--weight_decay": [
+      ".0001"
+    ],
+    "--scheduler": [
+      "cosine"
+    ],
+    "--min_learning_rate": [
+      ".000001"
+    ],
+    "--fused_optimizer": [],
+    "--tf32": [],
+    "--cudnn_benchmark": [],
+    "--augmentation": [
+      "standard"
+    ],
+    "--normalization": [
+      "dataset"
+    ],
+    "--small_input_stem": [
+      "auto"
+    ],
+    "--class_weight": [
+      "none"
+    ],
+    "--plots": [
+      "none"
+    ],
+    "--device": [
+      "cuda"
+    ],
+    "--best_state_device": [
+      "cpu"
+    ],
+    "--gradient_log": []
+  },
+  "global_alpha_20261107": {
+    "--datasets": [
+      "cifar100"
+    ],
+    "--activations": [
+      "LGTS-f4-Alpha"
+    ],
+    "--seed_order": [
+      "936137",
+      "529212",
+      "448132",
+      "942529",
+      "110107"
+    ],
+    "--epochs": [
+      "100"
+    ],
+    "--patience": [
+      "0"
+    ],
+    "--protocol": [
+      "full_train"
+    ],
+    "--activation_scope": [
+      "full_backbone"
+    ],
+    "--activation_sharing": [
+      "network"
+    ],
+    "--lgts_alphas": [
+      "0.4"
+    ],
+    "--lgts_alpha_min": [
+      "0.05"
+    ],
+    "--lgts_alpha_max": [
+      "1.5"
+    ],
+    "--lgts_beta": [
+      "1"
+    ],
+    "--lgts_beta_min": [
+      ".5"
+    ],
+    "--lgts_beta_max": [
+      "3"
+    ],
+    "--no_pretrained": [],
+    "--batch_size": [
+      "128"
+    ],
+    "--med_batch_size": [
+      "128"
+    ],
+    "--num_workers": [
+      "4"
+    ],
+    "--prefetch_factor": [
+      "4"
+    ],
+    "--optimizer": [
+      "adamw"
+    ],
+    "--learning_rate": [
+      ".001"
+    ],
+    "--weight_decay": [
+      ".0001"
+    ],
+    "--scheduler": [
+      "cosine"
+    ],
+    "--min_learning_rate": [
+      ".000001"
+    ],
+    "--fused_optimizer": [],
+    "--tf32": [],
+    "--cudnn_benchmark": [],
+    "--augmentation": [
+      "standard"
+    ],
+    "--normalization": [
+      "dataset"
+    ],
+    "--small_input_stem": [
+      "auto"
+    ],
+    "--class_weight": [
+      "auto"
+    ],
+    "--med_size": [
+      "64"
+    ],
+    "--plots": [
+      "none"
+    ],
+    "--device": [
+      "cuda"
+    ],
+    "--best_state_device": [
+      "cpu"
+    ],
+    "--gradient_log": []
+  },
+  "organ_no_rotation_20261107": {
+    "--datasets": [
+      "organsmnist"
+    ],
+    "--activations": [
+      "LGTS-f4-Alpha"
+    ],
+    "--seed_order": [
+      "936137",
+      "529212",
+      "448132",
+      "942529",
+      "110107"
+    ],
+    "--epochs": [
+      "100"
+    ],
+    "--patience": [
+      "0"
+    ],
+    "--protocol": [
+      "full_train"
+    ],
+    "--activation_scope": [
+      "full_backbone"
+    ],
+    "--activation_sharing": [
+      "site"
+    ],
+    "--lgts_alphas": [
+      "0.4"
+    ],
+    "--lgts_alpha_min": [
+      "0.05"
+    ],
+    "--lgts_alpha_max": [
+      "1.5"
+    ],
+    "--lgts_beta": [
+      "1"
+    ],
+    "--lgts_beta_min": [
+      ".5"
+    ],
+    "--lgts_beta_max": [
+      "3"
+    ],
+    "--no_pretrained": [],
+    "--batch_size": [
+      "128"
+    ],
+    "--med_batch_size": [
+      "128"
+    ],
+    "--num_workers": [
+      "4"
+    ],
+    "--prefetch_factor": [
+      "4"
+    ],
+    "--optimizer": [
+      "adamw"
+    ],
+    "--learning_rate": [
+      ".001"
+    ],
+    "--weight_decay": [
+      ".0001"
+    ],
+    "--scheduler": [
+      "cosine"
+    ],
+    "--min_learning_rate": [
+      ".000001"
+    ],
+    "--fused_optimizer": [],
+    "--tf32": [],
+    "--cudnn_benchmark": [],
+    "--augmentation": [
+      "none"
+    ],
+    "--normalization": [
+      "dataset"
+    ],
+    "--small_input_stem": [
+      "auto"
+    ],
+    "--class_weight": [
+      "auto"
+    ],
+    "--med_size": [
+      "64"
+    ],
+    "--plots": [
+      "none"
+    ],
+    "--device": [
+      "cuda"
+    ],
+    "--best_state_device": [
+      "cpu"
+    ],
+    "--gradient_log": []
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "dataset": "imagenet100",
+  "revision": "0519dc2f402a3a18c6e57f7913db059215eee25b",
+  "files": [
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/dataset_info.json",
+      "size": 3108,
+      "sha256": "1caa0b15299ca0a43c38e79d2bccc38aa86843a400bd95191f59a4930c6d36a1"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00000-of-00017.arrow",
+      "size": 501289272,
+      "sha256": "2a0ffdfaaf9987adbb37c60dccef6c589fef81ad10e1856a46131d6878daaed3"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00001-of-00017.arrow",
+      "size": 505839184,
+      "sha256": "e18b01d68c39f14fd94d6c34bb6ed67b18a9604bebca8a6d0fe0381759e8173f"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00002-of-00017.arrow",
+      "size": 505953968,
+      "sha256": "e819f16846df9043b6e890526e0cf5eea60b53243138354c30b8b9ac1343a6cf"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00003-of-00017.arrow",
+      "size": 501925888,
+      "sha256": "95d7e1ddda65d33cfe3ac01383dafbf345a9cc02d252b5b0777e561eea9e9df6"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00004-of-00017.arrow",
+      "size": 502011256,
+      "sha256": "2f712e1c2c1d5341dc7749495280a12dcc7a74a227c7bd548d7ae6208c2996ad"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00005-of-00017.arrow",
+      "size": 505920472,
+      "sha256": "4d8931ed1ee0dc790eb4f274e977be48923c05dfd9d74b4eaa0936030326464a"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00006-of-00017.arrow",
+      "size": 502869896,
+      "sha256": "58563033252d3f1160bf8cf1b6c6c84eee8d0ecee27c7c892973630ed71ca5f7"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00007-of-00017.arrow",
+      "size": 504335952,
+      "sha256": "b82246dc22af6ce849e67f7b3fda2c7c14e5edcf9d491cec71a069d52543596c"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00008-of-00017.arrow",
+      "size": 501989960,
+      "sha256": "1b6848d6818dc9d1d60bc6924b50a10ddb6ef27d380ebfe8025571f87a400ce5"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00009-of-00017.arrow",
+      "size": 502926760,
+      "sha256": "fda4e3d2e3d91ea5fc23bd0f2b70e0c4ae7e7270fc8e0d7b9fad27e69ff25451"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00010-of-00017.arrow",
+      "size": 504908240,
+      "sha256": "00b51970eaaca1ea3bb150434562911a9805d37a55c1e48ba8de09c612ebffe8"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00011-of-00017.arrow",
+      "size": 500540248,
+      "sha256": "73faa1f9db25d7167c4dec5d113e9b8baf79b5b87a5786cc35d31b13a0a14a75"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00012-of-00017.arrow",
+      "size": 500633104,
+      "sha256": "5326b41136dc259d8c56d2bf95772dbe6d94a002b16a9e0362d1932bdc71390d"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00013-of-00017.arrow",
+      "size": 504356912,
+      "sha256": "8894d4baca2e5d187d3ec26a80d206aaee93078bcd35cbd47778dbed430f0e2e"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00014-of-00017.arrow",
+      "size": 502962912,
+      "sha256": "ebc342fe53adf7fa378bba73916dc272b0477205e2b3d11c892c9ca1ff49a113"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00015-of-00017.arrow",
+      "size": 502055776,
+      "sha256": "b46b37e202ec0ec56ef533048815a6d14ae72710c9be149cb9ce72ec9fc75178"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-train-00016-of-00017.arrow",
+      "size": 42281208,
+      "sha256": "f37619cd60f79384b61d9da4cad7932ecc01a0363a2917c0148c9fff79b0bd95"
+    },
+    {
+      "path": "huggingface/clane9___imagenet-100/default/0.0.0/0519dc2f402a3a18c6e57f7913db059215eee25b/imagenet-100-validation.arrow",
+      "size": 314487440,
+      "sha256": "dd890408454e014d1fd5f52a24fbc91245db41e6bed600ed7870884bc03d3076"
+    },
+    {
+      "path": "huggingface_hub/datasets--clane9--imagenet-100/blobs/dedbb80e690fb2115be85e04410fca92c45f014c",
+      "size": 4655,
+      "sha256": "0c13317babe7e32f62eaea4d80013a8c9f5ce3fe07983a93281c48349ec91a8f"
+    },
+    {
+      "path": "huggingface_hub/datasets--clane9--imagenet-100/snapshots/0519dc2f402a3a18c6e57f7913db059215eee25b/scripts/classes.py",
+      "size": 4655,
+      "sha256": "0c13317babe7e32f62eaea4d80013a8c9f5ce3fe07983a93281c48349ec91a8f"
+    }
+  ],
+  "file_count": 21,
+  "total_bytes": 8407300866
+}

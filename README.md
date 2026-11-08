@@ -8,7 +8,13 @@ The manuscript names `LGTS-f4-Alpha` as **LGTS-Alpha** and
 `LGTS-f2-Slope` as **LGTS-Slope**. The implementation labels are retained in
 the files so that the published results remain traceable to the recorded runs.
 
-## Release scope
+## Major revision
+
+The [revision study](research_revision/README.md) includes 960 completed training runs across CIFAR-100, DermaMNIST, OrganSMNIST and ImageNet-100. It contains the recorded training configurations, activation and real-epoch timing protocols, and code for the paired statistical comparisons.
+
+Per-run histories, predictions and class metrics are available in the [major-revision data release](https://github.com/SGT16/LGTS-Alpha/releases/tag/major-revision-data-2026-11-08).
+
+## Original experiments
 
 The primary experiment contains:
 
@@ -23,7 +29,7 @@ A separate OrganSMNIST sensitivity experiment contains 75 additional runs in
 which horizontal flipping was removed while the other settings were retained.
 It is reported separately and does not alter the primary statistical analysis.
 
-This release contains only the experiments and derived results reported in the
+The original release contains only the experiments and derived results reported in the
 manuscript, together with one explicitly identified validation-only exploration
 workbook. Dataset files, model checkpoints, prediction arrays, and local training
 logs are not included.
@@ -144,7 +150,3 @@ The OrganSMNIST paired sensitivity analysis can be regenerated with:
 
 The software is released under the MIT License. Third-party datasets are not
 included and remain subject to their original terms.
-
-## Revised experiments and measurements
-
-The revision release contains the stable PyTorch training engine, complete panel and seed tables, timing protocols, numerical diagnostics, and a CPU analysis verifier. See [research_revision/README.md](research_revision/README.md).

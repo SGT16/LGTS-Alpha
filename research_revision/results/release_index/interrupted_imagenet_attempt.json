@@ -1,0 +1,26 @@
+{
+  "status": "incomplete",
+  "job_id": "imagenet-baselines-f646c91a6749",
+  "excluded_from_completed_run_count": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 3.7448632642439157,
+      "val_f1": null,
+      "acc": null,
+      "loss": null,
+      "time_sec": 259.7335309000009,
+      "esb": 0,
+      "best": null,
+      "learning_rate": 0.001,
+      "amp_scale_end": 65536.0,
+      "amp_skipped_steps": 0,
+      "lgts_alpha": 0.3503339071484173,
+      "lgts_beta": 1.0,
+      "lgts_beta_plus": null,
+      "lgts_beta_minus": null,
+      "lgts_beta_gap": null,
+      "lgts_beta_ratio": null
+    }
+  ]
+}

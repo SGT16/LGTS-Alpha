@@ -36,7 +36,6 @@ def expected_calibration_error(y_true: np.ndarray, probs: np.ndarray, bins: int 
 
 
 def nll_from_logits(y_true: np.ndarray, logits: np.ndarray) -> float:
-    """Numerically stable multiclass NLL without float32 probability clipping."""
     values = np.asarray(logits, dtype=np.float64)
     maximum = values.max(axis=1, keepdims=True)
     log_normalizer = maximum[:, 0] + np.log(np.exp(values - maximum).sum(axis=1))
@@ -177,7 +176,6 @@ def plot_reliability(y_true: np.ndarray, probs: np.ndarray, path: Path) -> None:
 
 
 def plot_lgts_diagnostics(model: nn.Module, history: list[dict], shape_path: Path, trajectory_path: Path) -> None:
-    """Plot the selected LGTS shape/derivative and learned parameter paths."""
     layers = [module for module in model.modules() if isinstance(module, LGTSBase)]
     if not layers:
         return

@@ -1,11 +1,3 @@
-"""DenseNet121 support for the v2 cross-architecture continuation study.
-
-This module is intentionally separate from ``models.py``.  The unfinished v2
-MobileNetV2/EfficientNetV2S sweep fingerprints ``models.py``; changing that
-file before the sweep finishes would create a new experiment identity and
-prevent completed-condition resume.
-"""
-
 from __future__ import annotations
 
 from types import MethodType
@@ -37,7 +29,6 @@ def _adapt_densenet_small_input_stem(
     in_channels: int,
     pretrained: bool,
 ) -> None:
-    """Use the standard CIFAR-style 3x3/stride-1 DenseNet stem."""
     old = model.features.conv0
     replacement = nn.Conv2d(
         in_channels,
@@ -71,7 +62,6 @@ def _make_final_activation_explicit(
     activation: str,
     activation_kwargs: dict,
 ) -> None:
-    """Expose torchvision DenseNet's functional final ReLU as one fair site."""
     channels = int(model.classifier.in_features)
     model.final_activation = (
         nn.ReLU(inplace=False)

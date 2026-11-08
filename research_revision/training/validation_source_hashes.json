@@ -1,0 +1,30 @@
+{
+  "archived_adapter_sha256": "743ed4985a6e9bfbd5164a613a3a791405734bec28f33413293d7d4163c4a52f",
+  "archived_engine_files": {
+    "train_benchmark.py": "d09ac6203b8ebd535f211acdd725722df0469254000976439b7cf878f8581a8a",
+    "lgts_benchmark/__init__.py": "0b91e70602f9871f905b360c31b2116dc62167f18e3e01786fd31b31a8df81df",
+    "lgts_benchmark/activations.py": "cad9c05e4f2a7d32f8ec4404d24149775283fe95f5f30f615ebec31cfeb5a43e",
+    "lgts_benchmark/data.py": "5a6af30572c7ace34e20828c3354aecd1649e2ac38029cbe73084f471892abe3",
+    "lgts_benchmark/metrics.py": "300284941b5978e3022bdf3322278d51bc523b587a590313ca212b1cf4c19bca",
+    "lgts_benchmark/models.py": "648561c4515e2d9b47ff65c702c14479e19c33cb61d8b5d9cf3045a788ed3b68",
+    "lgts_benchmark/numerics.py": "db88a9fda32f218c6793e3ff05225484c0e17b41c009aca35884bd445cfe3639",
+    "lgts_benchmark/reporting.py": "9db442ff339cb8804cdb12b4b8639f286124d9b46c9c9d2a2d4acd4b2306680f"
+  },
+  "release_engine_files": {
+    "train_benchmark.py": "3d27d05c235891599db8bf6de774de9ba13f04a581b8dae7332386b1f14c7ad9",
+    "lgts_benchmark/__init__.py": "0ca93ed5bfab66c245c458b526827b4e612f204434adff82f470195b0be3b8cd",
+    "lgts_benchmark/activations.py": "cd26f84bbba551e58b0301ef13b6ade8bc65a1ff92d2a87d05129800564663b4",
+    "lgts_benchmark/data.py": "7f5f20c5dec3b196388e73ad0a09e99f49459406430a3421d0e7c0f05784075b",
+    "lgts_benchmark/metrics.py": "89ed30ea4df35103225da4ff76b27c040f6235c0e2ae7882f4e2eb6d241d742e",
+    "lgts_benchmark/models.py": "a7d5e5b4c8e33ab2b3044939c035da93a79ba65494bcfaa280346e90e0fb5dfb",
+    "lgts_benchmark/numerics.py": "7b9be57ffd08bfd53f6b7593d339a5842c3eaa70227e757c2ae1f9113322f41d",
+    "lgts_benchmark/reporting.py": "1c8e4e35fa499204c5824b2d9450f321ca97e185f386988adb20f9097b8e8945"
+  },
+  "validation_split": {
+    "training_file_sha256": "735e79b04f092ca3d2e6d07f368c0a7d70d48c48d28865950cc24454cf45129b",
+    "metadata_file_sha256": "a5d4786345c961390f865e93b434dbd5c6904ce880667e0cb888c97d449f28b9",
+    "train_indices_sha256": "1cbac67e327034562bd9bb5b5571956c8f2cec8f1a0a556468c078046fceee4c",
+    "validation_indices_sha256": "cbb48b16d42ac302b1381ac735889914c2dd37bb08c9aae6c9a4c22f74a6d1a4",
+    "dataset_fingerprint_sha256": "b588c77570783f332281f73ed0d12868158b6bbd9fd21448d02075fa2e3d6efa"
+  }
+}

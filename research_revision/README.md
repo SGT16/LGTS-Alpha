@@ -1,8 +1,21 @@
 # LGTS-Alpha experimental code and outcomes
 
-The original comparison used three datasets, three CNN backbones, five activations and five paired seeds (225 runs). The subsequent OrganSMNIST sensitivity panel changed horizontal flipping (75 runs). ImageNet-100, the activation controls and timing experiments are separate evidence sets. A protocol dated 19 August 2026 records the original design. Its date was recorded internally and does not constitute an independent timestamp.
+The original comparison used three datasets, three CNN backbones, five activations and five paired seeds (225 runs). The subsequent OrganSMNIST sensitivity panel changed horizontal flipping (75 runs). ImageNet-100, the activation controls and timing experiments are separate evidence sets. The [original protocol](protocols/Q2_CONFIRMATORY_PROTOCOL.md) and its [machine-readable specification](protocols/protocol_q2_confirmatory.json) record the design and planned analysis. The date of 19 August 2026 comes from the internal record. An independent timestamp establishing that the protocol preceded official test evaluation is unavailable.
+
+## Code for the revision experiments
+
+- [Training](training/README.md) lists the recorded settings and commands for the 960 completed revision runs, including the ImageNet-100 extension, the validation-only learning-rate sweep and the OrganSMNIST rotation control.
+- [Benchmarks](benchmarks/README.md) covers activation microbenchmarks, eager and compiled training steps, and full epochs timed with the data loader.
+- [Analysis](analysis/README.md) reproduces the paired activation and orientation comparisons and the uncertainty estimates from the released data.
+
+The training engine records a source fingerprint with each run and checkpoint. The [archived engine](https://github.com/SGT16/LGTS-Alpha/tree/cbc7baf51d662d4ec030fa3ae21cb41ea7ce4ab8/research_revision/engine) preserves the earlier release byte for byte. Reruns from this checkout receive a new source fingerprint.
 
 ## Inspect the results
+
+- [Reviewer tables](results/reviewer_tables/README.md) contain the 300 original and flip-sensitivity seed scores, statistical comparisons, activation controls and sagittal organ confusion matrices.
+- [Training diagnostics](results/diagnostics/README.md) contain layer gradients, learned activation parameters and validation losses from the learning-rate pilot.
+- [Measurement details](results/measurement_details/) accompany the activation, training-step and whole-epoch timing results.
+- [Per-run archive index](results/release_index/README.md) maps each of the 960 completed revision runs to its files in the [major-revision data release](https://github.com/SGT16/LGTS-Alpha/releases/tag/major-revision-data-2026-11-08). Select a run to download its history, predictions, class metrics and recorded diagnostics.
 
 From this directory, with Python, NumPy and SciPy installed:
 

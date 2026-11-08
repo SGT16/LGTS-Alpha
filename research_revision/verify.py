@@ -1,4 +1,3 @@
-"""Verify the portable revision tables and reproduce key manuscript values on CPU."""
 import csv
 import hashlib
 import json
@@ -38,6 +37,12 @@ def main():
     panels = Counter(r["panel"] for r in settings.values())
     if panels != json.loads((ROOT / "protocols/panel_counts.json").read_text()):
         raise ValueError("Panel count mismatch")
+    historical = {"q2_confirmatory", "q2_postconfirmatory_organsmnist_no_hflip", "q2_postconfirmatory_imagenet100"}
+    expected = {key: row["panel"] for key, row in settings.items() if row["panel"] not in historical}
+    with (ROOT / "training/runs.csv").open(encoding="utf-8", newline="") as handle:
+        recipes = list(csv.DictReader(handle))
+    if len(recipes) != 960 or {r["run_id"]:r["panel"] for r in recipes} != expected or len(expected) != len(recipes):
+        raise ValueError("The recorded revision runs and the training commands do not match.")
     groups = defaultdict(dict)
     for i, r in settings.items():
         if r["panel"] == "q2_confirmatory":
@@ -77,7 +82,7 @@ def main():
     four = json.loads((RESULTS/"prelu_fp16_slope_replays.json").read_text())
     if len(four["units"]) != 4 or four["accepted"] or any(r["slope_gradient_finite"] or not r["input_gradient_finite"] or r["completed_blocks"] != 10 for r in four["units"]):
         raise ValueError("Incorrect diagnostic replay evidence")
-    print(f"{len(checks)} file hashes verified; {len(settings)} final runs; 4 diagnostic replays.")
+    print(f"{len(checks)} file hashes verified; {len(settings)} final runs; {len(recipes)} revision training commands; 4 diagnostic replays.")
     print(f"Original Q = {q:.5f}, p = {p:.6f}; Alpha minus ACON-C = {observed:.6f}.")
     print(f"Whole-seed CI [{observed-half:.6f}, {observed+half:.6f}]; model CI [{observed-width:.6f}, {observed+width:.6f}].")
 

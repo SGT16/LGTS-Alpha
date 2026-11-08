@@ -21,7 +21,6 @@ from scipy.stats import friedmanchisquare, t, wilcoxon
 
 
 def replace_with_retry(source: Path, destination: Path, attempts: int = 8) -> None:
-    """Atomic same-volume replacement, tolerating transient Windows scanners."""
     for attempt in range(attempts):
         try:
             os.replace(source, destination)
@@ -38,7 +37,6 @@ def atomic_torch_save(path: Path, payload) -> None:
     import torch
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + f".{os.getpid()}.{uuid.uuid4().hex}.tmp")
-    # The previous checkpoint remains intact until a complete new file exists.
     with temporary.open("wb") as handle:
         torch.save(payload, handle)
         handle.flush()
@@ -47,7 +45,6 @@ def atomic_torch_save(path: Path, payload) -> None:
 
 
 def _with_derived_metrics(row: dict) -> dict:
-    """Backfill error rate in both new and legacy fold rows."""
     item = dict(row)
     accuracy = item.get("test_accuracy", "")
     if accuracy not in {"", None, "nan"}:
@@ -239,7 +236,6 @@ def _model_sort_key(item: dict) -> tuple:
 
 
 def _add_model_color_scales(ws, items: list[dict], first_data_row: int = 2) -> None:
-    """Color scores within each architecture instead of across unlike models."""
     start = first_data_row
     while start < first_data_row + len(items):
         group = (
@@ -267,7 +263,6 @@ def _add_model_color_scales(ws, items: list[dict], first_data_row: int = 2) -> N
 
 
 def _write_model_summary(ws, summaries: list[dict], confirmatory_view: bool) -> None:
-    """Write one ranked activation block per model for fair within-model reading."""
     ws.sheet_view.showGridLines = False
     ws["A1"] = "Model-Based Activation Summary"
     ws["A1"].font = Font(size=18, bold=True, color="FFFFFF")
@@ -509,7 +504,6 @@ def _read_protocol_rows(workbook_path: Path) -> list[dict]:
 
 
 def update_live_workbook(path: Path, row: dict, per_class: list[dict] | None = None) -> None:
-    """Append/replace one fold and atomically refresh Dashboard, Summary and Runs."""
     path.parent.mkdir(parents=True, exist_ok=True)
     pending = path.with_name(f"{path.stem}_pending{path.suffix}")
     candidates = [p for p in (path, pending) if p.exists()]
@@ -561,7 +555,6 @@ def update_live_workbook(path: Path, row: dict, per_class: list[dict] | None = N
 
 
 def initialize_live_workbook(path: Path) -> None:
-    """Create an empty, fully structured tracker without overwriting results."""
     if path.exists() or path.with_name(f"{path.stem}_pending{path.suffix}").exists():
         return
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -610,7 +603,6 @@ def build_aggregate_reports(results_csv: Path, output_dir: Path) -> None:
     if summary:
         with summary_path.open("w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=list(summary[0])); w.writeheader(); w.writerows(summary)
-    # Paired fold/seed tests, LGTS versus each competing activation.
     stats = []
     scopes = sorted(set((r["dataset"], r["model"], r["activation_scope"], r.get("protocol"), r.get("gpu_model")) for r in rows))
     for dataset, model, scope, protocol, gpu_model in scopes:
@@ -634,8 +626,6 @@ def build_aggregate_reports(results_csv: Path, output_dir: Path) -> None:
                 try: stat, p = wilcoxon(x, y, zero_method="zsplit")
                 except ValueError: stat = p = np.nan
                 stats.append({"dataset": dataset, "model": model, "scope": scope, "protocol": protocol, "gpu_model": gpu_model, "metric": score_key, "test": "Wilcoxon", "comparison": f"{lgts_variant} vs {competitor}", "n": len(common), "statistic": stat, "p_value": p, "mean_difference": mean(np.asarray(x)-np.asarray(y))})
-        # Pre-registered mechanistic contrasts: Swish->f1 tests the added tanh
-        # branch; f1->f2 tests slope matching; f2->f3 tests untied gate rates.
         for f1_name in sorted(name for name in paired if name.startswith("LGTS-f1")):
             alpha_suffix = f1_name[len("LGTS-f1"):]
             planned = [
@@ -663,7 +653,6 @@ def build_aggregate_reports(results_csv: Path, output_dir: Path) -> None:
                     "p_value": p, "mean_difference": float(np.mean(differences)),
                     "paired_cohen_dz": float(np.mean(differences) / difference_sd) if difference_sd > 0 else np.nan,
                 })
-    # Holm-adjust within each dataset/model/scope family while retaining raw p.
     families: dict[tuple, list[int]] = defaultdict(list)
     for index, row in enumerate(stats):
         if str(row.get("test", "")).startswith("Wilcoxon") and np.isfinite(row.get("p_value", np.nan)):
@@ -695,7 +684,6 @@ def _aggregate_plots(rows: list[dict], output_dir: Path, score_key: str, score_l
         fig, ax = plt.subplots(figsize=(max(8, len(activations) * 0.8), 5))
         ax.boxplot(values, tick_labels=activations, showmeans=True); ax.set_ylabel(score_label); ax.set_title(f"{dataset}: activation comparison")
         ax.tick_params(axis="x", rotation=35); ax.grid(axis="y", alpha=0.2); fig.tight_layout(); fig.savefig(plot_dir / f"{dataset}_activation_boxplot.png", dpi=180); plt.close(fig)
-    # Dataset x activation mean macro-F1 heatmap.
     activations = sorted(set(r.get("activation_variant") or r["activation"] for r in rows))
     matrix = np.full((len(datasets), len(activations)), np.nan)
     for i, d in enumerate(datasets):
@@ -705,15 +693,12 @@ def _aggregate_plots(rows: list[dict], output_dir: Path, score_key: str, score_l
     fig, ax = plt.subplots(figsize=(max(9, len(activations) * 0.85), max(4, len(datasets) * 0.7)))
     sns.heatmap(matrix, annot=True, fmt=".3f", cmap="viridis", xticklabels=activations, yticklabels=datasets, ax=ax)
     ax.set_title(f"Mean {score_label.lower()}"); fig.tight_layout(); fig.savefig(plot_dir / "dataset_activation_heatmap.png", dpi=180); plt.close(fig)
-    # Accuracy-cost Pareto view.
     fig, ax = plt.subplots(figsize=(8, 6))
     for a in activations:
         part = [r for r in rows if (r.get("activation_variant") or r["activation"]) == a]
         ax.scatter(mean([float(r["inference_ms_per_image"]) for r in part]), mean([float(r[score_key]) for r in part]), label=a, s=55)
     ax.set(xlabel="Evaluation inference time (ms/image; lower is better)", ylabel=score_label, title="Accuracy-cost trade-off"); ax.grid(alpha=0.2); ax.legend(fontsize=8)
     fig.tight_layout(); fig.savefig(plot_dir / "accuracy_cost_pareto.png", dpi=180); plt.close(fig)
-    # A dual-gate contribution is interpretable only if beta+ and beta- learn
-    # measurably different transition rates rather than collapsing together.
     dual = [r for r in rows if r.get("lgts_beta_plus", "") not in {"", None} and r.get("lgts_beta_minus", "") not in {"", None}]
     if dual:
         beta_plus = np.asarray([float(r["lgts_beta_plus"]) for r in dual])

@@ -1,0 +1,82 @@
+{
+  "dataset": "organsmnist",
+  "source": "MedMNIST/organsmnist",
+  "classes": [
+    "bladder",
+    "femur-left",
+    "femur-right",
+    "heart",
+    "kidney-left",
+    "kidney-right",
+    "liver",
+    "lung-left",
+    "lung-right",
+    "pancreas",
+    "spleen"
+  ],
+  "in_channels": 1,
+  "native_size": 64,
+  "train": 13932,
+  "validation": 2452,
+  "test": 8827,
+  "train_class_counts": [
+    1148,
+    630,
+    614,
+    721,
+    1132,
+    1119,
+    3464,
+    741,
+    803,
+    2004,
+    1556
+  ],
+  "validation_class_counts": [
+    188,
+    104,
+    95,
+    246,
+    140,
+    159,
+    491,
+    261,
+    275,
+    280,
+    213
+  ],
+  "test_class_counts": [
+    811,
+    439,
+    445,
+    510,
+    704,
+    693,
+    2078,
+    397,
+    439,
+    1343,
+    968
+  ],
+  "recommended_normalization": [
+    [
+      0.5
+    ],
+    [
+      0.5
+    ]
+  ],
+  "holdout_seed": 2026,
+  "train_labels_sha256": "3499a765238aa5e0bb5164d3a3493e75b011e3c73605780feb42410ce78149db",
+  "validation_labels_sha256": "45a0068dab5b55a15ee72284eab565cd2afa48d613a5d75c4dcb6404d9c79009",
+  "test_labels_sha256": "4089dd604e48ddb455acb68f37f3ae481a9c56bfa7a3049e20ac8dd7236f1dac",
+  "upstream_metadata": {
+    "file": "organsmnist_64.npz",
+    "md5": "53a6d115339d874c25e309a994ff46d3",
+    "expected_md5": "53a6d115339d874c25e309a994ff46d3",
+    "medmnist_version": "3.0.2",
+    "task": "multi-class",
+    "license": "CC BY 4.0"
+  },
+  "dataset_fingerprint_sha256": "024a447fd9a3efebb63f5cf0399df22242eabc59e2146e58b415daafc410235e"
+}

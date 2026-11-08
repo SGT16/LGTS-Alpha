@@ -1,9 +1,3 @@
-"""Post-review, CPU-only statistics from a frozen, provenance-checked snapshot.
-
-No torch, GPU, checkpoint loading, training controls, network access or source
-result mutation. CSV files are numerical intermediates for the parent report.
-All inferential analyses here were selected after review, not preregistered.
-"""
 from __future__ import annotations
 
 import argparse
@@ -44,8 +38,6 @@ METRICS = (PRIMARY, 'test_accuracy', 'test_balanced_accuracy',
 TIMING = {'train_time_sec', 'mean_epoch_time_sec', 'inference_ms_per_image',
     'throughput_images_sec', 'peak_training_gpu_memory_mb', 'peak_inference_gpu_memory_mb'}
 
-# Planned policy is compared, while actual fallback precision and resume counts
-# remain reported observation attributes, not exclusion criteria.
 METRIC_CONFIG = ('code_sha256', 'engine_version', 'study_stage', 'protocol',
     'selection_policy', 'evaluation_split', 'split_seed', 'pretrained',
     'weight_initialization', 'activation_scope', 'normalization', 'class_weight',
@@ -86,7 +78,6 @@ def _vector(values):
 
 
 def midranks(values):
-    """Average ranks for exactly tied values, independent of their order."""
     a = _vector(values)
     order = np.argsort(a, kind='stable')
     result = np.empty(len(a), dtype=float)
@@ -101,14 +92,6 @@ def midranks(values):
 
 
 def exact_signed_rank(differences):
-    """Exact conditional sign-permutation test, two-sided, Wilcox zero rule.
-
-    Differences are rounded to 12 decimals only for ranking, with zero values
-    removed and tied magnitudes assigned average ranks. Every one of 2**n
-    equally likely sign assignments is enumerated. This is not SciPy's
-    no-ties-only exact reference distribution. Symmetric sign-exchangeability
-    under the null is assumed. At five nonzero pairs the smallest p is .0625.
-    """
     raw = _vector(differences)
     d = np.round(raw, RANK_DECIMALS)
     d = d[d != 0]
@@ -135,7 +118,6 @@ def exact_signed_rank(differences):
 
 
 def holm(pvalues):
-    """Holm family-wise adjusted p values in the original order."""
     p = np.asarray(pvalues, dtype=float)
     if p.ndim != 1 or not np.isfinite(p).all() or np.any((p < 0) | (p > 1)):
         raise ValueError('p values must be finite and between zero and one')
@@ -149,7 +131,6 @@ def holm(pvalues):
 
 
 def paired_bootstrap(differences, key, reps=BOOTSTRAPS):
-    """Percentile interval of the paired mean; n=5 intervals are exploratory."""
     d = _vector(differences)
     if type(reps) is not int or reps < 100:
         raise ValueError('At least 100 integer bootstrap replicates required')
@@ -164,14 +145,6 @@ def paired_bootstrap(differences, key, reps=BOOTSTRAPS):
 
 
 def crossed_bootstrap(cube, key, reps=BOOTSTRAPS):
-    """Product resampling of dataset, backbone and common paired-seed levels.
-
-    Samples each axis independently with replacement and averages the Cartesian
-    product, preserving the observed crossed array. It does not resample the
-    45 cells independently. Only 3 dataset/architecture levels are available,
-    so the resulting interval is a descriptive sensitivity, not robust
-    population-level evidence or an exactly calibrated bootstrap.
-    """
     a = np.asarray(cube, dtype=float)
     if a.ndim != 3 or min(a.shape) < 2 or not np.isfinite(a).all():
         raise ValueError('A finite complete three-factor cube is required')
@@ -189,7 +162,6 @@ def crossed_bootstrap(cube, key, reps=BOOTSTRAPS):
 
 
 def ni_rows(comparison, margins=(.005, .01, .02)):
-    """Post-review NI sensitivity, not a declaration based on nonsignificance."""
     rows = []
     for margin in margins:
         if not math.isfinite(margin) or margin <= 0:

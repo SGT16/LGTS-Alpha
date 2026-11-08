@@ -1,4 +1,3 @@
-"""Fail-closed numerical checks and recoverable final-weight snapshots."""
 from __future__ import annotations
 
 import json
@@ -11,7 +10,7 @@ from torch import nn
 
 
 class NumericalError(FloatingPointError):
-    """Invalid numerical evidence; retraining blindly is not a recovery policy."""
+    pass
 
 
 def require_finite(value, name: str) -> None:
@@ -29,11 +28,6 @@ def validate_model_state(model: nn.Module) -> None:
 
 
 def save_model_snapshot(path: Path, model: nn.Module, metadata: dict) -> None:
-    """Save weights/buffers atomically, without changing the live model or RNG.
-
-    This is an evaluation recovery artifact, not an optimizer/epoch-resume
-    checkpoint. Metadata must identify the scientific run and training budget.
-    """
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     payload = {
