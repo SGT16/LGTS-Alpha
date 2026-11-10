@@ -10,6 +10,8 @@ the files so that the published results remain traceable to the recorded runs.
 
 ## Major revision
 
+The [110-run follow-up release](https://github.com/SGT16/LGTS-Alpha/releases/tag/reviewer-followup-artifacts-2026-11-11) contains the training code, fixed experiment configurations, per-run results and statistical comparisons.
+
 The [revision study](research_revision/README.md) includes 960 completed training runs across CIFAR-100, DermaMNIST, OrganSMNIST and ImageNet-100. It contains the recorded training configurations, activation and real-epoch timing protocols, and code for the paired statistical comparisons.
 
 Per-run histories, predictions and class metrics are available in the [major-revision data release](https://github.com/SGT16/LGTS-Alpha/releases/tag/major-revision-data-2026-11-08).
@@ -47,7 +49,7 @@ logs are not included.
 | `results/learned_alpha/` | Layer-level alpha workbook and the corresponding figure |
 | `results/dataset_manifests/` | Class counts, split fingerprints, and source metadata; no images |
 | `exploration/live_results_f4.xlsx` | Validation-only F4 exploration; excluded from all confirmatory analyses |
-| `reproducibility/` | Exact source snapshots identified by the recorded SHA-256 hashes |
+| `reproducibility/` | Source snapshots and their recorded and distributed SHA-256 hashes |
 | `tests/` | Unit and smoke tests |
 
 `protocol_v2.json` and `protocol_f4_ablation.json` are retained as historical
@@ -76,7 +78,7 @@ py -3.14 -m venv .venv
 CPU execution is sufficient for unit tests and dry runs. Repeating the full
 300-run study requires a CUDA-capable GPU and substantial computation time.
 
-Verify the published result files, exact source snapshots, and run counts with:
+Verify the published result files, source snapshots, historical fingerprints, and run counts with:
 
 ```powershell
 .\.venv\Scripts\python.exe verify_release.py

@@ -18,16 +18,17 @@ sensitivity protocol was specified after completion of the primary analysis
 and before the 75 additional runs. Those runs were not added to the primary
 Friedman, Wilcoxon, Holm, or non-inferiority calculations.
 
-## Exact source snapshots
+## Source snapshots and recorded hashes
 
-The root source tree is the maintained public interface. Byte-identical source
-snapshots corresponding to the two recorded experiment hashes are preserved in:
+The root source tree is the maintained public interface. The two study-specific
+source snapshots are distributed in:
 
 - `reproducibility/source_snapshot_q2_confirmatory/`
 - `reproducibility/source_snapshot_organsmnist_no_hflip/`
 
-The snapshot file hashes reproduce the combined code hashes written into the
-experiment records. The original runs were completed before this Git repository
+The verifier checks the distributed files against their SHA-256 hashes and
+reconstructs each historical fingerprint using the recorded per-file hashes.
+[The source-snapshot record](reproducibility/README.md) documents the differences. The original runs were completed before this Git repository
 was created; consequently, their recorded `git_commit` field is unavailable.
 The per-file SHA-256 map in each `results/**/provenance.json` file is the
 authoritative source identity for those runs.

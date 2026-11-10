@@ -175,7 +175,6 @@ FINGERPRINT_FILES = (
 
 
 def source_fingerprint(project_root: Path) -> tuple[str, dict[str, str]]:
-    """Return a combined SHA-256 and per-file hashes for training-relevant code."""
     per_file: dict[str, str] = {}
     combined = hashlib.sha256()
     for relative in FINGERPRINT_FILES:
@@ -230,12 +229,6 @@ def package_lock_snapshot() -> tuple[str, str]:
 
 
 def prepare_experiment_identity(args: argparse.Namespace, project_root: Path) -> dict:
-    """Bind resume paths to training settings and the exact source snapshot.
-
-    Dataset/model/activation/seed selections remain path components and are
-    deliberately excluded, allowing a large experiment to be launched in
-    stages without changing its identity.
-    """
     code_sha256, file_hashes = source_fingerprint(project_root)
     runtime = runtime_metadata()
     package_lock, package_lock_sha256 = package_lock_snapshot()
@@ -378,9 +371,6 @@ def balanced_weights(labels: np.ndarray, n_classes: int, device: torch.device) -
 
 
 def build_optimizer(model: nn.Module, args):
-    # Biases, normalization weights and scalar activation parameters are not
-    # weight-decayed. This avoids directly regularizing alpha/beta and applies
-    # the same rule to learnable baseline activations such as PReLU.
     decay, no_decay = [], []
     for name, parameter in model.named_parameters():
         if not parameter.requires_grad:
@@ -430,7 +420,6 @@ PARTIAL_RUN_PATTERNS = (
 
 
 def reset_partial_run(run_dir: Path) -> list[str]:
-    """Remove only run-local transient artifacts before restarting at epoch 1."""
     removed: list[str] = []
     for pattern in PARTIAL_RUN_PATTERNS:
         for artifact in run_dir.glob(pattern):
@@ -441,7 +430,6 @@ def reset_partial_run(run_dir: Path) -> list[str]:
 
 
 def release_accelerator_memory(device: torch.device) -> None:
-    """Release unreachable tensors and cached CUDA blocks between runs."""
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -460,9 +448,6 @@ def train_one(
     val_idx: np.ndarray | None,
     device: torch.device,
 ):
-    # A single benchmark process can execute hundreds of independent runs.
-    # Clear allocator residue before constructing the next model; this does
-    # not affect model weights, seeds, batches, or numerical results.
     release_accelerator_memory(device)
     effective_scope = "all_layers" if model_name == "PaperCNN" else args.activation_scope
     activation_name = canonical_activation_name(activation)
@@ -482,9 +467,6 @@ def train_one(
             f"Run {repeat_no}/{repeat_total} | seed={seed} | "
             f"Fold {fold_no}/{args.k_folds}"
         )
-    # Seed already identifies a fixed-protocol repeat. Keep the directory name
-    # independent of the order in which --seeds are supplied so resume remains
-    # stable when a subset of seeds is launched later.
     unit_dir = args.protocol if args.protocol in {"fixed", "full_train"} else f"fold_{fold_no}"
     dataset_fingerprint = bundle.metadata.get("dataset_fingerprint_sha256", "unversioned")
     run_dir = Path(args.output_dir) / bundle.name / f"data_{dataset_fingerprint[:16]}" / model_name / effective_scope / activation_variant / f"seed_{seed}" / unit_dir
@@ -492,8 +474,6 @@ def train_one(
     done_path = run_dir / "done.json"
     in_progress_path = run_dir / "in_progress.json"
     if done_path.exists() and not args.rerun_done:
-        # A crash immediately after the atomic done marker may leave only this
-        # harmless transient marker. The completed fold still takes priority.
         in_progress_path.unlink(missing_ok=True)
         print(f"SKIP | {bundle.name} | {terminal_unit} | {model_name}-{activation_variant}-{effective_scope} | completed")
         return
@@ -611,10 +591,6 @@ def train_one(
         improved = bool(uses_validation and val_f1 > best_f1 + args.min_delta)
         if improved:
             best_f1, best_epoch, esb = val_f1, epoch, 0
-            # Keep the selected model in RAM only. No epoch checkpoint is
-            # written; run-level continuation is controlled by done.json.
-            # Device-side clones avoid repeated PCIe copies and are small
-            # relative to the 24 GB experiment GPU.
             if args.best_state_device == "cpu":
                 best_state = {name: tensor.detach().cpu().clone() for name, tensor in model.state_dict().items()}
             else:
@@ -647,8 +623,6 @@ def train_one(
         if uses_validation and args.patience > 0 and epoch >= args.min_epochs and esb >= args.patience:
             break
 
-    # Sum all epochs in this fold; interrupted folds restart and overwrite
-    # their history from epoch 1.
     train_time = float(sum(float(item["time_sec"]) for item in history))
     peak_training_mb = torch.cuda.max_memory_allocated() / 1024**2 if device.type == "cuda" else 0.0
     if uses_validation:
@@ -661,8 +635,6 @@ def train_one(
         del scheduler
     if device.type == "cuda":
         torch.cuda.empty_cache()
-    # Official test evaluation, predictions, and metrics remain closed during
-    # selection and ablation. Only confirmatory full_train may evaluate them.
     evaluate_official_test = args.protocol == "full_train"
     evaluation_split = "test" if evaluate_official_test else "validation"
     if evaluate_official_test:
@@ -799,9 +771,6 @@ def train_one(
     in_progress_path.unlink(missing_ok=True)
     label = "TEST" if evaluate_official_test else "VALIDATION"
     print(f"{label} | {bundle.name} | {terminal_unit} | {model_name}-{activation_variant}-{effective_scope} | {evaluation_split}_f1={metrics['f1_macro']:.4f} | acc={metrics['accuracy']:.4f} | error={metrics['error_rate_percent']:.2f}% | auc={metrics['roc_auc_macro_ovr']:.4f} | ece={metrics['ece_15']:.4f}")
-    # Explicitly drop the largest run-local CUDA owners before the next run.
-    # CPython would normally release them on return, but doing it here makes
-    # long benchmark sweeps robust to delayed cyclic garbage collection.
     del model, criterion, evaluation_loader
     release_accelerator_memory(device)
 
@@ -829,9 +798,6 @@ def main() -> None:
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     configure_runtime(args)
     if args.shared_live_workbook:
-        # Explicit opt-in for a study-level tracker shared by sequential model
-        # processes. Relative paths are anchored to the project so both
-        # processes resolve exactly the same workbook.
         requested_live_workbook = Path(args.live_workbook or "live_results.xlsx")
         live_workbook = (
             requested_live_workbook
@@ -839,12 +805,8 @@ def main() -> None:
             else project_root / requested_live_workbook
         )
     else:
-        # Default safety: keep each tracker inside its immutable experiment
-        # directory and treat an explicit path as a filename only.
         live_name = Path(args.live_workbook).name if args.live_workbook else "live_results.xlsx"
         live_workbook = Path(args.output_dir) / live_name
-    # Be forgiving when PowerShell/path completion drops the filename and only
-    # a directory reaches argparse. A live workbook must always be an .xlsx.
     if live_workbook.suffix.lower() != ".xlsx":
         live_workbook = live_workbook / "live_results.xlsx"
     args.live_workbook_path = str(live_workbook)
@@ -852,8 +814,6 @@ def main() -> None:
     (Path(args.output_dir) / "environment_lock.txt").write_text(
         "\n".join(identity["package_lock"]) + "\n", encoding="utf-8",
     )
-    # Explicit f4 conditions run in their nested scientific order. The locked
-    # v2 primary (f2) remains the first legacy comparator after this family.
     priority = {
         "LGTS-f4-Base-Squareplus": 0,
         "LGTS-f4-Fixed": 1,

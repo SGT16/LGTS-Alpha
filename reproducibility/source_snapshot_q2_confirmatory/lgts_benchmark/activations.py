@@ -9,28 +9,18 @@ import torch.nn.functional as F
 
 
 class Swish(nn.Module):
-    """Parameter-free Swish control: f0(x) = x * sigmoid(x)."""
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return x * torch.sigmoid(x)
 
 
 class ResidualSafeReLU(nn.Module):
-    """Exact ReLU whose backward does not depend on an unchanged output.
-
-    torchvision EfficientNetV2 uses an in-place residual addition in some
-    FusedMBConv blocks. torch.relu saves its output for backward, so that
-    later addition invalidates autograd's version check. torch.where saves
-    the input-side condition instead, preserving PyTorch ReLU values and its
-    zero-point gradient while remaining safe in those residual blocks.
-    """
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return torch.where(x > 0.0, x, 0.0)
 
 
 def _channel_parameter(parameter: torch.Tensor, x: torch.Tensor) -> torch.Tensor:
-    """Broadcast a scalar/channel-wise parameter over NCHW or NC tensors."""
     if parameter.numel() == 1:
         return parameter
     if x.ndim < 2 or x.shape[1] != parameter.numel():
@@ -42,10 +32,6 @@ def _channel_parameter(parameter: torch.Tensor, x: torch.Tensor) -> torch.Tensor
 
 
 class AconC(nn.Module):
-    r"""Channel-wise ACON-C from Ma et al. (CVPR 2021).
-
-    f(x) = (p1-p2)x*sigmoid(beta*(p1-p2)x) + p2*x
-    """
 
     def __init__(self, channels: int | None = None) -> None:
         super().__init__()
@@ -63,11 +49,6 @@ class AconC(nn.Module):
 
 
 class QianGated(nn.Module):
-    r"""Qian et al. (2018) gated mixture of LReLU and ELU.
-
-    f(x) = sigmoid(omega*x)*LReLU(x)
-           + (1-sigmoid(omega*x))*ELU(x)
-    """
 
     def __init__(self, channels: int | None = None, omega: float = 1.0) -> None:
         super().__init__()
@@ -91,7 +72,6 @@ def _inverse_sigmoid_range(value: float, low: float, high: float) -> torch.Tenso
 
 
 class LGTSBase(nn.Module):
-    """Shared constrained, optionally learnable LGTS parameterization."""
 
     variant = "LGTS"
     ablation_role = "legacy"
@@ -122,12 +102,6 @@ class LGTSBase(nn.Module):
 
     @property
     def learning_mode(self) -> str:
-        """Describe what this concrete activation instance actually learns.
-
-        Named f4 ablations deliberately override the global CLI learning mode,
-        so this value is derived from registered parameters instead of copied
-        from the command line.
-        """
         alpha_is_learned = isinstance(self.raw_alpha, nn.Parameter)
         beta_is_learned = any(
             isinstance(getattr(self, name, None), nn.Parameter)
@@ -175,50 +149,28 @@ class _SymmetricLGTSBase(LGTSBase):
 
 
 class LGTS(_SymmetricLGTSBase):
-    r"""Original LGTS (f1).
-
-    f1(x) = x*sigmoid(beta*x) + alpha*tanh(x)*sigmoid(-beta*x)
-    """
 
     variant = "LGTS-f1"
     formula = "x*sigmoid(beta*x)+alpha*tanh(x)*sigmoid(-beta*x)"
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # sigmoid(-z) = 1 - sigmoid(z), so the mathematically identical
-        # single-gate form avoids a second sigmoid and one large intermediate.
         gate = torch.sigmoid(self.beta * x)
         negative = self.alpha * torch.tanh(x)
         return negative + gate * (x - negative)
 
 
 class SlopeMatchedLGTS(_SymmetricLGTSBase):
-    r"""Slope-matched symmetric LGTS (f2), satisfying f2'(0)=1.
-
-    f2(x) = x*sigmoid(beta*x) + alpha*tanh(x/alpha)*sigmoid(-beta*x)
-    """
 
     variant = "LGTS-f2-Slope"
     formula = "x*sigmoid(beta*x)+alpha*tanh(x/alpha)*sigmoid(-beta*x)"
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # This is exactly
-        # x*sigmoid(beta*x) + alpha*tanh(x/alpha)*sigmoid(-beta*x),
-        # written with one sigmoid via sigmoid(-z) = 1 - sigmoid(z).
         gate = torch.sigmoid(self.beta * x)
         negative = self.alpha * torch.tanh(x / self.alpha)
         return negative + gate * (x - negative)
 
 
 class AsymmetricDualGateLGTS(LGTSBase):
-    r"""Asymmetric dual-gated, slope-matched LGTS (f3).
-
-    f3(x) = x*sigmoid(beta_plus*x)
-            + alpha*tanh(x/alpha)*sigmoid(-beta_minus*x)
-
-    beta_plus and beta_minus are separately learned transition rates. The two
-    gates are oppositely oriented but are not claimed to be statistically
-    independent or a partition of unity.
-    """
 
     variant = "LGTS-f3-Dual"
     formula = "x*sigmoid(beta_plus*x)+alpha*tanh(x/alpha)*sigmoid(-beta_minus*x)"
@@ -268,14 +220,6 @@ class AsymmetricDualGateLGTS(LGTSBase):
 
 
 class AlgebraicBaseLGTS(LGTSBase):
-    r"""Fixed-parameter Squareplus base used only as an f4 ablation control.
-
-    A_alpha(x) = (x + sqrt(x^2 + alpha^2)) / 2
-
-    This component is a reparameterized Squareplus and is therefore not
-    presented as a novel activation by itself.  Keeping alpha fixed makes the
-    comparison with ``LGTS-f4-Fixed`` isolate the logistic correction term.
-    """
 
     variant = "LGTS-f4-Base-Squareplus"
     ablation_role = "base_squareplus_fixed"
@@ -284,25 +228,10 @@ class AlgebraicBaseLGTS(LGTSBase):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         alpha = self.alpha.to(dtype=x.dtype)
         root = torch.sqrt(x.square() + alpha.square())
-        # Use the defining Squareplus expression directly. ``torch.where``
-        # evaluates both branches eagerly, so the earlier cancellation-safe
-        # rational branch added a division, comparison and large temporary at
-        # every activation site. In the negative saturation region any
-        # float16 cancellation is far below the -alpha logistic tail and does
-        # not change the represented activation at working precision.
         return 0.5 * (x + root)
 
 
 class AlgebraicLogisticLGTS(_SymmetricLGTSBase):
-    r"""Monotone algebraic-logistic LGTS candidate (f4).
-
-    f4(x) = (x + sqrt(x^2 + alpha^2))/2 - alpha*sigmoid(-beta*x)
-
-    It satisfies f4(0)=0, approaches the identity as x tends to positive
-    infinity, approaches -alpha as x tends to negative infinity, and has
-    strictly positive derivative for finite x.  Named subclasses/instances
-    differ only in whether alpha and beta are learned.
-    """
 
     variant = "LGTS-f4-Full"
     ablation_role = "algebraic_plus_logistic_both_learned"
@@ -319,15 +248,11 @@ class AlgebraicLogisticLGTS(_SymmetricLGTSBase):
         alpha = self.alpha.to(dtype=x.dtype)
         beta = self.beta.to(dtype=x.dtype)
         root = torch.sqrt(x.square() + alpha.square())
-        # Algebraically identical to the former branchwise implementation,
-        # but substantially cheaper and more memory-efficient on CUDA because
-        # it avoids eager evaluation of the unused rational branch.
         base = 0.5 * (x + root)
         return base - alpha * torch.sigmoid(-beta * x)
 
 
 class LogMeanActivation(nn.Module):
-    """Stable log-mean-exp hybrid activation."""
 
     def __init__(self, left: Callable[[torch.Tensor], torch.Tensor], right: Callable[[torch.Tensor], torch.Tensor], t: float = 0.6):
         super().__init__()
@@ -400,9 +325,6 @@ def make_activation(
     lgts_beta_min: float = 0.5,
     lgts_beta_max: float = 3.0,
 ) -> nn.Module:
-    # Normalize aliases and the public CLI names through one canonical path.
-    # In particular, LGTS-f2-Slope and LGTS-f3-Dual must work directly rather
-    # than only through their legacy LGTS-Symmetric/LGTS-Dual aliases.
     key = _activation_key(canonical_activation_name(name))
     common = dict(
         alpha=lgts_alpha,
@@ -415,8 +337,6 @@ def make_activation(
         beta_max=lgts_beta_max,
     )
     factories: dict[str, Callable[[], nn.Module]] = {
-        # Use PyTorch's native out-of-place ReLU for a fair latency baseline.
-        # ResidualSafeReLU is retained as a mathematical regression helper.
         "relu": lambda: nn.ReLU(inplace=False),
         "leakyrelu": lambda: nn.LeakyReLU(negative_slope=0.01, inplace=False),
         "prelu": lambda: nn.PReLU(num_parameters=1),
@@ -445,8 +365,6 @@ def make_activation(
         "lgtsf3": lambda: AsymmetricDualGateLGTS(beta_plus=lgts_beta, beta_minus=lgts_beta, **common),
         "lgtsf3dual": lambda: AsymmetricDualGateLGTS(beta_plus=lgts_beta, beta_minus=lgts_beta, **common),
         "asymmetricdualgatelgts": lambda: AsymmetricDualGateLGTS(beta_plus=lgts_beta, beta_minus=lgts_beta, **common),
-        # f4 is a nested ablation family. Explicit names intentionally fix the
-        # learning mode so all five controls can be run in one experiment.
         "lgtsf4basesquareplus": lambda: AlgebraicBaseLGTS(
             alpha=lgts_alpha, learnable=False, learn_alpha=False,
             alpha_min=lgts_alpha_min, alpha_max=lgts_alpha_max,
@@ -533,7 +451,6 @@ def lgts_parameter_rows(model: nn.Module) -> list[dict[str, float | str]]:
 
 
 def lgts_parameter_stats(model: nn.Module) -> dict[str, float | int | str | None]:
-    """Return fold-level layer statistics for every LGTS variant/ablation."""
     rows = lgts_parameter_rows(model)
     result: dict[str, float | int | str | None] = {
         "variant": rows[0]["variant"] if rows else None,
@@ -570,7 +487,6 @@ def lgts_parameter_snapshot(model: nn.Module) -> dict[str, float | None]:
 
 
 def adaptive_activation_parameter_rows(model: nn.Module) -> list[dict[str, float | int | str]]:
-    """Layer summaries for trainable comparison activations."""
     rows: list[dict[str, float | int | str]] = []
     for layer_name, layer in model.named_modules():
         if isinstance(layer, AconC):

@@ -56,7 +56,6 @@ def _activation_kwargs(
 
 
 class PaperCNN(nn.Module):
-    """Controlled shallow CNN used only as a supplementary architecture."""
 
     def __init__(self, in_channels: int, num_classes: int, activation: str, activation_kwargs: dict):
         super().__init__()
@@ -92,8 +91,6 @@ class PaperCNN(nn.Module):
 
 
 def _activation_types() -> tuple[type[nn.Module], ...]:
-    # Deliberately excludes Sigmoid/Softmax so attention, SE and output gates
-    # are never replaced during full-backbone experiments.
     return (
         nn.ReLU, nn.ReLU6, nn.LeakyReLU, nn.ELU, nn.PReLU, nn.GELU,
         nn.SiLU, nn.Mish, nn.Hardswish, nn.Tanh,
@@ -101,12 +98,6 @@ def _activation_types() -> tuple[type[nn.Module], ...]:
 
 
 def _preceding_channels(module: nn.Module, child_name: str) -> int | None:
-    # torchvision's SqueezeExcitation registers ``fc2`` before ``activation``
-    # even though forward() applies activation immediately after ``fc1``.
-    # Looking only at registration order therefore assigns input_channels to
-    # a tensor whose real channel count is squeeze_channels. Scalar
-    # activations hide this bug, while channel-wise Qian-Gated and ACON-C
-    # correctly reject the mismatch.
     if (
         child_name == "activation"
         and isinstance(getattr(module, "fc1", None), nn.Conv2d)
@@ -136,7 +127,6 @@ def _replace_activations(module: nn.Module, activation: str, activation_kwargs: 
 
 
 class SplitActivationBasicBlock(nn.Module):
-    """Torchvision BasicBlock with independent modules at its two call sites."""
 
     expansion = 1
 
@@ -162,7 +152,6 @@ class SplitActivationBasicBlock(nn.Module):
         out = self.bn2(self.conv2(out))
         if self.downsample is not None:
             identity = self.downsample(x)
-        # Out-of-place addition is compatible with every candidate activation.
         out = out + identity
         return self.act2(out)
 
@@ -181,7 +170,6 @@ def _split_resnet18_activations(
 
 
 def _adapt_resnet_small_input_stem(model: nn.Module, in_channels: int, pretrained: bool) -> None:
-    """Use a 3x3/stride-1 stem and no max-pool for inputs up to 64 px."""
     old = model.conv1
     replacement = nn.Conv2d(
         in_channels, old.out_channels, kernel_size=3, stride=1, padding=1, bias=False,
@@ -200,12 +188,6 @@ def _adapt_resnet_small_input_stem(model: nn.Module, in_channels: int, pretraine
 
 
 def _adapt_conv_stem_stride_one(model: nn.Module, stem_label: str) -> None:
-    """Change an ImageNet stem's first spatial convolution to stride 1.
-
-    MobileNetV2 and EfficientNet otherwise downsample a 32x32 input before the
-    first feature stage. Keeping the kernel/weights unchanged makes the
-    adaptation explicit and comparable while preserving the model family.
-    """
     for module in model.modules():
         if isinstance(module, nn.Conv2d):
             module.stride = (1, 1)
@@ -215,12 +197,6 @@ def _adapt_conv_stem_stride_one(model: nn.Module, stem_label: str) -> None:
 
 
 def _make_efficientnet_residuals_out_of_place(model: nn.Module) -> None:
-    """Avoid torchvision EfficientNet's ``result += input`` residual update.
-
-    Some replacement activations need their output unchanged for backward.
-    Out-of-place addition is mathematically identical and lets the ReLU control
-    use native ``nn.ReLU`` rather than a slower torch.where implementation.
-    """
     def forward(block, x):
         result = block.block(x)
         if block.use_res_connect:

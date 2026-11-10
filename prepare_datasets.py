@@ -9,7 +9,6 @@ from lgts_benchmark.data import dataset_manifest, load_bundle
 
 
 def merge_dataset_manifests(target: Path, updates: list[dict]) -> list[dict]:
-    """Merge separately prepared datasets without dropping earlier manifests."""
     existing: list[dict] = []
     if target.exists():
         loaded = json.loads(target.read_text(encoding="utf-8"))
