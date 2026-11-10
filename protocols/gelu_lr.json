@@ -1,0 +1,978 @@
+{
+  "study": "GELU and validation-selected LR follow-up, historical test set, exploratory",
+  "engine_sha256": "26b72ffae50b15061c3407d033ae705d5d853c4f71d90b50087abbe874cb09af",
+  "seed_order": [
+    936137,
+    529212,
+    448132,
+    942529,
+    110107
+  ],
+  "fixed_config": {
+    "epochs": 100,
+    "patience": 0,
+    "min_epochs": 0,
+    "protocol": "full_train",
+    "activation_scope": "full_backbone",
+    "activation_sharing": "site",
+    "lgts_alphas": [
+      0.4
+    ],
+    "lgts_alpha_min": 0.05,
+    "lgts_alpha_max": 1.5,
+    "lgts_beta": 1.0,
+    "lgts_beta_min": 0.5,
+    "lgts_beta_max": 3.0,
+    "lgts_learning": "both",
+    "batch_size": 128,
+    "med_batch_size": 128,
+    "num_workers": 4,
+    "prefetch_factor": 4,
+    "optimizer": "adamw",
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "min_learning_rate": 1e-06,
+    "augmentation": "standard",
+    "normalization": "dataset",
+    "small_input_stem": "auto",
+    "class_weight": "auto",
+    "med_size": 64,
+    "image_size": 0,
+    "device": "cuda",
+    "best_state_device": "cpu",
+    "plots": "none",
+    "no_pretrained": true,
+    "fused_optimizer": true,
+    "tf32": true,
+    "cudnn_benchmark": true,
+    "gradient_log": true,
+    "no_amp": false,
+    "channels_last": false,
+    "performance_mode": false,
+    "keep_duplicate_controls": false,
+    "lgts_fixed": false
+  },
+  "panel_counts": {
+    "expanded_gelu": 45,
+    "selected_lr": 25,
+    "shared": 5,
+    "unique": 65
+  },
+  "jobs": [
+    {
+      "id": "refit-641e5197112d6ece",
+      "identity_sha256": "641e5197112d6ece5c9f42885d426671f9fc0ee88b55670dde798b0b74866dd3",
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.27
+    },
+    {
+      "id": "refit-d0d27e49b38cf3c2",
+      "identity_sha256": "d0d27e49b38cf3c25d1f360e844eef809325c2552490f5e61caee1fd0346ca4e",
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.27
+    },
+    {
+      "id": "refit-7b651d5818537f31",
+      "identity_sha256": "7b651d5818537f31ac43ddbf75c5e2be66dad6c04219974fd223e7302887dc3f",
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.27
+    },
+    {
+      "id": "refit-9b354a37d1def83b",
+      "identity_sha256": "9b354a37d1def83b7696d40f274fb175fce5e2acaa3b710c10b8d28e7058df85",
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.27
+    },
+    {
+      "id": "refit-dd9b5dea2e110c67",
+      "identity_sha256": "dd9b5dea2e110c67dbca785a43973dbf2887df4c09db4d0aa8cd323af7f57f68",
+      "dataset": "cifar100",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.27
+    },
+    {
+      "id": "refit-39b86455220bcb51",
+      "identity_sha256": "39b86455220bcb51bca70c13ffb1489dffbca07663a5eaf90473de39cedeea7d",
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 17.19
+    },
+    {
+      "id": "refit-4b49abef493b6533",
+      "identity_sha256": "4b49abef493b6533d71d2df2f9b16b543b1f162c3deb56574fe54954bd5c38d0",
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 17.19
+    },
+    {
+      "id": "refit-a9d4a93e1023a69f",
+      "identity_sha256": "a9d4a93e1023a69fe38db4367567f854c261abaf5e4076bee0076d2b8ed5b960",
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 17.19
+    },
+    {
+      "id": "refit-ceb321ed07acfbdf",
+      "identity_sha256": "ceb321ed07acfbdf800bbfc70ac2fcdf061c465a551cb8f47ad1fd75c9a7a55f",
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 17.19
+    },
+    {
+      "id": "refit-fa0ac71c7aa83a3e",
+      "identity_sha256": "fa0ac71c7aa83a3e869c35cb865a710cb6c692e22f0e71a56b8ddba0a23716ce",
+      "dataset": "cifar100",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 17.19
+    },
+    {
+      "id": "refit-aa4b7d3b49cc4ae5",
+      "identity_sha256": "aa4b7d3b49cc4ae53b9676158ac82bb04bd9f4b2cfdf56102c352995f74090c8",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu",
+        "selected_lr"
+      ],
+      "estimated_minutes": 54.84
+    },
+    {
+      "id": "refit-ad669327835483e9",
+      "identity_sha256": "ad669327835483e98be8248484b25dfe3ef2ef423f042b029b73b8c9c7117e1d",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu",
+        "selected_lr"
+      ],
+      "estimated_minutes": 54.84
+    },
+    {
+      "id": "refit-ce93bfce427ba37b",
+      "identity_sha256": "ce93bfce427ba37ba795b4e945a828296a0d83a04bc18696c484ef4b5cfa5612",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu",
+        "selected_lr"
+      ],
+      "estimated_minutes": 54.84
+    },
+    {
+      "id": "refit-15b90eafb145a8e4",
+      "identity_sha256": "15b90eafb145a8e4f58ed3f1346d3d6c83cdb0d3b4bc45c2c680a4d2993caa94",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu",
+        "selected_lr"
+      ],
+      "estimated_minutes": 54.84
+    },
+    {
+      "id": "refit-6669c40b44c2a52d",
+      "identity_sha256": "6669c40b44c2a52deac05d15ef30c6179793b0f3347b69fa635648b357f642d7",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu",
+        "selected_lr"
+      ],
+      "estimated_minutes": 54.84
+    },
+    {
+      "id": "refit-9dadb62b8ce09386",
+      "identity_sha256": "9dadb62b8ce093867e6ffb8c9f2f183aa57ae0aa4d3b58db866581b800cf8495",
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 6.55
+    },
+    {
+      "id": "refit-06f934ee9b047d03",
+      "identity_sha256": "06f934ee9b047d037694c57eb9ac6de033741ee1cf3d4fe5e8ace60563fd4ad0",
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 6.55
+    },
+    {
+      "id": "refit-2a9e0bbc1781de93",
+      "identity_sha256": "2a9e0bbc1781de9331fbd64ae10c50eeea2ebfb5880771c62af08289311e6f9e",
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 6.55
+    },
+    {
+      "id": "refit-c624845ec0c54105",
+      "identity_sha256": "c624845ec0c54105e0f0fe6bbe9f458a98e5c7c59b8c80fc66b605fd26e63f79",
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 6.55
+    },
+    {
+      "id": "refit-6f06fa8575d8b9da",
+      "identity_sha256": "6f06fa8575d8b9da851b9398d923b0ae491b6d5c85e290e53d70c845d4d842d1",
+      "dataset": "dermamnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 6.55
+    },
+    {
+      "id": "refit-b2aa3807e4f54b33",
+      "identity_sha256": "b2aa3807e4f54b3329a1847cb615256f0578c31423bc3779ddc58165829b5af0",
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 4.58
+    },
+    {
+      "id": "refit-800f8b66111d5a47",
+      "identity_sha256": "800f8b66111d5a475e328153b33f98189adff72d4172977502ffc15fb6d7b2e5",
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 4.58
+    },
+    {
+      "id": "refit-1a664ba362818a2d",
+      "identity_sha256": "1a664ba362818a2ddb00604e526d4d46c615a54f24b7899523a1e8a93a7beca9",
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 4.58
+    },
+    {
+      "id": "refit-558ed28bc594f282",
+      "identity_sha256": "558ed28bc594f282e36a2600b4a7ea991fc0f58eb2011b94cc6112b15a83d21a",
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 4.58
+    },
+    {
+      "id": "refit-7586c9de1746cbaf",
+      "identity_sha256": "7586c9de1746cbafb45c23a8af1280da2026dae60f9fd8d566f7666ea0b3919c",
+      "dataset": "dermamnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 4.58
+    },
+    {
+      "id": "refit-f0292a6e0b34b2c0",
+      "identity_sha256": "f0292a6e0b34b2c0829825ecb7a5ccc3f7260e486ae0c5272899936695657616",
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 10.96
+    },
+    {
+      "id": "refit-593a7db8a7f52e53",
+      "identity_sha256": "593a7db8a7f52e53021a60e99a0c9cc08f6732bd2f847a29ab195cc939f13fce",
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 10.96
+    },
+    {
+      "id": "refit-48680a548bdb341a",
+      "identity_sha256": "48680a548bdb341a54626214356a24ac59f6d8ae03401e87d7f4e73c72dd1233",
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 10.96
+    },
+    {
+      "id": "refit-f920c4fd33892cf1",
+      "identity_sha256": "f920c4fd33892cf17f7dd16b510deafc8345605bf88ded44d66cf3f0643ca362",
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 10.96
+    },
+    {
+      "id": "refit-ff4217093ee1f4f9",
+      "identity_sha256": "ff4217093ee1f4f99255a2d3cd01aa780982d62663f3db66c1f91c61334ad22e",
+      "dataset": "dermamnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 10.96
+    },
+    {
+      "id": "refit-4b3cdd23ab87547c",
+      "identity_sha256": "4b3cdd23ab87547cc073e810735aa5b7bbb33b87acc1907748aba8d42899db92",
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.23
+    },
+    {
+      "id": "refit-278b8278a4ffbf58",
+      "identity_sha256": "278b8278a4ffbf5847ed71d14489bed8c472d4e6fcb00e15503388a23ff03090",
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.23
+    },
+    {
+      "id": "refit-ae307c4a5d722a30",
+      "identity_sha256": "ae307c4a5d722a304474603fa4549ce9bd2016e679ffa392ad8c85afb0b6b9ad",
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.23
+    },
+    {
+      "id": "refit-006a33dbb23f85c7",
+      "identity_sha256": "006a33dbb23f85c71965e1f87fa7e873853d2632281c44c17d859c9f22673e2c",
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.23
+    },
+    {
+      "id": "refit-9b25a287fe0ef7a2",
+      "identity_sha256": "9b25a287fe0ef7a2139c3e091b2c1129809b8c993ce5a64344cc7a1189288afa",
+      "dataset": "organsmnist",
+      "model": "ResNet18",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 12.23
+    },
+    {
+      "id": "refit-b1c58861d8648885",
+      "identity_sha256": "b1c58861d8648885b93d4fede2a2b2f6684f23b2038dcc23f192f8002599eff2",
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 7.69
+    },
+    {
+      "id": "refit-767a77bdf402e9f4",
+      "identity_sha256": "767a77bdf402e9f48db6dcfdce7700d7c45d84c4d7bcbad0245e9d62153cc430",
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 7.69
+    },
+    {
+      "id": "refit-b4c26d2a89e86ac0",
+      "identity_sha256": "b4c26d2a89e86ac083b0f6c6b9a982d507e6a04060800e577a237d5d9b797e20",
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 7.69
+    },
+    {
+      "id": "refit-cbbf1ef9e7783484",
+      "identity_sha256": "cbbf1ef9e77834849914edbf890b3affa5be648083adcad63c6b678464b9ae71",
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 7.69
+    },
+    {
+      "id": "refit-144701dcc255e133",
+      "identity_sha256": "144701dcc255e1331ba67cde41021f9c858f333e3c9d07211c8173806c593a62",
+      "dataset": "organsmnist",
+      "model": "MobileNetV2",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 7.69
+    },
+    {
+      "id": "refit-0ebe22f93e7c8f64",
+      "identity_sha256": "0ebe22f93e7c8f64cd8ed532a0ea1518ff7dbf81cde457f16eb9a1b5f1eb87a6",
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 20.64
+    },
+    {
+      "id": "refit-128356640644a01d",
+      "identity_sha256": "128356640644a01dbf5ec9f3d2790a0572afa0a7fb4846163a2cc4c69d81b941",
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 20.64
+    },
+    {
+      "id": "refit-76476739e1ff5ed1",
+      "identity_sha256": "76476739e1ff5ed17709c62bee789e1ef43b4af275f43e2ec5ab055d217858af",
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 20.64
+    },
+    {
+      "id": "refit-c6a6966bf393f05c",
+      "identity_sha256": "c6a6966bf393f05c1bf2b3a52ff8ef6dbfd8797e728846d68907d89b4e9cf392",
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 20.64
+    },
+    {
+      "id": "refit-2716a9b0d0b196c9",
+      "identity_sha256": "2716a9b0d0b196c9a1a78f12374af356f9b244f4e5c5b66fb4484a538e9a84e4",
+      "dataset": "organsmnist",
+      "model": "EfficientNetV2S",
+      "activation": "GELU",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "expanded_gelu"
+      ],
+      "estimated_minutes": 20.64
+    },
+    {
+      "id": "refit-9900ca043c286c25",
+      "identity_sha256": "9900ca043c286c250f1bcc92ae8610d552c3ab11c92d9907eab05ef95b5841c1",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed": 936137,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 144.06
+    },
+    {
+      "id": "refit-fbfb2bef14a55380",
+      "identity_sha256": "fbfb2bef14a5538058895f5f2bddaf878f2aeccc7d2889e4de1fabf222f1014e",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed": 529212,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 144.06
+    },
+    {
+      "id": "refit-60e03f789621f02c",
+      "identity_sha256": "60e03f789621f02c740ecaa2454b0ce9b974e062e3f71b761b2dc872daa9aa39",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed": 448132,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 144.06
+    },
+    {
+      "id": "refit-3eca4a00db68605e",
+      "identity_sha256": "3eca4a00db68605e6c7fa250700d5e1d2858e0d6b1fb7bca28ee71f089db2ed2",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed": 942529,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 144.06
+    },
+    {
+      "id": "refit-bcf497de9267931d",
+      "identity_sha256": "bcf497de9267931d3c6806fe03a3bedd18d5b1fcd57711d8ebf24f77a4f690da",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f4-Alpha",
+      "seed": 110107,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 144.06
+    },
+    {
+      "id": "refit-36d22ad3de9365f8",
+      "identity_sha256": "36d22ad3de9365f80850c98bebf8c90a02444cbe0f1aed2bc8ee325ee696fad8",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed": 936137,
+      "learning_rate": 0.003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 108.23
+    },
+    {
+      "id": "refit-8c8e31be3f49ba29",
+      "identity_sha256": "8c8e31be3f49ba2962dd6c21bee7b4285405e6305abb90eac23fefe67ce2b1db",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed": 529212,
+      "learning_rate": 0.003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 108.23
+    },
+    {
+      "id": "refit-726946ad367d7822",
+      "identity_sha256": "726946ad367d7822771a7787eb9eed83df1ba6181679d5feae5962eb82227681",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed": 448132,
+      "learning_rate": 0.003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 108.23
+    },
+    {
+      "id": "refit-e44d52989abbeddc",
+      "identity_sha256": "e44d52989abbeddc68339deb12fb2ccdd88fe3791b2feb68067478426c484606",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed": 942529,
+      "learning_rate": 0.003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 108.23
+    },
+    {
+      "id": "refit-42a17572355b57b5",
+      "identity_sha256": "42a17572355b57b54c9b0655a1b023de781de95dbc52d573e8d927b2f1ccee28",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "LGTS-f2-Slope",
+      "seed": 110107,
+      "learning_rate": 0.003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 108.23
+    },
+    {
+      "id": "refit-181bfb8fb02c7c4c",
+      "identity_sha256": "181bfb8fb02c7c4c80c7d30c057c2601e8077f39365c57998bbc010b7eef7086",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed": 936137,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 92.12
+    },
+    {
+      "id": "refit-a874b5ab44912bcf",
+      "identity_sha256": "a874b5ab44912bcf2ef678b77405359c30176092aef38720fc74983d4886e6de",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed": 529212,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 92.12
+    },
+    {
+      "id": "refit-615265608cab3cfe",
+      "identity_sha256": "615265608cab3cfea9b19264080c2d8d495826fd5b9b40dd0d7e6f374c2b656b",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed": 448132,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 92.12
+    },
+    {
+      "id": "refit-694e90fc5c9471cb",
+      "identity_sha256": "694e90fc5c9471cb61d3e9ff1168dcf701b1d5fbee541562129cc816af1db436",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed": 942529,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 92.12
+    },
+    {
+      "id": "refit-13a0a99bf11c2411",
+      "identity_sha256": "13a0a99bf11c24119c8e6a6676003cd279cbe8bce74b270fbd8b3474649be2c4",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "ACON-C",
+      "seed": 110107,
+      "learning_rate": 0.001,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 92.12
+    },
+    {
+      "id": "refit-af1a3ab09d080e04",
+      "identity_sha256": "af1a3ab09d080e0465cd6c0fac65765b00e9a60e058ff5993443e01453814ba8",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed": 936137,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 52.24
+    },
+    {
+      "id": "refit-544bdf3a80ce3f4a",
+      "identity_sha256": "544bdf3a80ce3f4aaa0f14f33cc5f6dd5be077962445221eff8627698d1e72aa",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed": 529212,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 52.24
+    },
+    {
+      "id": "refit-52c8b4cc960fa828",
+      "identity_sha256": "52c8b4cc960fa828f2bc7d9d61bd1e018de26cd4ce8edbcdb186f1443db3e966",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed": 448132,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 52.24
+    },
+    {
+      "id": "refit-991d2a9659c36960",
+      "identity_sha256": "991d2a9659c369605d4db9472b8cbd59f0c1772cdc411ca2394d1172be6a9dd7",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed": 942529,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 52.24
+    },
+    {
+      "id": "refit-22334989673d88c5",
+      "identity_sha256": "22334989673d88c5c7d86e29c5d6f723f16e698b6e1371234974b77433ea6340",
+      "dataset": "cifar100",
+      "model": "EfficientNetV2S",
+      "activation": "Native",
+      "seed": 110107,
+      "learning_rate": 0.0003,
+      "epochs": 100,
+      "panels": [
+        "selected_lr"
+      ],
+      "estimated_minutes": 52.24
+    }
+  ]
+}

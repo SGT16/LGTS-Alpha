@@ -1,0 +1,158 @@
+{
+  "scope": "archived_statistical_and_component_results",
+  "source_result_archive": {
+    "bytes": 12742936,
+    "sha256": "cab3bdf4f5af59ce59cde9a102e1798cee7115951b67016b32a19df359352f55",
+    "basename": "LGTS_Reviewer_Results.zip"
+  },
+  "original_files": [
+    {
+      "archive_member": "research_revision/results/mixed_model_contrasts.csv",
+      "bytes": 3010,
+      "rows": 16,
+      "sha256": "1b4701328b0a508612e09461d6b6d308d55815ae260b0a1bc399e46c6f16be2f",
+      "catalog_verified": true,
+      "sha256sums_verified": true
+    },
+    {
+      "archive_member": "research_revision/results/reviewer_tables/original_sampling_intervals.csv",
+      "bytes": 4566,
+      "rows": 12,
+      "sha256": "fb8d505e21126d71d9625ab63179eb0ea3f2baffd60da3395d5a4f70c909c35d",
+      "catalog_verified": true,
+      "sha256sums_verified": true
+    },
+    {
+      "archive_member": "research_revision/results/diagnostics/learned_alpha_by_site.csv",
+      "bytes": 229478,
+      "rows": 2310,
+      "sha256": "0ae43b930d914ced0281d6426fd93c97b088668307f1ddfc046b2ac7c654fcc3",
+      "catalog_verified": true,
+      "sha256sums_verified": true
+    }
+  ],
+  "component_source": {
+    "seed_results_sha256": "1f60efd9938a200093fb387f976d74c9148946a758ff1633ed458244db236823",
+    "run_settings_sha256": "805d9d3f7df455ebdde728bf89997ad0612823f387e685bab9d5bba8e1d929e1",
+    "condition_summaries_sha256": "3b82573aab6097832a61e040820bc6a00200fcbefdd5013049b512de17e51253",
+    "source_panel": "components_baselines",
+    "source_activations": [
+      "LGTS-f4-Alpha",
+      "LGTS-f4-Base-Squareplus-Learned"
+    ],
+    "source_rows": 90,
+    "metric": "test_f1_macro",
+    "all_90_source_metrics_equal_in_second_archive": true
+  },
+  "component_contrast": {
+    "definition": "learned LGTS-Alpha minus learned-width Squareplus; equal weight to all nine dataset-backbone context means, five paired seeds each",
+    "contexts": 9,
+    "paired_seeds_per_context": 5,
+    "alpha_higher_contexts": 4,
+    "squareplus_higher_contexts": 5,
+    "mean_difference_from_decimal_seed_scores": "-0.0097999090553681644444444444444444444444444444444444",
+    "rounded_to_5_decimal_places": "-0.00980",
+    "rounded_to_6_decimal_places": "-0.009800",
+    "context_summary": [
+      {
+        "dataset": "cifar100",
+        "model": "EfficientNetV2S",
+        "alpha_condition_id": "581",
+        "learned_squareplus_condition_id": "582",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.61084610379079672",
+        "learned_squareplus_mean_macro_f1": "0.66962285247433248",
+        "alpha_minus_learned_squareplus": "-0.05877674868353576",
+        "alpha_higher": false
+      },
+      {
+        "dataset": "cifar100",
+        "model": "MobileNetV2",
+        "alpha_condition_id": "592",
+        "learned_squareplus_condition_id": "593",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.6116596025528493",
+        "learned_squareplus_mean_macro_f1": "0.62257782389839046",
+        "alpha_minus_learned_squareplus": "-0.01091822134554116",
+        "alpha_higher": false
+      },
+      {
+        "dataset": "cifar100",
+        "model": "ResNet18",
+        "alpha_condition_id": "603",
+        "learned_squareplus_condition_id": "604",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.7269297554404145",
+        "learned_squareplus_mean_macro_f1": "0.7230659093595007",
+        "alpha_minus_learned_squareplus": "0.0038638460809138",
+        "alpha_higher": true
+      },
+      {
+        "dataset": "dermamnist",
+        "model": "EfficientNetV2S",
+        "alpha_condition_id": "614",
+        "learned_squareplus_condition_id": "615",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.56702442767513894",
+        "learned_squareplus_mean_macro_f1": "0.57946158841841384",
+        "alpha_minus_learned_squareplus": "-0.01243716074327490",
+        "alpha_higher": false
+      },
+      {
+        "dataset": "dermamnist",
+        "model": "MobileNetV2",
+        "alpha_condition_id": "625",
+        "learned_squareplus_condition_id": "626",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.6468274896139677",
+        "learned_squareplus_mean_macro_f1": "0.64124841302154182",
+        "alpha_minus_learned_squareplus": "0.00557907659242588",
+        "alpha_higher": true
+      },
+      {
+        "dataset": "dermamnist",
+        "model": "ResNet18",
+        "alpha_condition_id": "636",
+        "learned_squareplus_condition_id": "637",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.61136647652178074",
+        "learned_squareplus_mean_macro_f1": "0.62014443212196708",
+        "alpha_minus_learned_squareplus": "-0.00877795560018634",
+        "alpha_higher": false
+      },
+      {
+        "dataset": "organsmnist",
+        "model": "EfficientNetV2S",
+        "alpha_condition_id": "647",
+        "learned_squareplus_condition_id": "648",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.77751469720239678",
+        "learned_squareplus_mean_macro_f1": "0.78619097396025316",
+        "alpha_minus_learned_squareplus": "-0.00867627675785638",
+        "alpha_higher": false
+      },
+      {
+        "dataset": "organsmnist",
+        "model": "MobileNetV2",
+        "alpha_condition_id": "658",
+        "learned_squareplus_condition_id": "659",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.77833760369654114",
+        "learned_squareplus_mean_macro_f1": "0.7764286481719376",
+        "alpha_minus_learned_squareplus": "0.00190895552460354",
+        "alpha_higher": true
+      },
+      {
+        "dataset": "organsmnist",
+        "model": "ResNet18",
+        "alpha_condition_id": "669",
+        "learned_squareplus_condition_id": "670",
+        "n_paired_seeds": 5,
+        "alpha_mean_macro_f1": "0.76919067765647894",
+        "learned_squareplus_mean_macro_f1": "0.7691553742223411",
+        "alpha_minus_learned_squareplus": "0.00003530343413784",
+        "alpha_higher": true
+      }
+    ]
+  }
+}

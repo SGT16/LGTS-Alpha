@@ -1,0 +1,7 @@
+python -m pip install -r requirements.txt
+python verify_supplement.py
+python archived_analysis_support/verify_analysis_support.py
+python initialization/reconstruct_initial_alpha.py --output reconstructed_initial_alpha.json
+python show_training_command.py --study gelu_lr --data-dir ./data --output-dir ./runs --format shell
+python show_training_command.py --study alpha_roles --data-dir ./data --output-dir ./runs --format shell
+python show_training_command.py --study bounds --data-dir ./data --output-dir ./runs --format shell

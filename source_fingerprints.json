@@ -1,0 +1,89 @@
+{
+  "algorithm": "SHA-256 of each ordered relative path, NUL, its lowercase hexadecimal SHA-256, NUL",
+  "original_supplement_sha256": "05711fd54dcf00e669d66f35576559bcf3749a5e1c821454018bfea2f0c1716d",
+  "engines": {
+    "standard": {
+      "ordered_files": [
+        "train_benchmark.py",
+        "lgts_benchmark/activations.py",
+        "lgts_benchmark/data.py",
+        "lgts_benchmark/metrics.py",
+        "lgts_benchmark/numerics.py",
+        "lgts_benchmark/models.py",
+        "lgts_benchmark/reporting.py"
+      ],
+      "original": {
+        "engine_sha256": "26b72ffae50b15061c3407d033ae705d5d853c4f71d90b50087abbe874cb09af",
+        "source_file_sha256": {
+          "train_benchmark.py": "d09ac6203b8ebd535f211acdd725722df0469254000976439b7cf878f8581a8a",
+          "lgts_benchmark/activations.py": "cad9c05e4f2a7d32f8ec4404d24149775283fe95f5f30f615ebec31cfeb5a43e",
+          "lgts_benchmark/data.py": "5a6af30572c7ace34e20828c3354aecd1649e2ac38029cbe73084f471892abe3",
+          "lgts_benchmark/metrics.py": "300284941b5978e3022bdf3322278d51bc523b587a590313ca212b1cf4c19bca",
+          "lgts_benchmark/numerics.py": "db88a9fda32f218c6793e3ff05225484c0e17b41c009aca35884bd445cfe3639",
+          "lgts_benchmark/models.py": "648561c4515e2d9b47ff65c702c14479e19c33cb61d8b5d9cf3045a788ed3b68",
+          "lgts_benchmark/reporting.py": "9db442ff339cb8804cdb12b4b8639f286124d9b46c9c9d2a2d4acd4b2306680f"
+        }
+      },
+      "packaged": {
+        "engine_sha256": "6b292294d422fce3156f81d30c169a7fd4a866393a0716171080c591daff6006",
+        "source_file_sha256": {
+          "train_benchmark.py": "3d27d05c235891599db8bf6de774de9ba13f04a581b8dae7332386b1f14c7ad9",
+          "lgts_benchmark/activations.py": "cd26f84bbba551e58b0301ef13b6ade8bc65a1ff92d2a87d05129800564663b4",
+          "lgts_benchmark/data.py": "7f5f20c5dec3b196388e73ad0a09e99f49459406430a3421d0e7c0f05784075b",
+          "lgts_benchmark/metrics.py": "89ed30ea4df35103225da4ff76b27c040f6235c0e2ae7882f4e2eb6d241d742e",
+          "lgts_benchmark/numerics.py": "7b9be57ffd08bfd53f6b7593d339a5842c3eaa70227e757c2ae1f9113322f41d",
+          "lgts_benchmark/models.py": "a7d5e5b4c8e33ab2b3044939c035da93a79ba65494bcfaa280346e90e0fb5dfb",
+          "lgts_benchmark/reporting.py": "1c8e4e35fa499204c5824b2d9450f321ca97e185f386988adb20f9097b8e8945"
+        }
+      }
+    },
+    "two_scale": {
+      "ordered_files": [
+        "train_benchmark.py",
+        "lgts_benchmark/activations.py",
+        "lgts_benchmark/data.py",
+        "lgts_benchmark/metrics.py",
+        "lgts_benchmark/numerics.py",
+        "lgts_benchmark/models.py",
+        "lgts_benchmark/reporting.py",
+        "lgts_benchmark/__init__.py",
+        "lgts_benchmark/densenet121_extension.py"
+      ],
+      "original": {
+        "engine_sha256": "3b1dcf30000f7956468afa445380cdf14c10e3721a8a83f84341a8832152e7c7",
+        "source_file_sha256": {
+          "train_benchmark.py": "b2e2a90431105ca60613f3d307099eb21d89e874fcf858744088c6401e4fc3f1",
+          "lgts_benchmark/activations.py": "aa8875caa9c3757d98e01d0058691972a14a5c34b042aacd5209caf114e82c61",
+          "lgts_benchmark/data.py": "5a6af30572c7ace34e20828c3354aecd1649e2ac38029cbe73084f471892abe3",
+          "lgts_benchmark/metrics.py": "300284941b5978e3022bdf3322278d51bc523b587a590313ca212b1cf4c19bca",
+          "lgts_benchmark/numerics.py": "db88a9fda32f218c6793e3ff05225484c0e17b41c009aca35884bd445cfe3639",
+          "lgts_benchmark/models.py": "e752950834d1fe76a5261563109a82a51cbbf9152875ec7cc6f053ae2f19d88e",
+          "lgts_benchmark/reporting.py": "9db442ff339cb8804cdb12b4b8639f286124d9b46c9c9d2a2d4acd4b2306680f",
+          "lgts_benchmark/__init__.py": "0b91e70602f9871f905b360c31b2116dc62167f18e3e01786fd31b31a8df81df",
+          "lgts_benchmark/densenet121_extension.py": "de8e95ff122ad0dbaba608dbae93e6e259a6706aa70673d2241d7eb98d0b8e7a"
+        }
+      },
+      "packaged": {
+        "engine_sha256": "a35abe4f95ee55e71e7fec71ce4cac324cc45c64ba62f6d672c3947196f5cb50",
+        "source_file_sha256": {
+          "train_benchmark.py": "049274cbfc11b70048b45a51b9cfe6996a41259c670e9f62789460da5b2b6488",
+          "lgts_benchmark/activations.py": "9f616e6928d98e25f5dc2cd035cc1daeeb294babe4d09e7a35b54cb1af72737e",
+          "lgts_benchmark/data.py": "7f5f20c5dec3b196388e73ad0a09e99f49459406430a3421d0e7c0f05784075b",
+          "lgts_benchmark/metrics.py": "89ed30ea4df35103225da4ff76b27c040f6235c0e2ae7882f4e2eb6d241d742e",
+          "lgts_benchmark/numerics.py": "7b9be57ffd08bfd53f6b7593d339a5842c3eaa70227e757c2ae1f9113322f41d",
+          "lgts_benchmark/models.py": "95b57d290f504931825b5b644ac46cd65133dc7d300e0cd953a7bda001062239",
+          "lgts_benchmark/reporting.py": "1c8e4e35fa499204c5824b2d9450f321ca97e185f386988adb20f9097b8e8945",
+          "lgts_benchmark/__init__.py": "924ca67d01c117932f54952bda326a4799a5d23c8dedae4203545b134ab215d1",
+          "lgts_benchmark/densenet121_extension.py": "10eb082c7f3e3addb89e24329c5d60ff43831e4bc8225be5a3d0e8d10d0d5bac"
+        }
+      }
+    }
+  },
+  "initialization": {
+    "original_audit_script_basename": "original_initial_alpha_audit.py",
+    "original_audit_script_sha256": "4a7b1e6649e33874eae63889e27aa455a080078567060b3a1cad752186ed519a",
+    "original_bounds_plan_sha256": "66a628ae0d58568ed4ac117fdcba6dc5ae9e30ca98cfc959689422880467ea5d",
+    "original_audit_sha256": "f2fdf48a5553b83e894541502dbbb66ee4a67de4859b3bd4e80e0dc6b990998e",
+    "reconstruction": "initialization/reconstruct_initial_alpha.py"
+  }
+}
