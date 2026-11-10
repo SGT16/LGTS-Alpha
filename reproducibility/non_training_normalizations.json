@@ -8,8 +8,81 @@
         "source_snapshot_organsmnist_no_hflip"
       ],
       "recorded_sha256": "f0c9fd5b5a5a2607ad9d1f786e0cba08bba4beaa6712b6598f8a1931c8584c52",
-      "published_sha256": "bf375f7666531d8c23f7fba2aecad1f6d37b4038fe43b87ea790d14f57f20c62",
-      "change_scope": "class docstring only",
+      "published_sha256": "08535623feab887db02fa62e991d7082afb85b2f421432ca2a7345201ee96b2a",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "lgts_benchmark/data.py",
+      "snapshot_scopes": [
+        "source_snapshot_organsmnist_no_hflip"
+      ],
+      "recorded_sha256": "3288718ed043d92113e78bb942af598a3c013acda2e8841c2c903ff7301fbb65",
+      "published_sha256": "793cb8e58d507917fb56a42c2bf25ed17d1553a6504ad10926b160a2e0879582",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "lgts_benchmark/data.py",
+      "snapshot_scopes": [
+        "source_snapshot_q2_confirmatory"
+      ],
+      "recorded_sha256": "968154590a85629912d6d9a408b058919eeff00aec84ac59971629b1057fb2f2",
+      "published_sha256": "7ffe1da23be597bc2befa0ba06634b807ceb394b78afbfe1e303ef6e9ec44bb8",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "lgts_benchmark/metrics.py",
+      "snapshot_scopes": [
+        "source_snapshot_q2_confirmatory",
+        "source_snapshot_organsmnist_no_hflip"
+      ],
+      "recorded_sha256": "c5314d6aa1438dbadb4f36e63b95f3eabd8a97c574bf04cce7ac2e5302ec251d",
+      "published_sha256": "d0311e4686da09b4a0dd97f4312b2239314bc7ad45e9b5d6ef9ce9c2c9e32186",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "lgts_benchmark/models.py",
+      "snapshot_scopes": [
+        "source_snapshot_q2_confirmatory",
+        "source_snapshot_organsmnist_no_hflip"
+      ],
+      "recorded_sha256": "f22c8a1d71bf9081f7f2f79316a19414922692b0ead5015442671995f17317b7",
+      "published_sha256": "d39ac225b48fa37124c2f35597c289d64d7f381469c356fb7dcde265ba09e833",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "lgts_benchmark/reporting.py",
+      "snapshot_scopes": [
+        "source_snapshot_q2_confirmatory",
+        "source_snapshot_organsmnist_no_hflip"
+      ],
+      "recorded_sha256": "81e8b5bc53cbba0f0f5ea73aa870d3cc0f15e71955177d53c48c23ebd4a04faf",
+      "published_sha256": "87d9305d280d2798dfe36560852fc220e8929fb16fdc81b7243173bbc2093938",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "train_benchmark.py",
+      "snapshot_scopes": [
+        "source_snapshot_q2_confirmatory"
+      ],
+      "recorded_sha256": "8ea090f0d215fb9e4cd86e0148ad9bd8482bcb979b17625059a14ab969e11188",
+      "published_sha256": "a1e0593b84e13f143c8306529f687f5d991bf566e9cd6f2ec37533b617f28680",
+      "change_scope": "Python comments and/or docstrings removed",
+      "training_semantics": "unchanged"
+    },
+    {
+      "path": "train_benchmark.py",
+      "snapshot_scopes": [
+        "source_snapshot_organsmnist_no_hflip"
+      ],
+      "recorded_sha256": "aa611abb5b88751d872ff455e319f4c825746aa3ed1a41912ad01129b3b7834f",
+      "published_sha256": "eca676b8c90b7bb80ec9861821905892ed52aef7d27d06f235979f38219b810f",
+      "change_scope": "Python comments and/or docstrings removed",
       "training_semantics": "unchanged"
     }
   ]

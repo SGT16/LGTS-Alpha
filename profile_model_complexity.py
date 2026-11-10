@@ -45,14 +45,6 @@ def is_activation_module(module: nn.Module) -> bool:
 
 
 def profile(model: nn.Module, sample: torch.Tensor) -> dict[str, int]:
-    """Count conventional Conv2d/Linear MACs for one forward pass.
-
-    A multiply-accumulate is reported as one MAC and two FLOPs. Bias,
-    normalization, pooling, residual addition and element-wise activation
-    operations are deliberately excluded. Their treatment differs between
-    profiling packages, particularly for sigmoid/tanh/sqrt activations, so
-    measured latency is retained as the hardware-aware efficiency measure.
-    """
 
     totals = {
         "conv_macs": 0,

@@ -1,12 +1,12 @@
 # Source snapshots
 
-These directories preserve the training-relevant files identified by the
-SHA-256 maps recorded during the experiments. They are archival snapshots, not
-the maintained command-line interface. One class docstring that does not enter
-the training computation was shortened for a journal-neutral research package;
-the recorded and published hashes are documented in
-`non_training_normalizations.json`. Every other snapshotted file remains
-byte-identical to the recorded source map.
+These directories contain the source files used to verify the two recorded
+training panels. The distributed Python files omit comments and docstrings.
+For each file whose bytes differ from the recorded source, `non_training_normalizations.json`
+lists both SHA-256 values. The verifier uses the distributed hash to check the
+file and the recorded hash to reconstruct the historical run fingerprint.
+The [November 8 release tree](https://github.com/SGT16/LGTS-Alpha/tree/8a2f6e97dc92db1cc51080e97c2e20a0522fe96b/reproducibility)
+retains the earlier published copies and their original mapping.
 
 - `source_snapshot_q2_confirmatory/` reconstructs combined run-time code hash
   `988cfad419b8ae4613f37e9c4b4c513e39cd56e278ed0e23fc4bfd88d2bdf301`.

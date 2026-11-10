@@ -1,4 +1,3 @@
-"""Verify the integrity and completeness of the LGTS-Alpha research release."""
 
 from __future__ import annotations
 
@@ -74,9 +73,6 @@ def verify_source_snapshot(result_dir: str, snapshot_dir: str) -> None:
             normalized_files += 1
         combined.update(relative.encode("utf-8"))
         combined.update(b"\0")
-        # Reconstruct the run-time fingerprint with the recorded hash. A
-        # separately documented, non-training metadata normalization may have
-        # a different published byte hash while preserving training semantics.
         combined.update(expected.encode("ascii"))
         combined.update(b"\0")
 
