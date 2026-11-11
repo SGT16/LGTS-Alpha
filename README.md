@@ -10,6 +10,8 @@ the files so that the published results remain traceable to the recorded runs.
 
 ## Major revision
 
+The [protocols and analysis archive](artifacts/LGTS_Protocols_and_Analysis.zip) contains the training recipes, per-run results and analysis programs for the 375 historical and 960 revision runs.
+
 The [110-run follow-up release](https://github.com/SGT16/LGTS-Alpha/releases/tag/reviewer-followup-artifacts-2026-11-11) contains the training code, fixed experiment configurations, per-run results and statistical comparisons.
 
 The [revision study](research_revision/README.md) includes 960 completed training runs across CIFAR-100, DermaMNIST, OrganSMNIST and ImageNet-100. It contains the recorded training configurations, activation and real-epoch timing protocols, and code for the paired statistical comparisons.
